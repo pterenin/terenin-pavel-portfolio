@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Globe, FileText } from "lucide-react";
 
@@ -28,11 +27,11 @@ export const Hero = () => {
           {/* Profile Image */}
           <div className="flex justify-center lg:justify-start order-2 lg:order-1">
             <div className="relative">
-              <div className="w-80 h-96 rounded-3xl overflow-hidden bg-white shadow-2xl">
+              <div className="w-80 h-96 rounded-3xl overflow-hidden bg-gradient-to-br from-blue-50 to-gray-100 shadow-2xl flex items-end justify-center p-4">
                 <img 
-                  src="https://pavelterenin.com/wp-content/uploads/2017/01/portrait.jpeg" 
+                  src="http://pavelterenin.com/wp-content/uploads/2025/05/IMG_8108.png" 
                   alt="Pavel Terenin" 
-                  className="w-full h-full object-cover" 
+                  className="w-full h-auto object-contain object-bottom" 
                 />
               </div>
             </div>
