@@ -47,9 +47,9 @@ export const Hero = () => {
             </div>
 
             <h1 className="text-5xl md:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-              An Interactive
+              Senior/Staff
               <br />
-              <span className="text-gray-700">Designer</span>
+              <span className="text-gray-700">Software Engineer</span>
             </h1>
 
             <p className="text-lg text-gray-600 mb-12 max-w-lg leading-relaxed">
