@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail } from "lucide-react";
 
@@ -133,7 +132,7 @@ export const Hero = () => {
               },
               { 
                 name: "Juniper Square", 
-                image: ""
+                image: "http://pavelterenin.com/wp-content/uploads/2025/05/1_bEhYs4ufdL56tExesmt-8Q@2x-150x150.png"
               }
             ].map((client, index) => (
               <div key={index} className="text-center">
