@@ -22,22 +22,27 @@ export const Navigation = () => {
   };
 
   return (
-    <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-sm border-b border-gray-100">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-100/50 shadow-sm">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <span className="text-2xl font-bold text-gray-900">Pavel Terenin</span>
+            <div className="flex items-center space-x-3">
+              <div className="w-10 h-10 bg-gradient-to-r from-indigo-600 to-purple-600 rounded-xl flex items-center justify-center">
+                <span className="text-white font-bold text-lg">P</span>
+              </div>
+              <span className="text-xl font-bold text-gray-900">Pavel</span>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-baseline space-x-1">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-gray-600 hover:text-cyan-600 px-3 py-2 text-sm font-medium transition-colors duration-200"
+                  className="text-gray-600 hover:text-indigo-600 px-4 py-2 text-sm font-medium transition-all duration-200 rounded-xl hover:bg-indigo-50"
                 >
                   {item.name}
                 </button>
@@ -49,7 +54,7 @@ export const Navigation = () => {
           <div className="md:hidden">
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}
-              className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-cyan-600 hover:bg-gray-50 transition-colors duration-200"
+              className="inline-flex items-center justify-center p-2 rounded-xl text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 transition-all duration-200"
             >
               {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -59,12 +64,12 @@ export const Navigation = () => {
         {/* Mobile Navigation */}
         {isMenuOpen && (
           <div className="md:hidden">
-            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white border-t border-gray-100">
+            <div className="px-2 pt-2 pb-3 space-y-1 sm:px-3 bg-white/95 backdrop-blur-md border-t border-gray-100/50 rounded-b-2xl">
               {navItems.map((item) => (
                 <button
                   key={item.name}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-gray-600 hover:text-cyan-600 block px-3 py-2 text-base font-medium w-full text-left transition-colors duration-200"
+                  className="text-gray-600 hover:text-indigo-600 block px-4 py-3 text-base font-medium w-full text-left transition-all duration-200 rounded-xl hover:bg-indigo-50"
                 >
                   {item.name}
                 </button>
