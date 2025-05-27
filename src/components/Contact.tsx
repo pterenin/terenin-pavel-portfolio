@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
+import { Mail, Phone, Linkedin } from "lucide-react";
 
 export const Contact = () => {
   const [formData, setFormData] = useState({
@@ -44,55 +45,60 @@ export const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-20">
+          <div className="inline-block px-4 py-2 bg-white text-gray-700 rounded-full text-sm font-medium mb-6">
+            Contact
+          </div>
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
+            Let's work together
+          </h2>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+            Ready to discuss your next project? I'd love to hear from you. 
+            Let's create something amazing together.
+          </p>
+        </div>
+
         <div className="grid lg:grid-cols-2 gap-16">
           {/* Left Column - Contact Info and FAQs */}
           <div className="space-y-12">
             {/* Contact Info */}
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-                Let's work together
-              </h2>
-              <p className="text-lg text-gray-600 mb-8 leading-relaxed">
-                Ready to discuss your next project? I'd love to hear from you. 
-                Let's create something amazing together.
-              </p>
-              
-              <div className="space-y-4">
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600">📧</span>
+              <div className="space-y-6">
+                <div className="flex items-center space-x-6">
+                  <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm">
+                    <Mail className="w-6 h-6 text-gray-700" strokeWidth={1.5} />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Email</p>
-                    <a href="mailto:pavel.terenin@gmail.com" className="text-blue-600 hover:text-blue-700">
+                    <p className="font-semibold text-gray-900 text-lg">Email</p>
+                    <a href="mailto:pavel.terenin@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors">
                       pavel.terenin@gmail.com
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600">📞</span>
+                <div className="flex items-center space-x-6">
+                  <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm">
+                    <Phone className="w-6 h-6 text-gray-700" strokeWidth={1.5} />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">Phone</p>
-                    <a href="tel:+16049108101" className="text-blue-600 hover:text-blue-700">
+                    <p className="font-semibold text-gray-900 text-lg">Phone</p>
+                    <a href="tel:+16049108101" className="text-gray-600 hover:text-gray-900 transition-colors">
                       +1 (604) 910-8101
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center space-x-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                    <span className="text-blue-600">💼</span>
+                <div className="flex items-center space-x-6">
+                  <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm">
+                    <Linkedin className="w-6 h-6 text-gray-700" strokeWidth={1.5} />
                   </div>
                   <div>
-                    <p className="font-semibold text-gray-900">LinkedIn</p>
+                    <p className="font-semibold text-gray-900 text-lg">LinkedIn</p>
                     <a 
                       href="https://linkedin.com/in/pavelterenin" 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-700"
+                      className="text-gray-600 hover:text-gray-900 transition-colors"
                     >
                       linkedin.com/in/pavelterenin
                     </a>
@@ -103,24 +109,19 @@ export const Contact = () => {
 
             {/* FAQ Section */}
             <div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6">
-                Questions people normally ask me
+              <h3 className="text-3xl font-bold text-gray-900 mb-8">
+                Frequently Asked Questions
               </h3>
               
               <div className="space-y-6">
                 {faqs.map((faq, index) => (
-                  <div key={index} className="border-b border-gray-200 pb-4">
-                    <button className="flex justify-between items-start w-full text-left">
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-gray-900 mb-2">
-                          {faq.question}
-                        </h4>
-                        <p className="text-gray-600 text-sm">
-                          {faq.answer}
-                        </p>
-                      </div>
-                      <span className="text-blue-600 ml-4">+</span>
-                    </button>
+                  <div key={index} className="bg-white rounded-2xl p-6 shadow-sm">
+                    <h4 className="font-semibold text-gray-900 mb-3 text-lg">
+                      {faq.question}
+                    </h4>
+                    <p className="text-gray-600 leading-relaxed">
+                      {faq.answer}
+                    </p>
                   </div>
                 ))}
               </div>
@@ -129,9 +130,9 @@ export const Contact = () => {
 
           {/* Right Column - Contact Form */}
           <div>
-            <Card className="border-0 shadow-lg rounded-2xl">
-              <CardContent className="p-8">
-                <h3 className="text-2xl font-bold text-gray-900 mb-6">
+            <Card className="border-0 shadow-lg rounded-3xl bg-white">
+              <CardContent className="p-10">
+                <h3 className="text-3xl font-bold text-gray-900 mb-8">
                   Send me a message
                 </h3>
                 
@@ -143,7 +144,7 @@ export const Contact = () => {
                       value={formData.name}
                       onChange={handleChange}
                       required
-                      className="border-gray-200 rounded-lg h-12"
+                      className="border-gray-200 rounded-2xl h-14 text-lg"
                     />
                   </div>
                   <div>
@@ -154,7 +155,7 @@ export const Contact = () => {
                       value={formData.email}
                       onChange={handleChange}
                       required
-                      className="border-gray-200 rounded-lg h-12"
+                      className="border-gray-200 rounded-2xl h-14 text-lg"
                     />
                   </div>
                   <div>
@@ -164,7 +165,7 @@ export const Contact = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       required
-                      className="border-gray-200 rounded-lg h-12"
+                      className="border-gray-200 rounded-2xl h-14 text-lg"
                     />
                   </div>
                   <div>
@@ -175,10 +176,10 @@ export const Contact = () => {
                       value={formData.message}
                       onChange={handleChange}
                       required
-                      className="border-gray-200 rounded-lg"
+                      className="border-gray-200 rounded-2xl text-lg"
                     />
                   </div>
-                  <Button type="submit" className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-lg py-3 h-12 font-semibold">
+                  <Button type="submit" className="w-full bg-gray-900 hover:bg-gray-800 text-white rounded-2xl py-4 h-auto text-lg font-semibold">
                     Send Message
                   </Button>
                 </form>
