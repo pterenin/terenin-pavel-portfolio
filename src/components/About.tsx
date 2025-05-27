@@ -1,5 +1,5 @@
 
-import { GraduationCap, Code2, Database, Cloud } from "lucide-react";
+import { GraduationCap, Code2, Database, Cloud, Monitor } from "lucide-react";
 
 export const About = () => {
   const timeline = [
