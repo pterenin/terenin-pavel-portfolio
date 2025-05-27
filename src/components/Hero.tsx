@@ -114,16 +114,16 @@ export const Hero = () => {
         {/* Statistics Section */}
         <div className="mt-20 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="bg-white rounded-3xl p-8 shadow-sm">
-            <div className="text-4xl font-bold text-gray-900 mb-2">98+</div>
-            <div className="text-gray-600 font-medium">Projects Experience</div>
+            <div className="text-4xl font-bold text-gray-900 mb-2">14+</div>
+            <div className="text-gray-600 font-medium">Years of Experience</div>
           </div>
           <div className="bg-white rounded-3xl p-8 shadow-sm">
-            <div className="text-4xl font-bold text-gray-900 mb-2">21+</div>
-            <div className="text-gray-600 font-medium">Features & Awards</div>
+            <div className="text-4xl font-bold text-gray-900 mb-2">20+</div>
+            <div className="text-gray-600 font-medium">Technologies Mastered</div>
           </div>
           <div className="bg-white rounded-3xl p-8 shadow-sm">
-            <div className="text-4xl font-bold text-gray-900 mb-2">97%</div>
-            <div className="text-gray-600 font-medium">Client Rating</div>
+            <div className="text-4xl font-bold text-gray-900 mb-2">5+</div>
+            <div className="text-gray-600 font-medium">Fortune 500 Clients</div>
           </div>
         </div>
 
