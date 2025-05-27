@@ -1,17 +1,12 @@
 
 export const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-white py-12 border-t border-gray-800">
+    <footer className="bg-gray-900 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-3 gap-8 mb-8">
           {/* Brand */}
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-yellow-400 rounded-full flex items-center justify-center">
-                <span className="text-gray-900 font-bold text-lg">P</span>
-              </div>
-              <span className="text-xl font-bold text-white">Pavel</span>
-            </div>
+            <h3 className="text-xl font-bold text-white mb-4">Pavel Terenin</h3>
             <p className="text-gray-400 leading-relaxed">
               Senior/Staff Software Engineer with 13+ years of experience creating 
               exceptional digital experiences.
@@ -22,11 +17,11 @@ export const Footer = () => {
           <div>
             <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
             <ul className="space-y-2">
-              {["Services", "Works", "About", "Contact"].map((link) => (
+              {["Home", "About", "Portfolio", "Services", "Contact"].map((link) => (
                 <li key={link}>
                   <a 
                     href={`#${link.toLowerCase()}`} 
-                    className="text-gray-400 hover:text-yellow-400 transition-colors duration-200"
+                    className="text-gray-400 hover:text-white transition-colors duration-200"
                   >
                     {link}
                   </a>
@@ -61,7 +56,7 @@ export const Footer = () => {
             <div className="flex space-x-6">
               <a 
                 href="https://linkedin.com/in/pavelterenin" 
-                className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 flex items-center space-x-2"
+                className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center space-x-2"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -70,7 +65,7 @@ export const Footer = () => {
               </a>
               <a 
                 href="mailto:pavel.terenin@gmail.com" 
-                className="text-gray-400 hover:text-yellow-400 transition-colors duration-200 flex items-center space-x-2"
+                className="text-gray-400 hover:text-white transition-colors duration-200 flex items-center space-x-2"
               >
                 <span>📧</span>
                 <span>Email</span>
