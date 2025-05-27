@@ -1,23 +1,23 @@
 
 import { Card, CardContent } from "@/components/ui/card";
-import { Lightbulb, Pen, Monitor } from "lucide-react";
+import { Code, Database, Cloud } from "lucide-react";
 
 export const Services = () => {
   const specialities = [
     {
-      icon: Lightbulb,
-      title: "Product design",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna, non nisl tincidunt ut elementum turpis.",
+      icon: Code,
+      title: "Front-End Development",
+      description: "React, Vue, Angular, TypeScript, JavaScript, Next.js, Redux, Micro Frontends, and modern web technologies for scalable user interfaces.",
     },
     {
-      icon: Pen,
-      title: "UI/UX Design",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna, non nisl tincidunt ut elementum turpis.",
+      icon: Database,
+      title: "Full-Stack Development",
+      description: "GraphQL, Node.js, Python, RESTful APIs, MongoDB, PostgreSQL, MySQL, and end-to-end application development.",
     },
     {
-      icon: Monitor,
-      title: "Interactive design",
-      description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna, non nisl tincidunt ut elementum turpis.",
+      icon: Cloud,
+      title: "DevOps & Architecture",
+      description: "AWS, Docker, Kubernetes, Jenkins, CI/CD pipelines, Micro Services architecture, and scalable cloud solutions.",
     },
   ];
 
@@ -26,11 +26,11 @@ export const Services = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            Specialities
+            Software Engineering Specialties
           </h2>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. In urna, 
-            non nisl tincidunt ut elementum turpis.
+            13+ years of expertise in front-end and full-stack development, 
+            delivering scalable web and mobile applications across multiple industries.
           </p>
         </div>
 
