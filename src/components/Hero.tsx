@@ -1,4 +1,3 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail } from "lucide-react";
 
@@ -30,10 +29,6 @@ export const Hero = () => {
                   alt="Pavel Terenin"
                   className="w-full h-full object-cover"
                 />
-              </div>
-              {/* Floating badge */}
-              <div className="absolute -top-4 -right-4 bg-blue-600 text-white rounded-2xl px-4 py-2 shadow-lg">
-                <div className="text-xs font-medium">Hey, It's Art! 🎨</div>
               </div>
             </div>
           </div>
