@@ -19,8 +19,8 @@ export const Hero = () => {
   };
   return (
     <section id="home" className="min-h-screen bg-gray-50 relative overflow-hidden pt-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-8 items-center min-h-[80vh]">
           {/* Text Content */}
           <div className="text-left order-1 lg:order-1">
             <div className="mb-8">
@@ -70,7 +70,7 @@ export const Hero = () => {
           </div>
 
           {/* Profile Image */}
-          <div className="flex justify-center lg:justify-end order-2 lg:order-2">
+          <div className="flex justify-center lg:justify-start order-2 lg:order-2 mt-12">
             <div className="relative">
               <div className="w-80 h-96 flex items-end justify-center p-4 px-0 py-0 rounded-none">
                 <img src="http://pavelterenin.com/wp-content/uploads/2025/05/IMG_8108.png" alt="Pavel Terenin" className="w-full h-auto object-contain object-bottom" />
