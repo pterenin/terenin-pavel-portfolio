@@ -17,20 +17,12 @@ export const Hero = () => {
       });
     }
   };
-  return <section id="home" className="min-h-screen bg-gray-50 relative overflow-hidden pt-16">
+  return (
+    <section id="home" className="min-h-screen bg-gray-50 relative overflow-hidden pt-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
-          {/* Profile Image */}
-          <div className="flex justify-center lg:justify-start order-2 lg:order-1">
-            <div className="relative">
-              <div className="w-80 h-96 flex items-end justify-center p-4 px-0 py-0 rounded-none">
-                <img src="http://pavelterenin.com/wp-content/uploads/2025/05/IMG_8108.png" alt="Pavel Terenin" className="w-full h-auto object-contain object-bottom" />
-              </div>
-            </div>
-          </div>
-
           {/* Text Content */}
-          <div className="text-left order-1 lg:order-2">
+          <div className="text-left order-1 lg:order-1">
             <div className="mb-8">
               <span className="inline-block px-4 py-2 bg-white text-gray-700 rounded-full text-sm font-medium mb-8 shadow-sm">
                 Pavel Terenin
@@ -73,6 +65,15 @@ export const Hero = () => {
                 <a href="https://pavelterenin.com/" className="w-10 h-10 bg-white hover:bg-blue-50 hover:border-blue-200 border border-gray-200 rounded-xl flex items-center justify-center text-gray-700 transition-all duration-300" target="_blank" rel="noopener noreferrer">
                   <Globe className="w-4 h-4" />
                 </a>
+              </div>
+            </div>
+          </div>
+
+          {/* Profile Image */}
+          <div className="flex justify-center lg:justify-end order-2 lg:order-2">
+            <div className="relative">
+              <div className="w-80 h-96 flex items-end justify-center p-4 px-0 py-0 rounded-none">
+                <img src="http://pavelterenin.com/wp-content/uploads/2025/05/IMG_8108.png" alt="Pavel Terenin" className="w-full h-auto object-contain object-bottom" />
               </div>
             </div>
           </div>
@@ -128,5 +129,6 @@ export const Hero = () => {
           </div>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
