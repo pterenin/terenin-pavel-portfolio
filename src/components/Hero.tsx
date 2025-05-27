@@ -1,3 +1,4 @@
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail } from "lucide-react";
 
@@ -112,19 +113,45 @@ export const Hero = () => {
           <div className="text-center mb-12">
             <h3 className="text-xl font-medium text-gray-900 mb-8">Meet my recent clients</h3>
           </div>
-          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-8 gap-6 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
             {[
-              { name: "Google", color: "bg-red-500" },
-              { name: "Warner Bros", color: "bg-gray-800" },
-              { name: "Mailchimp", color: "bg-yellow-400" },
-              { name: "Adobe", color: "bg-red-600" },
-              { name: "Upwork", color: "bg-green-500" },
-              { name: "Creative Cloud", color: "bg-blue-500" },
-              { name: "Woocommerce", color: "bg-purple-600" },
-              { name: "Canva", color: "bg-blue-400" }
+              { 
+                name: "Lululemon", 
+                image: "http://pavelterenin.com/wp-content/uploads/2025/05/Lululemon_Athletica_logo.svg_-300x300.png"
+              },
+              { 
+                name: "Electronic Arts", 
+                image: "http://pavelterenin.com/wp-content/uploads/2025/05/Electronic_Arts-Logo.wine_-300x200.png"
+              },
+              { 
+                name: "Realtor.com", 
+                image: "http://pavelterenin.com/wp-content/uploads/2025/05/realtor-com-logo-300-150x150.png"
+              },
+              { 
+                name: "1Password", 
+                image: "http://pavelterenin.com/wp-content/uploads/2025/05/images-150x150.png"
+              },
+              { 
+                name: "Juniper Square", 
+                image: ""
+              }
             ].map((client, index) => (
               <div key={index} className="text-center">
-                <div className={`w-12 h-12 ${client.color} rounded-xl mx-auto mb-2`}></div>
+                {client.image ? (
+                  <div className="w-20 h-16 mx-auto mb-2 flex items-center justify-center bg-white rounded-xl p-2 shadow-sm">
+                    <img 
+                      src={client.image} 
+                      alt={client.name}
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                ) : (
+                  <div className="w-20 h-16 bg-gray-200 rounded-xl mx-auto mb-2 flex items-center justify-center">
+                    <span className="text-xs text-gray-600 font-medium text-center px-1">
+                      {client.name}
+                    </span>
+                  </div>
+                )}
                 <span className="text-xs text-gray-600 font-medium">{client.name}</span>
               </div>
             ))}
