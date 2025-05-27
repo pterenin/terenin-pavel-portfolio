@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 
@@ -24,7 +23,8 @@ export const Portfolio = () => {
       description: "Developed a new listing details page used by millions, improving load times by 30%.",
       tech: "React, Next.js, TypeScript, GraphQL",
       image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
-      category: "Web App"
+      category: "Web App",
+      link: "https://www.realtor.com/"
     }
   ];
 
