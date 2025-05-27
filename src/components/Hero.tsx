@@ -9,86 +9,143 @@ export const Hero = () => {
     }
   };
 
-  return (
-    <section id="home" className="min-h-screen flex items-center justify-center bg-gradient-to-br from-indigo-600 via-purple-600 to-cyan-500 relative overflow-hidden">
-      {/* Geometric Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 left-10 w-32 h-32 bg-yellow-400 rounded-full opacity-20 animate-pulse"></div>
-        <div className="absolute top-40 right-20 w-24 h-24 bg-orange-400 rounded-lg rotate-45 opacity-30"></div>
-        <div className="absolute bottom-32 left-1/4 w-16 h-16 bg-pink-400 rounded-full opacity-25"></div>
-        <div className="absolute bottom-20 right-1/3 w-20 h-20 bg-green-400 rounded-lg rotate-12 opacity-20"></div>
-        
-        {/* Dotted Pattern */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="grid grid-cols-12 gap-4 h-full">
-            {Array.from({ length: 144 }).map((_, i) => (
-              <div key={i} className="w-1 h-1 bg-white rounded-full"></div>
-            ))}
-          </div>
-        </div>
-      </div>
+  const scrollToPortfolio = () => {
+    const element = document.querySelector("#portfolio");
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
+  return (
+    <section id="home" className="min-h-screen bg-gray-900 text-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
           {/* Text Content */}
-          <div className="text-left animate-fade-in">
-            <div className="mb-6">
-              <span className="inline-block px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm font-medium mb-4">
-                Hello, I'm
+          <div className="text-left">
+            <div className="mb-8">
+              <span className="text-gray-400 text-sm uppercase tracking-wider mb-4 block">
+                — Introduction
               </span>
             </div>
 
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
-              Pavel Terenin
+            <h1 className="text-5xl md:text-7xl font-bold text-white mb-6 leading-tight">
+              Pavel
               <br />
-              <span className="text-yellow-300">Senior/Staff Software Engineer</span>
+              Terenin.
             </h1>
 
-            <p className="text-xl md:text-2xl text-white/90 mb-8 max-w-2xl leading-relaxed">
-              Delivering scalable, user-centric web and mobile applications with 13+ years of front-end and full-stack expertise.
+            <div className="w-16 h-1 bg-yellow-400 mb-8"></div>
+
+            <h2 className="text-xl md:text-2xl text-gray-300 mb-6 leading-relaxed">
+              Senior/Staff Software Engineer and
+              <br />
+              Developer, based in
+              <br />
+              Vancouver.
+            </h2>
+
+            <p className="text-gray-400 mb-8 max-w-lg leading-relaxed">
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, 
+              totam rem aperiam, eaque ipsa.
             </p>
 
-            <div className="flex flex-col sm:flex-row gap-4">
-              <Button size="lg" className="bg-yellow-400 hover:bg-yellow-500 text-gray-900 px-8 py-3 text-lg font-semibold rounded-full">
-                Download CV
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                onClick={scrollToContact}
-                className="border-white text-white hover:bg-white hover:text-gray-900 px-8 py-3 text-lg rounded-full backdrop-blur-sm"
-              >
-                Contact Me
-              </Button>
-            </div>
+            <button 
+              onClick={scrollToPortfolio}
+              className="text-yellow-400 hover:text-yellow-300 transition-colors duration-200 flex items-center space-x-2 group"
+            >
+              <span className="border-b border-yellow-400 group-hover:border-yellow-300">My story</span>
+              <span>→</span>
+            </button>
           </div>
 
           {/* Profile Image */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative">
-              {/* Decorative Elements */}
-              <div className="absolute -top-4 -left-4 w-8 h-8 bg-yellow-400 rounded-full"></div>
-              <div className="absolute -bottom-4 -right-4 w-6 h-6 bg-orange-400 rounded-lg rotate-45"></div>
-              <div className="absolute top-1/2 -right-8 w-4 h-4 bg-pink-400 rounded-full"></div>
-              
-              {/* Profile Image Container */}
-              <div className="relative w-80 h-80 rounded-3xl overflow-hidden bg-gradient-to-br from-yellow-400 to-orange-500 p-2">
-                <div className="w-full h-full rounded-2xl overflow-hidden">
-                  <img 
-                    src="https://pavelterenin.com/wp-content/uploads/2017/01/portrait.jpeg" 
-                    alt="Pavel Terenin"
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="w-80 h-96 rounded-2xl overflow-hidden">
+                <img 
+                  src="https://pavelterenin.com/wp-content/uploads/2017/01/portrait.jpeg" 
+                  alt="Pavel Terenin"
+                  className="w-full h-full object-cover"
+                />
               </div>
+            </div>
+          </div>
+        </div>
 
-              {/* Floating Card */}
-              <div className="absolute -bottom-6 -left-6 bg-white rounded-2xl p-4 shadow-xl">
-                <div className="flex items-center space-x-3">
-                  <div className="w-3 h-3 bg-green-400 rounded-full animate-pulse"></div>
-                  <span className="text-gray-700 font-medium">Available for work</span>
-                </div>
-              </div>
+        {/* Bottom Section */}
+        <div className="mt-20 grid md:grid-cols-2 gap-12">
+          {/* Contact Section */}
+          <div>
+            <span className="text-gray-400 text-sm uppercase tracking-wider mb-4 block">
+              — Contact
+            </span>
+            <h3 className="text-2xl font-bold text-white mb-4">
+              Any Type Of Query
+              <br />
+              & Discussion.
+            </h3>
+            <p className="text-gray-400 mb-6 leading-relaxed">
+              Sed ut perspiciatis unde omnis iste natus error sit
+              voluptatem accusantium.
+            </p>
+            <button 
+              onClick={scrollToContact}
+              className="text-yellow-400 hover:text-yellow-300 transition-colors duration-200 flex items-center space-x-2 group"
+            >
+              <span className="border-b border-yellow-400 group-hover:border-yellow-300">pavel.terenin@gmail.com</span>
+              <span>→</span>
+            </button>
+          </div>
+
+          {/* Quote Section */}
+          <div>
+            <h3 className="text-2xl font-bold text-white mb-6 leading-relaxed">
+              You can't use up creativity,
+              <br />
+              the more you use, more you have
+              <br />
+              in your significant mind.
+            </h3>
+            <p className="text-gray-400 leading-relaxed">
+              Sed ut perspiciatis unde omnis iste natus error sit
+              voluptatem accusantium doloremque laudantium,
+              totam rem aperiam, eaque ipsa.
+            </p>
+          </div>
+        </div>
+
+        {/* Stats */}
+        <div className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8">
+          <div>
+            <div className="text-4xl font-bold text-yellow-400 mb-2">13+</div>
+            <div className="text-gray-400 text-sm">
+              Years of
+              <br />
+              Experience.
+            </div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-yellow-400 mb-2">50+</div>
+            <div className="text-gray-400 text-sm">
+              Satisfied
+              <br />
+              Clients.
+            </div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-yellow-400 mb-2">100+</div>
+            <div className="text-gray-400 text-sm">
+              Projects
+              <br />
+              Completed.
+            </div>
+          </div>
+          <div>
+            <div className="text-4xl font-bold text-yellow-400 mb-2">24/7</div>
+            <div className="text-gray-400 text-sm">
+              Support
+              <br />
+              Available.
             </div>
           </div>
         </div>

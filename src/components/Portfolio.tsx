@@ -1,139 +1,83 @@
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 export const Portfolio = () => {
   const projects = [
     {
-      title: "Lululemon Login Experience",
-      description: "Integrated Okta SSO with passwordless passkeys and biometric authentication.",
-      tech: ["TypeScript", "Next.js", "React", "OKTA API", "Micro Frontends"],
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
-      category: "Web Development"
-    },
-    {
-      title: "EA Technical Health Dashboard",
-      description: "Built a data-driven dashboard aggregating multiple sources into a user-friendly interface.",
-      tech: ["React", "Next.js", "Node.js", "Express.js", "SQLite/MySQL"],
-      image: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=600&h=400&fit=crop",
-      category: "Dashboard"
-    },
-    {
-      title: "Realtor.com Listing Details",
-      description: "Developed a new listing details page used by millions, improving load times by 30%.",
-      tech: ["React", "Next.js", "TypeScript", "GraphQL"],
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
-      category: "E-commerce"
-    },
-    {
-      title: "E-commerce Platform",
-      description: "Full-stack e-commerce solution with payment integration and admin dashboard.",
-      tech: ["Vue.js", "Node.js", "MongoDB", "Stripe"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=600&h=400&fit=crop",
-      category: "E-commerce"
-    },
-    {
-      title: "Mobile Banking App",
-      description: "Secure mobile banking application with biometric authentication.",
-      tech: ["React Native", "Node.js", "PostgreSQL", "AWS"],
-      image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
-      category: "Mobile App"
-    },
-    {
-      title: "Analytics Dashboard",
-      description: "Real-time analytics dashboard for tracking business metrics and KPIs.",
-      tech: ["Angular", "D3.js", "Python", "PostgreSQL"],
+      title: "All Creative Works, Selected projects.",
+      description: "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque.",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      category: "Dashboard"
+      category: "Featured"
     },
+    {
+      title: "BeServer.",
+      subtitle: "Branding, Product",
+      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
+      category: "Product"
+    },
+    {
+      title: "Energetic Tumbler.",
+      subtitle: "Product, Development",
+      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
+      category: "Development"
+    }
   ];
 
-  const categories = ["All", "Web Development", "Dashboard", "E-commerce", "Mobile App"];
-
   return (
-    <section id="portfolio" className="py-20 bg-gray-50 relative overflow-hidden">
-      {/* Background Elements */}
-      <div className="absolute inset-0">
-        <div className="absolute top-20 right-20 w-32 h-32 bg-blue-200 rounded-full opacity-20"></div>
-        <div className="absolute bottom-40 left-20 w-24 h-24 bg-purple-200 rounded-lg rotate-12 opacity-25"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-16">
-          <div className="inline-block px-4 py-2 bg-indigo-100 text-indigo-600 rounded-full text-sm font-medium mb-4">
-            Portfolio
-          </div>
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
-            Digital Product Showcases
-          </h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            A selection of recent projects that showcase my expertise in building scalable, 
-            user-focused applications for leading companies.
-          </p>
-        </div>
-
-        {/* Filter Tabs */}
-        <div className="flex flex-wrap justify-center gap-3 mb-12">
-          {categories.map((category, index) => (
-            <button
-              key={index}
-              className={`px-6 py-3 rounded-full text-sm font-medium transition-all duration-300 ${
-                index === 0 
-                  ? 'bg-indigo-600 text-white shadow-lg' 
-                  : 'bg-white text-gray-600 hover:bg-indigo-50 hover:text-indigo-600'
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
-
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {projects.map((project, index) => (
-            <Card key={index} className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-0 rounded-3xl overflow-hidden bg-white">
-              <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 rounded-t-3xl overflow-hidden relative">
-                <img 
-                  src={project.image} 
-                  alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                />
-                <div className="absolute top-4 left-4">
-                  <span className="px-3 py-1 bg-white/90 backdrop-blur-sm text-gray-700 text-xs rounded-full font-medium">
-                    {project.category}
+    <section id="portfolio" className="py-20 bg-gray-900 text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid lg:grid-cols-3 gap-8">
+          {/* Featured Project */}
+          <div className="lg:col-span-1">
+            <Card className="bg-gray-800 border-0 rounded-2xl overflow-hidden h-full">
+              <CardContent className="p-8 h-full flex flex-col justify-between">
+                <div className="mb-8">
+                  <span className="text-yellow-400 text-sm uppercase tracking-wider mb-4 block">
+                    — Portfolio
                   </span>
+                  <h2 className="text-2xl font-bold text-white mb-4 leading-tight">
+                    {projects[0].title}
+                  </h2>
+                  <p className="text-gray-400 leading-relaxed">
+                    {projects[0].description}
+                  </p>
                 </div>
-              </div>
-              <CardHeader className="p-6">
-                <CardTitle className="text-xl text-gray-900 group-hover:text-indigo-600 transition-colors duration-300">
-                  {project.title}
-                </CardTitle>
-                <CardDescription className="text-gray-600 leading-relaxed">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="px-6 pb-6">
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className="px-3 py-1 bg-gray-50 text-gray-600 text-xs rounded-full border border-gray-200"
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
-                <Button variant="ghost" className="w-full text-indigo-600 hover:bg-indigo-50 rounded-xl">
-                  View Project →
-                </Button>
+                <button className="text-yellow-400 hover:text-yellow-300 transition-colors duration-200 flex items-center space-x-2 group self-start">
+                  <span className="border-b border-yellow-400 group-hover:border-yellow-300">View all works</span>
+                  <span>→</span>
+                </button>
               </CardContent>
             </Card>
-          ))}
-        </div>
+          </div>
 
-        <div className="text-center">
-          <Button size="lg" className="bg-indigo-600 hover:bg-indigo-700 text-white px-8 py-3 rounded-full">
-            View All Projects
-          </Button>
+          {/* Project Grid */}
+          <div className="lg:col-span-2 grid gap-8">
+            {projects.slice(1).map((project, index) => (
+              <Card key={index} className="bg-gray-800 border-0 rounded-2xl overflow-hidden group hover:bg-gray-750 transition-colors duration-300">
+                <div className="grid md:grid-cols-2 gap-0">
+                  <div className="aspect-video md:aspect-square bg-gray-700 rounded-l-2xl overflow-hidden">
+                    <img 
+                      src={project.image} 
+                      alt={project.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-8 flex flex-col justify-center">
+                    <h3 className="text-2xl font-bold text-white mb-2">
+                      {project.title}
+                    </h3>
+                    <p className="text-gray-400 mb-4">
+                      {project.subtitle}
+                    </p>
+                    <button className="text-yellow-400 hover:text-yellow-300 transition-colors duration-200 flex items-center space-x-2 group self-start">
+                      <span className="border-b border-yellow-400 group-hover:border-yellow-300">View project</span>
+                      <span>→</span>
+                    </button>
+                  </div>
+                </div>
+              </Card>
+            ))}
+          </div>
         </div>
       </div>
     </section>
