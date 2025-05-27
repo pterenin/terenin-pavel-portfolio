@@ -9,7 +9,8 @@ export const Portfolio = () => {
       description: "Integrated Okta SSO with passwordless passkeys and biometric authentication.",
       tech: "TypeScript, Next.js, React, OKTA API",
       image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-      category: "Featured"
+      category: "Featured",
+      link: "https://shop.lululemon.com/en-ca/account/login"
     },
     {
       title: "EA Technical Health Dashboard",
@@ -66,9 +67,19 @@ export const Portfolio = () => {
                     <span className="font-medium">Tech Stack:</span> {project.tech}
                   </p>
                 </div>
-                <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50">
-                  View Project
-                </Button>
+                {project.link ? (
+                  <Button 
+                    variant="outline" 
+                    className="w-full border-blue-600 text-blue-600 hover:bg-blue-50"
+                    onClick={() => window.open(project.link, '_blank')}
+                  >
+                    View Project
+                  </Button>
+                ) : (
+                  <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50">
+                    View Project
+                  </Button>
+                )}
               </CardContent>
             </Card>
           ))}
