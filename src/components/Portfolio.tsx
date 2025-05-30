@@ -1,4 +1,3 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Code, Zap } from "lucide-react";
@@ -52,7 +51,7 @@ export const Portfolio = () => {
 
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {projects.map((project, index) => (
-            <Card key={index} className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden group bg-white ${project.featured ? 'lg:col-span-2 lg:row-span-1' : ''}`}>
+            <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden group bg-white">
               <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden relative">
                 <img 
                   src={project.image} 
