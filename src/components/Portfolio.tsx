@@ -1,7 +1,6 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink, Sparkles } from "lucide-react";
 
 export const Portfolio = () => {
   const projects = [
@@ -11,16 +10,14 @@ export const Portfolio = () => {
       tech: "TypeScript, Next.js, React, OKTA API",
       image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-165348-700x492.png",
       category: "Featured",
-      link: "https://shop.lululemon.com/en-ca/account/login",
-      gradient: "from-pink-500 to-rose-500"
+      link: "https://shop.lululemon.com/en-ca/account/login"
     },
     {
       title: "EA Technical Health Dashboard",
       description: "Built a data-driven dashboard aggregating multiple sources into a user-friendly interface.",
       tech: "React, Next.js, Node.js, Express.js",
       image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-170145-700x383.png",
-      category: "Dashboard",
-      gradient: "from-blue-500 to-cyan-500"
+      category: "Dashboard"
     },
     {
       title: "Realtor.com Listing Details",
@@ -28,57 +25,45 @@ export const Portfolio = () => {
       tech: "React, Next.js, TypeScript, GraphQL",
       image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-165548-700x602.png",
       category: "Web App",
-      link: "https://www.realtor.com/realestateandhomes-detail/508-N-Tremont-St-B_Oceanside_CA_92054_M98642-95351?from=srp-list-card",
-      gradient: "from-purple-500 to-indigo-500"
+      link: "https://www.realtor.com/realestateandhomes-detail/508-N-Tremont-St-B_Oceanside_CA_92054_M98642-95351?from=srp-list-card"
     }
   ];
 
   return (
-    <section id="portfolio" className="py-24 bg-gradient-to-br from-gray-50 via-white to-gray-50 relative overflow-hidden">
-      {/* Background decoration */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-20 left-20 w-64 h-64 rounded-full bg-gradient-to-br from-purple-400/10 to-pink-400/10 blur-3xl"></div>
-        <div className="absolute bottom-20 right-20 w-64 h-64 rounded-full bg-gradient-to-br from-blue-400/10 to-cyan-400/10 blur-3xl"></div>
-      </div>
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm text-gray-700 rounded-full text-sm font-medium mb-8 shadow-lg border border-white/20">
-            <Sparkles className="w-4 h-4 text-purple-500" />
-            My Work
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-            <span className="bg-gradient-to-r from-gray-900 to-gray-600 bg-clip-text text-transparent">Featured Projects</span>
+    <section id="portfolio" className="py-20 bg-gray-50">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-16">
+          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+            Featured Projects
           </h2>
-          <p className="text-lg text-gray-600 max-w-2xl mx-auto leading-relaxed">
+          <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             A selection of projects that showcase my expertise in full-stack development and modern web technologies.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-12">
           {projects.map((project, index) => (
-            <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden group hover:scale-105 bg-white/80 backdrop-blur-sm border border-white/20">
-              <div className="aspect-video bg-gray-200 overflow-hidden relative">
+            <Card key={index} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-2xl overflow-hidden group">
+              <div className="aspect-video bg-gray-200 overflow-hidden">
                 <img 
                   src={project.image} 
                   alt={project.title}
-                  className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent group-hover:from-black/30 transition-all duration-500"></div>
               </div>
-              <CardContent className="p-8 relative">
-                <div className="mb-4">
-                  <span className={`inline-block px-4 py-2 bg-gradient-to-r ${project.gradient} text-white text-xs font-medium rounded-full shadow-lg`}>
+              <CardContent className="p-6">
+                <div className="mb-2">
+                  <span className="inline-block px-3 py-1 bg-blue-100 text-blue-600 text-xs font-medium rounded-full">
                     {project.category}
                   </span>
                 </div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors">
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">
                   {project.title}
                 </h3>
-                <p className="text-gray-600 mb-6 leading-relaxed group-hover:text-gray-700 transition-colors">
+                <p className="text-gray-600 mb-4 leading-relaxed">
                   {project.description}
                 </p>
-                <div className="mb-6">
+                <div className="mb-4">
                   <p className="text-sm text-gray-500">
                     <span className="font-medium">Tech Stack:</span> {project.tech}
                   </p>
@@ -86,13 +71,12 @@ export const Portfolio = () => {
                 {project.link && (
                   <Button 
                     variant="outline" 
-                    className="w-full border-2 border-gray-200 hover:border-blue-300 text-gray-700 hover:bg-blue-50/50 rounded-2xl py-3 h-auto font-medium transition-all duration-300 hover:shadow-lg group/btn"
+                    className="w-full border-blue-600 text-blue-600 hover:bg-blue-50"
                     onClick={() => window.open(project.link, '_blank')}
                   >
-                    <ExternalLink className="w-4 h-4 mr-2 group-hover/btn:scale-110 transition-transform" />
                     View Project
                   </Button>
-                )}
+                ) }
               </CardContent>
             </Card>
           ))}
@@ -100,10 +84,10 @@ export const Portfolio = () => {
 
         <div className="text-center">
           <Button 
-            className="bg-gradient-to-r from-gray-900 to-gray-700 hover:from-gray-800 hover:to-gray-600 text-white px-10 py-4 rounded-2xl font-medium text-lg shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium"
             onClick={() => window.open('https://docs.google.com/document/d/1IL9JJWODBToRulJeuLTmFd15fyqAUJbSiakI9l-kiH8/edit?usp=sharing', '_blank')}
           >
-            View My Complete CV
+            View My CV
           </Button>
         </div>
       </div>
