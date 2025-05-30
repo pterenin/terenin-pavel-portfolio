@@ -23,6 +23,24 @@ export const Hero = () => {
 
   return (
     <section id="home" className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden pt-16">
+      {/* Video Background */}
+      <div className="absolute inset-0 z-0">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="w-full h-full object-cover"
+          poster="https://pavelterenin.com/blog/wp-content/uploads/2025/05/IMG_8108.png"
+        >
+          <source src="https://pavelterenin.com/blog/wp-content/uploads/2025/05/Video_for_Web_Portfolio.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+        
+        {/* Video Overlay */}
+        <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px]"></div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
           {/* Text Content */}
@@ -107,7 +125,7 @@ export const Hero = () => {
           <div className="flex justify-center lg:justify-end order-1 lg:order-2">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-3xl blur-3xl"></div>
-              <div className="relative w-80 h-96 rounded-3xl overflow-hidden portrait-container shadow-2xl ring-1 ring-gray-100">
+              <div className="relative w-80 h-96 rounded-3xl overflow-hidden portrait-container shadow-2xl ring-1 ring-white/20 backdrop-blur-sm">
                 <img 
                   src="https://pavelterenin.com/blog/wp-content/uploads/2025/05/IMG_8108.png" 
                   alt="Pavel Terenin" 
@@ -120,15 +138,15 @@ export const Hero = () => {
 
         {/* Statistics Section */}
         <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-white/50 hover:shadow-md transition-all duration-300">
             <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">14+</div>
             <div className="text-gray-600 font-medium">Years of Experience</div>
           </div>
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-white/50 hover:shadow-md transition-all duration-300">
             <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">20+</div>
             <div className="text-gray-600 font-medium">Technologies Mastered</div>
           </div>
-          <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-md transition-all duration-300">
+          <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-white/50 hover:shadow-md transition-all duration-300">
             <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">5+</div>
             <div className="text-gray-600 font-medium">Fortune 500 Clients</div>
           </div>
@@ -158,7 +176,7 @@ export const Hero = () => {
               image: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/1_bEhYs4ufdL56tExesmt-8Q@2x-150x150.png"
             }].map((client, index) => (
               <div key={index} className="text-center group">
-                <div className="w-20 h-16 mx-auto mb-3 flex items-center justify-center bg-white rounded-xl p-3 shadow-sm border border-gray-100 group-hover:shadow-md transition-all duration-300">
+                <div className="w-20 h-16 mx-auto mb-3 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-sm border border-white/50 group-hover:shadow-md transition-all duration-300">
                   <img src={client.image} alt={client.name} className="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" />
                 </div>
                 <span className="text-xs text-gray-600 font-medium">{client.name}</span>
