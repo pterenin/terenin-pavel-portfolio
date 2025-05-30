@@ -132,7 +132,7 @@ export const Hero = () => {
           <div className="text-center mb-12">
             <h3 className="text-xl font-medium text-gray-900 mb-8">Meet my recent clients</h3>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
+          <div className="grid grid-cols-3 lg:grid-cols-5 gap-8 items-center">
             {[{
             name: "Lululemon",
             image: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/Lululemon_Athletica_logo.svg_-300x300.png"
