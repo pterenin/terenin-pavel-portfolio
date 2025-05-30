@@ -66,7 +66,7 @@ export const Portfolio = () => {
                 {project.featured && (
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full flex items-center gap-1">
-                      <Zap className="w-3 h-3" />
+                      <Zap className="w-3 h-3 text-yellow-400" />
                       Featured
                     </span>
                   </div>
@@ -91,7 +91,7 @@ export const Portfolio = () => {
                       variant="ghost"
                       size="sm"
                       onClick={() => window.open(project.link, '_blank')}
-                      className="text-gray-400 hover:text-blue-600 p-2"
+                      className="text-blue-500 hover:text-blue-600 p-2"
                     >
                       <ExternalLink className="w-4 h-4" />
                     </Button>
@@ -148,7 +148,7 @@ export const Portfolio = () => {
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
             onClick={() => window.open('https://docs.google.com/document/d/1IL9JJWODBToRulJeuLTmFd15fyqAUJbSiakI9l-kiH8/edit?usp=sharing', '_blank')}
           >
-            <Code className="mr-2 w-5 h-5" />
+            <Code className="mr-2 w-5 h-5 text-yellow-400" />
             Download Full Resume
           </Button>
         </div>

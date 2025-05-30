@@ -101,13 +101,13 @@ export const Hero = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  <span className="text-sm font-bold text-blue-600 group-hover:text-blue-700">in</span>
+                  <span className="text-sm font-bold text-blue-600">in</span>
                 </a>
                 <a 
                   href="mailto:pavel.terenin@gmail.com" 
                   className="w-12 h-12 bg-white hover:bg-blue-50 hover:border-blue-200 border-2 border-gray-100 rounded-xl flex items-center justify-center text-gray-700 transition-all duration-300 shadow-sm hover:shadow-md group"
                 >
-                  <Mail className="w-5 h-5 text-red-500 group-hover:text-red-600" />
+                  <Mail className="w-5 h-5 text-red-500" />
                 </a>
                 <a 
                   href="https://pavelterenin.com/blog" 
@@ -115,7 +115,7 @@ export const Hero = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  <Globe className="w-5 h-5 text-green-500 group-hover:text-green-600" />
+                  <Globe className="w-5 h-5 text-green-500" />
                 </a>
               </div>
             </div>
@@ -177,7 +177,7 @@ export const Hero = () => {
             }].map((client, index) => (
               <div key={index} className="text-center group">
                 <div className="w-20 h-16 mx-auto mb-3 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-sm border border-white/50 group-hover:shadow-md transition-all duration-300">
-                  <img src={client.image} alt={client.name} className="max-w-full max-h-full object-contain grayscale group-hover:grayscale-0 transition-all duration-300" />
+                  <img src={client.image} alt={client.name} className="max-w-full max-h-full object-contain transition-all duration-300" />
                 </div>
                 <span className="text-xs text-gray-600 font-medium">{client.name}</span>
               </div>
