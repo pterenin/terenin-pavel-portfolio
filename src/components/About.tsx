@@ -1,62 +1,52 @@
 
-
-import { GraduationCap, Code2, Database, Cloud, Monitor } from "lucide-react";
+import { GraduationCap, Code2, Database, Cloud, Monitor, Sparkles } from "lucide-react";
 
 export const About = () => {
-  const timeline = [
-    {
-      year: "2007–2010",
-      title: "Bachelor of Commerce (Finance)",
-      institution: "Lobachevsky State University",
-    },
-    {
-      year: "2011",
-      title: "Certificate in Java Programming",
-      institution: "University of Information Technologies",
-    },
-    {
-      year: "2012–2013",
-      title: "Diploma in Web Programming",
-      institution: "Concordia University",
-    },
-  ];
-
   const skillGroups = [
     {
       category: "Languages & Frameworks",
       skills: ["Python", "TypeScript", "JavaScript", "PHP", "Java", "HTML", "CSS", "XML", "Ajax"],
       icon: Code2,
-      color: "from-gray-600 to-gray-800"
+      gradient: "from-blue-500 to-cyan-500"
     },
     {
       category: "Front-End",
       skills: ["React", "Vue", "Angular", "Redux", "Flux", "Backbone", "Micro Frontends"],
       icon: Monitor,
-      color: "from-gray-600 to-gray-800"
+      gradient: "from-purple-500 to-pink-500"
     },
     {
       category: "Back-End & Databases",
       skills: ["Node.js", "Next.js", "GraphQL", "MongoDB", "PostgreSQL", "MySQL", "Oracle"],
       icon: Database,
-      color: "from-gray-600 to-gray-800"
+      gradient: "from-green-500 to-blue-500"
     },
     {
       category: "DevOps & Cloud",
       skills: ["Docker", "Kubernetes", "Jenkins", "AWS", "CI/CD"],
       icon: Cloud,
-      color: "from-gray-600 to-gray-800"
+      gradient: "from-orange-500 to-red-500"
     },
   ];
 
   return (
-    <section id="about" className="py-24 bg-white relative overflow-hidden">
+    <section id="about" className="py-24 bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 relative overflow-hidden">
+      {/* Background decoration */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div className="absolute top-40 right-40 w-80 h-80 rounded-full bg-gradient-to-br from-blue-400/10 to-purple-400/10 blur-3xl"></div>
+        <div className="absolute bottom-40 left-40 w-80 h-80 rounded-full bg-gradient-to-br from-purple-400/10 to-pink-400/10 blur-3xl"></div>
+      </div>
+
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
-          <div className="inline-block px-4 py-2 bg-gray-100 text-gray-700 rounded-full text-sm font-medium mb-6">
+          <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/80 backdrop-blur-sm text-gray-700 rounded-full text-sm font-medium mb-8 shadow-lg border border-white/20">
+            <Sparkles className="w-4 h-4 text-indigo-500" />
             About Me
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-            Building Scalable Solutions, Leading Innovation
+            <span className="bg-gradient-to-r from-gray-900 via-blue-800 to-purple-800 bg-clip-text text-transparent">
+              Building Scalable Solutions, Leading Innovation
+            </span>
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             I'm passionate about leveraging modern web technologies to create exceptional user experiences. 
@@ -65,52 +55,29 @@ export const About = () => {
           </p>
         </div>
 
-        <div className="grid  gap-20">
-          {/* Education Timeline */}
-          {/* <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-12 flex items-center">
-              <div className="w-12 h-12 bg-gray-100 rounded-2xl flex items-center justify-center mr-4">
-                <GraduationCap className="w-6 h-6 text-gray-700" strokeWidth={1.5} />
-              </div>
-              Education & Timeline
-            </h3>
-            <div className="space-y-8">
-              {timeline.map((item, index) => (
-                <div key={index} className="relative pl-10">
-                  <div className="absolute left-0 top-2 w-4 h-4 bg-gray-900 rounded-full"></div>
-                  <div className="absolute left-2 top-6 w-0.5 h-full bg-gray-200"></div>
-                  <div className="bg-gray-50 rounded-2xl p-6 border-l-4 border-gray-900">
-                    <div className="text-sm font-semibold text-gray-600 mb-2">{item.year}</div>
-                    <div className="font-semibold text-gray-900 mb-2 text-lg">{item.title}</div>
-                    <div className="text-gray-700">{item.institution}</div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div> */}
-
+        <div className="grid gap-20">
           {/* Skills Grid */}
           <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-12 flex items-center">
-              <div className="w-12 h-12 bg-gray-100 rounded-2xl flex items-center justify-center mr-4">
-                <Code2 className="w-6 h-6 text-gray-700" strokeWidth={1.5} />
+            <h3 className="text-3xl font-bold text-gray-900 mb-12 flex items-center justify-center">
+              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl flex items-center justify-center mr-4 shadow-lg">
+                <Code2 className="w-8 h-8 text-white" strokeWidth={1.5} />
               </div>
-              Technical Skills
+              <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Technical Skills</span>
             </h3>
-            <div className="space-y-6">
+            <div className="grid md:grid-cols-2 gap-8">
               {skillGroups.map((group, index) => (
-                <div key={index} className="bg-gray-50 rounded-3xl p-8 hover:bg-gray-100 transition-colors duration-300 border border-gray-100">
-                  <div className="flex items-center mb-6">
-                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm mr-5">
-                      <group.icon className="w-7 h-7 text-gray-700" strokeWidth={1.5} />
+                <div key={index} className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 hover:bg-white/80 transition-all duration-500 border border-white/20 shadow-lg hover:shadow-xl group hover:scale-105">
+                  <div className="flex items-center mb-8">
+                    <div className={`w-16 h-16 bg-gradient-to-br ${group.gradient} rounded-2xl flex items-center justify-center shadow-lg mr-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                      <group.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
                     </div>
-                    <h4 className="font-bold text-gray-900 text-xl">{group.category}</h4>
+                    <h4 className="font-bold text-gray-900 text-xl group-hover:text-gray-800 transition-colors">{group.category}</h4>
                   </div>
                   <div className="flex flex-wrap gap-3">
                     {group.skills.map((skill, skillIndex) => (
                       <span
                         key={skillIndex}
-                        className="px-4 py-2 bg-white text-gray-700 text-sm rounded-full border border-gray-200 hover:border-gray-300 transition-colors duration-200 font-medium"
+                        className="px-4 py-2 bg-white/80 backdrop-blur-sm text-gray-700 text-sm rounded-full border border-white/50 hover:border-gray-300 hover:bg-white transition-all duration-300 font-medium shadow-sm hover:shadow-md hover:scale-105"
                       >
                         {skill}
                       </span>
@@ -125,4 +92,3 @@ export const About = () => {
     </section>
   );
 };
-
