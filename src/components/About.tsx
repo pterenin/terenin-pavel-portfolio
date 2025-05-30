@@ -1,5 +1,4 @@
 
-
 import { GraduationCap, Code2, Database, Cloud, Monitor } from "lucide-react";
 
 export const About = () => {
@@ -26,25 +25,33 @@ export const About = () => {
       category: "Languages & Frameworks",
       skills: ["Python", "TypeScript", "JavaScript", "PHP", "Java", "HTML", "CSS", "XML", "Ajax"],
       icon: Code2,
-      color: "from-gray-600 to-gray-800"
+      color: "from-blue-50 to-indigo-50",
+      iconBg: "bg-blue-500",
+      border: "border-blue-200"
     },
     {
       category: "Front-End",
       skills: ["React", "Vue", "Angular", "Redux", "Flux", "Backbone", "Micro Frontends"],
       icon: Monitor,
-      color: "from-gray-600 to-gray-800"
+      color: "from-emerald-50 to-teal-50",
+      iconBg: "bg-emerald-500",
+      border: "border-emerald-200"
     },
     {
       category: "Back-End & Databases",
       skills: ["Node.js", "Next.js", "GraphQL", "MongoDB", "PostgreSQL", "MySQL", "Oracle"],
       icon: Database,
-      color: "from-gray-600 to-gray-800"
+      color: "from-purple-50 to-violet-50",
+      iconBg: "bg-purple-500",
+      border: "border-purple-200"
     },
     {
       category: "DevOps & Cloud",
       skills: ["Docker", "Kubernetes", "Jenkins", "AWS", "CI/CD"],
       icon: Cloud,
-      color: "from-gray-600 to-gray-800"
+      color: "from-orange-50 to-amber-50",
+      iconBg: "bg-orange-500",
+      border: "border-orange-200"
     },
   ];
 
@@ -65,59 +72,67 @@ export const About = () => {
           </p>
         </div>
 
-        <div className="grid  gap-20">
-          {/* Education Timeline */}
-          {/* <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-12 flex items-center">
-              <div className="w-12 h-12 bg-gray-100 rounded-2xl flex items-center justify-center mr-4">
-                <GraduationCap className="w-6 h-6 text-gray-700" strokeWidth={1.5} />
-              </div>
-              Education & Timeline
-            </h3>
-            <div className="space-y-8">
-              {timeline.map((item, index) => (
-                <div key={index} className="relative pl-10">
-                  <div className="absolute left-0 top-2 w-4 h-4 bg-gray-900 rounded-full"></div>
-                  <div className="absolute left-2 top-6 w-0.5 h-full bg-gray-200"></div>
-                  <div className="bg-gray-50 rounded-2xl p-6 border-l-4 border-gray-900">
-                    <div className="text-sm font-semibold text-gray-600 mb-2">{item.year}</div>
-                    <div className="font-semibold text-gray-900 mb-2 text-lg">{item.title}</div>
-                    <div className="text-gray-700">{item.institution}</div>
+        <div className="grid gap-20">
+          {/* Technical Skills */}
+          <div>
+            <div className="text-center mb-16">
+              <h3 className="text-4xl font-bold text-gray-900 mb-4 flex items-center justify-center">
+                <div className="w-14 h-14 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center mr-5 shadow-sm">
+                  <Code2 className="w-7 h-7 text-gray-700" strokeWidth={1.5} />
+                </div>
+                Technical Expertise
+              </h3>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Comprehensive technology stack with 14+ years of hands-on experience in modern development practices
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              {skillGroups.map((group, index) => (
+                <div 
+                  key={index} 
+                  className={`group relative bg-gradient-to-br ${group.color} rounded-3xl p-8 border ${group.border} hover:shadow-xl hover:scale-[1.02] transition-all duration-300 backdrop-blur-sm`}
+                >
+                  <div className="absolute inset-0 bg-white/20 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                  
+                  <div className="relative z-10">
+                    <div className="flex items-center mb-8">
+                      <div className={`w-16 h-16 ${group.iconBg} rounded-2xl flex items-center justify-center mr-6 shadow-lg group-hover:scale-110 transition-transform duration-300`}>
+                        <group.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-900 text-xl mb-1">{group.category}</h4>
+                        <div className="w-12 h-1 bg-gradient-to-r from-gray-400 to-gray-600 rounded-full"></div>
+                      </div>
+                    </div>
+                    
+                    <div className="grid grid-cols-2 gap-3">
+                      {group.skills.map((skill, skillIndex) => (
+                        <div
+                          key={skillIndex}
+                          className="px-4 py-3 bg-white/80 backdrop-blur-sm text-gray-800 text-sm rounded-xl border border-white/50 hover:bg-white hover:shadow-md transition-all duration-200 font-medium text-center group-hover:border-white/70"
+                        >
+                          {skill}
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               ))}
             </div>
-          </div> */}
-
-          {/* Skills Grid */}
-          <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-12 flex items-center">
-              <div className="w-12 h-12 bg-gray-100 rounded-2xl flex items-center justify-center mr-4">
-                <Code2 className="w-6 h-6 text-gray-700" strokeWidth={1.5} />
-              </div>
-              Technical Skills
-            </h3>
-            <div className="space-y-6">
-              {skillGroups.map((group, index) => (
-                <div key={index} className="bg-gray-50 rounded-3xl p-8 hover:bg-gray-100 transition-colors duration-300 border border-gray-100">
-                  <div className="flex items-center mb-6">
-                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm mr-5">
-                      <group.icon className="w-7 h-7 text-gray-700" strokeWidth={1.5} />
-                    </div>
-                    <h4 className="font-bold text-gray-900 text-xl">{group.category}</h4>
-                  </div>
-                  <div className="flex flex-wrap gap-3">
-                    {group.skills.map((skill, skillIndex) => (
-                      <span
-                        key={skillIndex}
-                        className="px-4 py-2 bg-white text-gray-700 text-sm rounded-full border border-gray-200 hover:border-gray-300 transition-colors duration-200 font-medium"
-                      >
-                        {skill}
-                      </span>
-                    ))}
-                  </div>
+            
+            {/* Professional Summary */}
+            <div className="mt-16 text-center">
+              <div className="bg-gradient-to-r from-gray-50 to-gray-100 rounded-3xl p-8 border border-gray-200">
+                <div className="max-w-4xl mx-auto">
+                  <h4 className="text-2xl font-bold text-gray-900 mb-4">Professional Philosophy</h4>
+                  <p className="text-lg text-gray-700 leading-relaxed">
+                    Committed to delivering high-quality, scalable solutions while fostering collaborative environments. 
+                    I believe in continuous learning, best practices implementation, and mentoring the next generation of developers 
+                    to build sustainable and innovative web applications.
+                  </p>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </div>
@@ -125,4 +140,3 @@ export const About = () => {
     </section>
   );
 };
-
