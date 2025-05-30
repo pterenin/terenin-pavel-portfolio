@@ -26,13 +26,13 @@ export const Hero = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
         <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
           {/* Profile Image */}
-          <div className="flex justify-center lg:justify-start order-2 lg:order-1">
+          <div className="flex justify-center lg:justify-end order-2 lg:order-1">
             <div className="relative">
-              <div className="w-80 h-96 rounded-3xl overflow-hidden bg-white shadow-2xl">
+              <div className="w-80 h-96 rounded-3xl overflow-hidden portrait-container">
                 <img 
-                  src="https://pavelterenin.com/wp-content/uploads/2017/01/portrait.jpeg" 
+                  src="https://pavelterenin.com/blog/wp-content/uploads/2025/05/IMG_8108.png" 
                   alt="Pavel Terenin" 
-                  className="w-full h-full object-cover" 
+                  className="w-full h-full object-cover portrait" 
                 />
               </div>
             </div>
@@ -99,7 +99,7 @@ export const Hero = () => {
                   <Mail className="w-4 h-4" />
                 </a>
                 <a 
-                  href="https://pavelterenin.com/" 
+                  href="https://pavelterenin.com/blog" 
                   className="w-10 h-10 bg-white hover:bg-blue-50 hover:border-blue-200 border border-gray-200 rounded-xl flex items-center justify-center text-gray-700 transition-all duration-300"
                   target="_blank" 
                   rel="noopener noreferrer"
@@ -135,19 +135,19 @@ export const Hero = () => {
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-8 items-center">
             {[{
             name: "Lululemon",
-            image: "http://pavelterenin.com/wp-content/uploads/2025/05/Lululemon_Athletica_logo.svg_-300x300.png"
+            image: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/Lululemon_Athletica_logo.svg_-300x300.png"
           }, {
             name: "Electronic Arts",
-            image: "http://pavelterenin.com/wp-content/uploads/2025/05/Electronic_Arts-Logo.wine_-300x200.png"
+            image: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/Electronic_Arts-Logo.wine_-300x200.png"
           }, {
             name: "Realtor.com",
-            image: "http://pavelterenin.com/wp-content/uploads/2025/05/realtor-com-logo-300-150x150.png"
+            image: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/realtor-com-logo-300-150x150.png"
           }, {
             name: "1Password",
-            image: "http://pavelterenin.com/wp-content/uploads/2025/05/images-150x150.png"
+            image: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/images-150x150.png"
           }, {
             name: "Juniper Square",
-            image: "http://pavelterenin.com/wp-content/uploads/2025/05/1_bEhYs4ufdL56tExesmt-8Q@2x-150x150.png"
+            image: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/1_bEhYs4ufdL56tExesmt-8Q@2x-150x150.png"
           }].map((client, index) => <div key={index} className="text-center">
                 {client.image ? <div className="w-20 h-16 mx-auto mb-2 flex items-center justify-center bg-white rounded-xl p-2 shadow-sm">
                     <img src={client.image} alt={client.name} className="max-w-full max-h-full object-contain" />

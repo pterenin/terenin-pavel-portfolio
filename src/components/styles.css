@@ -1,0 +1,67 @@
+.site-branding .site-title, .site-branding .site-text-logo {
+    margin: 0px;
+    line-height: 1;
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+    font-size: 23px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000000;
+    display: initial;
+    vertical-align: middle;
+    font-weight: 600;
+}
+
+
+
+.site-branding .site-title, .site-branding .site-text-logo {
+    margin: 0px;
+    line-height: 1;
+    font-family: "Raleway", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: #000000;
+    display: initial;
+    vertical-align: middle;
+    font-weight: 600;
+    position: relative;
+}
+
+.site-text-logo:before {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    background: none;
+    right: -8px;
+    bottom: -4px;
+    border-right: 3px solid #f0db4e;
+    border-bottom: 3px solid #f0db4e;
+    pointer-events: none;
+}
+
+
+.site-text-logo:after {
+    content: "";
+    position: absolute;
+    width: 40px;
+    height: 20px;
+    background: none;
+    left: -8px;
+    top: -4px;
+    border-left: 3px solid #f0db4e;
+    border-top: 3px solid #f0db4e;
+    pointer-events: none;
+}
+
+.site-description {
+  font-size: 14px;
+}
+
+.portrait-container {
+  height: 42rem !important;
+}
+
+.portrait {
+
+}

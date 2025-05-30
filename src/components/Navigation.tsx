@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
+import "./styles.css";
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -20,7 +21,7 @@ export const Navigation = () => {
     },
     {
       name: "My Blog",
-      href: "https://pavelterenin.com/",
+      href: "https://pavelterenin.com/blog",
       external: true
     },
     {
@@ -54,15 +55,9 @@ export const Navigation = () => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <button
-              onClick={() => scrollToSection("#home")}
-              className="flex items-center space-x-2 text-gray-900 hover:text-blue-600 transition-colors"
-            >
-              <div className="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
-                <span className="text-white font-bold text-sm">PT</span>
-              </div>
-              <span className="font-medium">pavel.terenin@gmail.com</span>
-            </button>
+            <div className="site-branding">
+            <div className="site-brand-inner no-logo-img has-title has-desc"><p className="site-title"><a className="site-text-logo" href="https://pavelterenin.com/" rel="home">Pavel Terenin</a></p><p className="site-description">Web Development</p></div>
+            </div>
           </div>
 
           {/* Desktop Navigation */}
@@ -82,7 +77,7 @@ export const Navigation = () => {
           <div className="hidden md:block">
             <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-200">
               <img
-                src="https://pavelterenin.com/wp-content/uploads/2017/01/portrait.jpeg"
+                src="https://pavelterenin.com/blog/wp-content/uploads/2017/01/portrait.jpeg"
                 alt="Pavel Terenin"
                 className="w-full h-full object-cover"
               />

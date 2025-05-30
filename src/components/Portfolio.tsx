@@ -8,7 +8,7 @@ export const Portfolio = () => {
       title: "Lululemon Login Experience",
       description: "Integrated Okta SSO with passwordless passkeys and biometric authentication.",
       tech: "TypeScript, Next.js, React, OKTA API",
-      image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+      image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-165348-700x492.png",
       category: "Featured",
       link: "https://shop.lululemon.com/en-ca/account/login"
     },
@@ -16,16 +16,16 @@ export const Portfolio = () => {
       title: "EA Technical Health Dashboard",
       description: "Built a data-driven dashboard aggregating multiple sources into a user-friendly interface.",
       tech: "React, Next.js, Node.js, Express.js",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?w=600&h=400&fit=crop",
+      image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-170145-700x383.png",
       category: "Dashboard"
     },
     {
       title: "Realtor.com Listing Details",
       description: "Developed a new listing details page used by millions, improving load times by 30%.",
       tech: "React, Next.js, TypeScript, GraphQL",
-      image: "https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?w=600&h=400&fit=crop",
+      image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-165548-700x602.png",
       category: "Web App",
-      link: "https://www.realtor.com/"
+      link: "https://www.realtor.com/realestateandhomes-detail/508-N-Tremont-St-B_Oceanside_CA_92054_M98642-95351?from=srp-list-card"
     }
   ];
 
@@ -68,7 +68,7 @@ export const Portfolio = () => {
                     <span className="font-medium">Tech Stack:</span> {project.tech}
                   </p>
                 </div>
-                {project.link ? (
+                {project.link && (
                   <Button 
                     variant="outline" 
                     className="w-full border-blue-600 text-blue-600 hover:bg-blue-50"
@@ -76,11 +76,7 @@ export const Portfolio = () => {
                   >
                     View Project
                   </Button>
-                ) : (
-                  <Button variant="outline" className="w-full border-blue-600 text-blue-600 hover:bg-blue-50">
-                    View Project
-                  </Button>
-                )}
+                ) }
               </CardContent>
             </Card>
           ))}
@@ -91,7 +87,7 @@ export const Portfolio = () => {
             className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium"
             onClick={() => window.open('https://docs.google.com/document/d/1IL9JJWODBToRulJeuLTmFd15fyqAUJbSiakI9l-kiH8/edit?usp=sharing', '_blank')}
           >
-            View All Projects
+            View My CV
           </Button>
         </div>
       </div>
