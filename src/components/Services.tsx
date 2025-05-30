@@ -33,10 +33,11 @@ export const Services = () => {
       backgroundImage: 'url(https://pavelterenin.com/blog/wp-content/uploads/2025/05/unnamed.jpg)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed'
     }}
   >
-    <div className="absolute inset-0 bg-white/95 backdrop-blur-sm"></div>
+    <div className="absolute inset-0 bg-white/90 "></div>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="text-center mb-20">
           <div className="inline-block px-4 py-2 bg-white text-gray-700 rounded-full text-sm font-medium mb-6 shadow-sm border border-gray-200">
@@ -72,8 +73,6 @@ export const Services = () => {
                 </div>
                 
                 <div className="flex items-center justify-center text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
-                  <span className="text-sm font-medium mr-2">Learn more</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 text-orange-500" />
                 </div>
               </CardContent>
             </Card>)}

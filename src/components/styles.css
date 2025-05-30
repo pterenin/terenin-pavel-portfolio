@@ -27,6 +27,8 @@
     bottom: -4px;
     border-right: 3px solid #3b82f6;
     border-bottom: 3px solid #3b82f6;
+    border-top: transparent;
+    border-left: transparent;
     pointer-events: none;
     transition: all 0.3s ease;
 }
@@ -41,6 +43,8 @@
     top: -4px;
     border-left: 3px solid #3b82f6;
     border-top: 3px solid #3b82f6;
+      border-right: transparent;
+    border-bottom: transparent;
     pointer-events: none;
     transition: all 0.3s ease;
 }
@@ -96,7 +100,8 @@
     
     .portrait {
         object-fit: cover;
-        object-position: 50% 20%;
+                padding: 0px 20px;
+                object-position: 52% 0%;
         padding: 20px 20px 0px 20px;
         box-sizing: content-box;
     }

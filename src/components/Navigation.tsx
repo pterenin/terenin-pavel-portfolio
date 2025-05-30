@@ -76,7 +76,7 @@ export const Navigation = () => {
                     Pavel Terenin
                   </a>
                 </p>
-                <p className="site-description">Senior Software Engineer</p>
+                <p className="site-description">Software Engineer</p>
               </div>
             </div>
           </div>
