@@ -58,29 +58,38 @@ export const About = () => {
         <div className="grid gap-20">
           {/* Skills Grid */}
           <div>
-            <h3 className="text-3xl font-bold text-gray-900 mb-12 flex items-center justify-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-3xl flex items-center justify-center mr-4 shadow-lg">
-                <Code2 className="w-8 h-8 text-white" strokeWidth={1.5} />
+            <div className="text-center mb-16">
+              <div className="inline-flex items-center gap-3 px-6 py-3 bg-white/90 backdrop-blur-sm text-gray-800 rounded-2xl text-lg font-semibold mb-6 shadow-xl border border-white/30">
+                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 to-purple-600 rounded-xl flex items-center justify-center shadow-md">
+                  <Code2 className="w-5 h-5 text-white" strokeWidth={2} />
+                </div>
+                Technical Expertise
               </div>
-              <span className="bg-gradient-to-r from-gray-900 to-gray-700 bg-clip-text text-transparent">Technical Skills</span>
-            </h3>
-            <div className="grid md:grid-cols-2 gap-8">
+              <p className="text-gray-600 max-w-2xl mx-auto text-lg">
+                Comprehensive technical skill set spanning modern web technologies, cloud platforms, and development methodologies
+              </p>
+            </div>
+            
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8 max-w-6xl mx-auto">
               {skillGroups.map((group, index) => (
-                <div key={index} className="bg-white/60 backdrop-blur-sm rounded-3xl p-8 hover:bg-white/80 transition-all duration-500 border border-white/20 shadow-lg hover:shadow-xl group hover:scale-105">
-                  <div className="flex items-center mb-8">
-                    <div className={`w-16 h-16 bg-gradient-to-br ${group.gradient} rounded-2xl flex items-center justify-center shadow-lg mr-6 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
-                      <group.icon className="w-8 h-8 text-white" strokeWidth={1.5} />
+                <div key={index} className="group bg-white/80 backdrop-blur-sm rounded-2xl p-8 hover:bg-white/90 transition-all duration-500 border border-white/40 shadow-xl hover:shadow-2xl hover:-translate-y-1">
+                  <div className="flex items-center mb-6">
+                    <div className={`w-14 h-14 bg-gradient-to-br ${group.gradient} rounded-xl flex items-center justify-center shadow-lg mr-5 group-hover:scale-110 group-hover:rotate-3 transition-all duration-500`}>
+                      <group.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
                     </div>
-                    <h4 className="font-bold text-gray-900 text-xl group-hover:text-gray-800 transition-colors">{group.category}</h4>
+                    <div>
+                      <h4 className="font-bold text-gray-900 text-xl group-hover:text-gray-800 transition-colors">{group.category}</h4>
+                      <div className="w-12 h-0.5 bg-gradient-to-r from-gray-300 to-transparent mt-1"></div>
+                    </div>
                   </div>
-                  <div className="flex flex-wrap gap-3">
+                  <div className="grid grid-cols-2 gap-3">
                     {group.skills.map((skill, skillIndex) => (
-                      <span
+                      <div
                         key={skillIndex}
-                        className="px-4 py-2 bg-white/80 backdrop-blur-sm text-gray-700 text-sm rounded-full border border-white/50 hover:border-gray-300 hover:bg-white transition-all duration-300 font-medium shadow-sm hover:shadow-md hover:scale-105"
+                        className="flex items-center justify-center px-3 py-2.5 bg-gradient-to-r from-white/90 to-white/70 backdrop-blur-sm text-gray-700 text-sm rounded-xl border border-white/60 hover:border-gray-300 hover:bg-white hover:shadow-md transition-all duration-300 font-medium group-hover:scale-105"
                       >
-                        {skill}
-                      </span>
+                        <span className="text-center">{skill}</span>
+                      </div>
                     ))}
                   </div>
                 </div>
