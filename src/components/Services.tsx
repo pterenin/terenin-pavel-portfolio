@@ -71,13 +71,24 @@ export const Services = () => {
 
         {/* Additional Services Section */}
         <div className="mt-20 text-center">
-          <div className="bg-white rounded-3xl p-12 shadow-lg border border-gray-100">
-            <h3 className="text-3xl font-bold text-gray-900 mb-6">Additional Capabilities</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-              {["Agile/Scrum Leadership", "Team Mentoring", "Code Reviews", "Performance Optimization", "Security Best Practices", "Testing Strategies", "Technical Documentation", "Project Architecture"].map((capability, index) => <div key={index} className="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200">
-                  <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
-                  <span className="text-gray-700 font-medium">{capability}</span>
-                </div>)}
+          <div 
+            className="bg-white rounded-3xl p-12 shadow-lg border border-gray-100 relative overflow-hidden"
+            style={{
+              backgroundImage: 'url(https://pavelterenin.com/blog/wp-content/uploads/2025/05/unnamed.jpg)',
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+              backgroundRepeat: 'no-repeat'
+            }}
+          >
+            <div className="absolute inset-0 bg-white/90 backdrop-blur-sm"></div>
+            <div className="relative z-10">
+              <h3 className="text-3xl font-bold text-gray-900 mb-6">Additional Capabilities</h3>
+              <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
+                {["Agile/Scrum Leadership", "Team Mentoring", "Code Reviews", "Performance Optimization", "Security Best Practices", "Testing Strategies", "Technical Documentation", "Project Architecture"].map((capability, index) => <div key={index} className="flex items-center space-x-3 p-4 bg-white/80 backdrop-blur-sm rounded-xl hover:bg-white/90 transition-colors duration-200 border border-white/50">
+                    <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                    <span className="text-gray-700 font-medium">{capability}</span>
+                  </div>)}
+              </div>
             </div>
           </div>
         </div>
