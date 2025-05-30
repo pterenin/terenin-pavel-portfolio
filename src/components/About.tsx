@@ -63,7 +63,7 @@ export const About = () => {
             About Me
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-            Building Scalable Solutions, Leading Innovation
+            Crafting Enterprise-Grade Applications with AI-Enhanced Development
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
             I'm passionate about leveraging modern web technologies to create exceptional user experiences. 
