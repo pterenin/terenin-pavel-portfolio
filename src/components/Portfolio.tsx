@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Code, Zap } from "lucide-react";
@@ -12,7 +13,8 @@ export const Portfolio = () => {
       category: "Authentication",
       link: "https://shop.lululemon.com/en-ca/account/login",
       featured: true,
-      metrics: "Improved login conversion by 23%"
+      metrics: "Improved login conversion by 23%",
+      logo: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/Lululemon_Athletica_logo.svg_-300x300.png"
     },
     {
       title: "EA Technical Health Dashboard",
@@ -20,7 +22,8 @@ export const Portfolio = () => {
       tech: "React, Next.js, Node.js, Express.js",
       image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-170145-700x383.png",
       category: "Dashboard",
-      metrics: "Reduced system monitoring time by 60%"
+      metrics: "Reduced system monitoring time by 60%",
+      logo: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/Electronic_Arts-Logo.wine_-300x200.png"
     },
     {
       title: "Realtor.com Property Details",
@@ -29,7 +32,8 @@ export const Portfolio = () => {
       image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-165548-700x602.png",
       category: "Web Application",
       link: "https://www.realtor.com/realestateandhomes-detail/508-N-Tremont-St-B_Oceanside_CA_92054_M98642-95351?from=srp-list-card",
-      metrics: "30% improvement in page load times"
+      metrics: "30% improvement in page load times",
+      logo: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/realtor-com-logo-300-150x150.png"
     }
   ];
 
@@ -70,9 +74,18 @@ export const Portfolio = () => {
               </div>
               <CardContent className="p-8">
                 <div className="mb-4 flex items-center justify-between">
-                  <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-full">
-                    {project.category}
-                  </span>
+                  <div className="flex items-center gap-3">
+                    <div className="w-8 h-8 flex items-center justify-center bg-white rounded-lg p-1 shadow-sm border border-gray-100">
+                      <img 
+                        src={project.logo} 
+                        alt={`${project.title} logo`} 
+                        className="max-w-full max-h-full object-contain" 
+                      />
+                    </div>
+                    <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-full">
+                      {project.category}
+                    </span>
+                  </div>
                   {project.link && (
                     <Button
                       variant="ghost"
