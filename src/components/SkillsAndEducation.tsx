@@ -1,5 +1,4 @@
 
-
 import { GraduationCap, Code2, Database, Cloud, Monitor } from "lucide-react";
 
 export const SkillsAndEducation = () => {
@@ -26,25 +25,25 @@ export const SkillsAndEducation = () => {
       category: "Languages & Frameworks",
       skills: ["Python", "TypeScript", "JavaScript", "PHP", "Java", "HTML", "CSS", "XML", "Ajax"],
       icon: Code2,
-      color: "from-gray-600 to-gray-800"
+      color: "from-blue-600 to-blue-800"
     },
     {
       category: "Front-End",
       skills: ["React", "Vue", "Angular", "Redux", "Flux", "Backbone", "Micro Frontends"],
       icon: Monitor,
-      color: "from-gray-600 to-gray-800"
+      color: "from-emerald-600 to-emerald-800"
     },
     {
       category: "Back-End & Databases",
       skills: ["Node.js", "Next.js", "GraphQL", "MongoDB", "PostgreSQL", "MySQL", "Oracle"],
       icon: Database,
-      color: "from-gray-600 to-gray-800"
+      color: "from-purple-600 to-purple-800"
     },
     {
       category: "DevOps & Cloud",
       skills: ["Docker", "Kubernetes", "Jenkins", "AWS", "CI/CD"],
       icon: Cloud,
-      color: "from-gray-600 to-gray-800"
+      color: "from-orange-600 to-orange-800"
     },
   ];
 
@@ -55,17 +54,17 @@ export const SkillsAndEducation = () => {
           {/* Education Timeline */}
           <div>
             <h3 className="text-3xl font-bold text-gray-900 mb-12 flex items-center">
-              <div className="w-12 h-12 bg-gray-100 rounded-2xl flex items-center justify-center mr-4">
-                <GraduationCap className="w-6 h-6 text-gray-700" strokeWidth={1.5} />
+              <div className="w-12 h-12 bg-gradient-to-br from-indigo-100 to-indigo-200 rounded-2xl flex items-center justify-center mr-4">
+                <GraduationCap className="w-6 h-6 text-indigo-600" strokeWidth={1.5} />
               </div>
               Education & Timeline
             </h3>
             <div className="space-y-8">
               {timeline.map((item, index) => (
                 <div key={index} className="relative pl-10">
-                  <div className="absolute left-0 top-2 w-4 h-4 bg-gray-900 rounded-full"></div>
+                  <div className="absolute left-0 top-2 w-4 h-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                   <div className="absolute left-2 top-6 w-0.5 h-full bg-gray-200"></div>
-                  <div className="bg-gray-50 rounded-2xl p-6 border-l-4 border-gray-900">
+                  <div className="bg-gray-50 rounded-2xl p-6 border-l-4 border-gradient-to-b from-blue-500 to-purple-500" style={{borderImage: 'linear-gradient(to bottom, #3b82f6, #8b5cf6) 1'}}>
                     <div className="text-sm font-semibold text-gray-600 mb-2">{item.year}</div>
                     <div className="font-semibold text-gray-900 mb-2 text-lg">{item.title}</div>
                     <div className="text-gray-700">{item.institution}</div>
@@ -78,8 +77,8 @@ export const SkillsAndEducation = () => {
           {/* Skills Grid */}
           <div>
             <h3 className="text-3xl font-bold text-gray-900 mb-12 flex items-center">
-              <div className="w-12 h-12 bg-gray-100 rounded-2xl flex items-center justify-center mr-4">
-                <Code2 className="w-6 h-6 text-gray-700" strokeWidth={1.5} />
+              <div className="w-12 h-12 bg-gradient-to-br from-green-100 to-green-200 rounded-2xl flex items-center justify-center mr-4">
+                <Code2 className="w-6 h-6 text-green-600" strokeWidth={1.5} />
               </div>
               Technical Skills
             </h3>
@@ -87,8 +86,8 @@ export const SkillsAndEducation = () => {
               {skillGroups.map((group, index) => (
                 <div key={index} className="bg-gray-50 rounded-3xl p-8 hover:bg-gray-100 transition-colors duration-300 border border-gray-100">
                   <div className="flex items-center mb-6">
-                    <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm mr-5">
-                      <group.icon className="w-7 h-7 text-gray-700" strokeWidth={1.5} />
+                    <div className={`w-14 h-14 bg-gradient-to-r ${group.color} rounded-2xl flex items-center justify-center shadow-sm mr-5`}>
+                      <group.icon className="w-7 h-7 text-white" strokeWidth={1.5} />
                     </div>
                     <h4 className="font-bold text-gray-900 text-xl">{group.category}</h4>
                   </div>
@@ -111,4 +110,3 @@ export const SkillsAndEducation = () => {
     </section>
   );
 };
-

@@ -1,4 +1,6 @@
+
 import { GraduationCap, Code2, Database, Cloud, Monitor } from "lucide-react";
+
 export const About = () => {
   const timeline = [{
     year: "2007–2010",
@@ -13,6 +15,7 @@ export const About = () => {
     title: "Diploma in Web Programming",
     institution: "Concordia University"
   }];
+  
   const skillGroups = [{
     category: "Languages & Frameworks",
     skills: ["Python", "TypeScript", "JavaScript", "PHP", "Java", "HTML", "CSS", "XML", "Ajax"],
@@ -42,6 +45,7 @@ export const About = () => {
     iconBg: "bg-orange-500",
     border: "border-orange-200"
   }];
+  
   return <section id="about" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
@@ -63,8 +67,8 @@ export const About = () => {
           <div>
             <div className="text-center mb-16">
               <h3 className="text-4xl font-bold text-gray-900 mb-4 flex items-center justify-center">
-                <div className="w-14 h-14 bg-gradient-to-br from-gray-100 to-gray-200 rounded-2xl flex items-center justify-center mr-5 shadow-sm">
-                  <Code2 className="w-7 h-7 text-gray-700" strokeWidth={1.5} />
+                <div className="w-14 h-14 bg-gradient-to-br from-blue-100 to-blue-200 rounded-2xl flex items-center justify-center mr-5 shadow-sm">
+                  <Code2 className="w-7 h-7 text-blue-600" strokeWidth={1.5} />
                 </div>
                 Technical Expertise
               </h3>

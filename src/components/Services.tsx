@@ -80,7 +80,7 @@ export const Services = () => {
                 
                 <div className="flex items-center justify-center text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
                   <span className="text-sm font-medium mr-2">Learn more</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 text-orange-500" />
                 </div>
               </CardContent>
             </Card>
@@ -103,7 +103,7 @@ export const Services = () => {
                 "Project Architecture"
               ].map((capability, index) => (
                 <div key={index} className="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                   <span className="text-gray-700 font-medium">{capability}</span>
                 </div>
               ))}

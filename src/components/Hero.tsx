@@ -72,7 +72,7 @@ export const Hero = () => {
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-medium text-lg h-auto group shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Let's Connect
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200" />
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200 text-white" />
               </Button>
               <Button 
                 variant="outline" 
@@ -86,7 +86,7 @@ export const Hero = () => {
                 onClick={() => window.open('https://docs.google.com/document/d/1IL9JJWODBToRulJeuLTmFd15fyqAUJbSiakI9l-kiH8/edit?usp=sharing', '_blank')}
                 className="border-2 border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300 px-8 py-4 rounded-xl font-medium text-lg h-auto flex items-center gap-2 transition-all duration-300"
               >
-                <Download className="w-4 h-4" />
+                <Download className="w-4 h-4 text-blue-600" />
                 Resume
               </Button>
             </div>
@@ -101,13 +101,13 @@ export const Hero = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  <span className="text-sm font-bold group-hover:text-blue-600">in</span>
+                  <span className="text-sm font-bold text-blue-600 group-hover:text-blue-700">in</span>
                 </a>
                 <a 
                   href="mailto:pavel.terenin@gmail.com" 
                   className="w-12 h-12 bg-white hover:bg-blue-50 hover:border-blue-200 border-2 border-gray-100 rounded-xl flex items-center justify-center text-gray-700 transition-all duration-300 shadow-sm hover:shadow-md group"
                 >
-                  <Mail className="w-5 h-5 group-hover:text-blue-600" />
+                  <Mail className="w-5 h-5 text-red-500 group-hover:text-red-600" />
                 </a>
                 <a 
                   href="https://pavelterenin.com/blog" 
@@ -115,7 +115,7 @@ export const Hero = () => {
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  <Globe className="w-5 h-5 group-hover:text-blue-600" />
+                  <Globe className="w-5 h-5 text-green-500 group-hover:text-green-600" />
                 </a>
               </div>
             </div>
