@@ -1,30 +1,21 @@
+
 .site-branding .site-title, .site-branding .site-text-logo {
     margin: 0px;
     line-height: 1;
-    font-family: "Raleway", Helvetica, Arial, sans-serif;
-    font-size: 23px;
-    letter-spacing: 1px;
+    font-family: "Raleway", -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    font-size: 20px;
+    letter-spacing: 0.5px;
     text-transform: uppercase;
-    color: #000000;
+    color: #1f2937;
     display: initial;
     vertical-align: middle;
-    font-weight: 600;
+    font-weight: 700;
+    position: relative;
+    transition: color 0.3s ease;
 }
 
-
-
-.site-branding .site-title, .site-branding .site-text-logo {
-    margin: 0px;
-    line-height: 1;
-    font-family: "Raleway", Helvetica, Arial, sans-serif;
-    font-size: 20px;
-    letter-spacing: 1px;
-    text-transform: uppercase;
-    color: #000000;
-    display: initial;
-    vertical-align: middle;
-    font-weight: 600;
-    position: relative;
+.site-branding .site-text-logo:hover {
+    color: #2563eb;
 }
 
 .site-text-logo:before {
@@ -35,11 +26,11 @@
     background: none;
     right: -8px;
     bottom: -4px;
-    border-right: 3px solid #f0db4e;
-    border-bottom: 3px solid #f0db4e;
+    border-right: 3px solid #3b82f6;
+    border-bottom: 3px solid #3b82f6;
     pointer-events: none;
+    transition: all 0.3s ease;
 }
-
 
 .site-text-logo:after {
     content: "";
@@ -49,26 +40,135 @@
     background: none;
     left: -8px;
     top: -4px;
-    border-left: 3px solid #f0db4e;
-    border-top: 3px solid #f0db4e;
+    border-left: 3px solid #3b82f6;
+    border-top: 3px solid #3b82f6;
     pointer-events: none;
+    transition: all 0.3s ease;
+}
+
+.site-text-logo:hover:before,
+.site-text-logo:hover:after {
+    border-color: #1d4ed8;
 }
 
 .site-description {
-  font-size: 14px;
+    font-size: 12px;
+    color: #6b7280;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    margin-top: 2px;
 }
 
 .portrait-container {
-  height: 42rem !important;
+    height: 42rem !important;
+    position: relative;
+}
+
+.portrait-container::before {
+    content: "";
+    position: absolute;
+    inset: -4px;
+    background: linear-gradient(45deg, #3b82f6, #8b5cf6, #06b6d4, #3b82f6);
+    background-size: 400% 400%;
+    border-radius: 1.5rem;
+    z-index: -1;
+    animation: gradient 8s ease infinite;
+    opacity: 0.6;
+}
+
+@keyframes gradient {
+    0%, 100% {
+        background-position: 0% 50%;
+    }
+    50% {
+        background-position: 100% 50%;
+    }
 }
 
 @media only screen and (max-width: 1024px) {
-  .portrait-container {
-  height: 20rem !important;
-}
-.portrait {
-object-fit: cover;
-    object-position: 100% 0%;
+    .portrait-container {
+        height: 24rem !important;
+    }
+    
+    .portrait {
+        object-fit: cover;
+        object-position: 50% 20%;
+    }
+    
+    .site-branding .site-title, .site-branding .site-text-logo {
+        font-size: 18px;
+    }
 }
 
+@media only screen and (max-width: 768px) {
+    .portrait-container {
+        height: 20rem !important;
+    }
+    
+    .site-branding .site-title, .site-branding .site-text-logo {
+        font-size: 16px;
+    }
+    
+    .site-text-logo:before,
+    .site-text-logo:after {
+        width: 30px;
+        height: 15px;
+        border-width: 2px;
+    }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #cbd5e1;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #94a3b8;
+}
+
+/* Smooth focus transitions */
+button:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+    transition: outline 0.2s ease;
+}
+
+/* Enhanced animation utilities */
+.animate-fade-in {
+    animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
