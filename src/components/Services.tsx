@@ -1,6 +1,16 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Code, Database, Cloud, ArrowRight } from "lucide-react";
+import { useState, useEffect } from "react";
+
 export const Services = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => setScrollY(window.scrollY);
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   const specialities = [{
     icon: Code,
     title: "Front-End Excellence",
@@ -33,10 +43,12 @@ export const Services = () => {
       backgroundImage: 'url(https://pavelterenin.com/blog/wp-content/uploads/2025/05/unnamed.jpg)',
       backgroundSize: 'cover',
       backgroundPosition: 'center',
-      backgroundRepeat: 'no-repeat'
+      backgroundRepeat: 'no-repeat',
+      backgroundAttachment: 'fixed',
+      transform: `translateY(${scrollY * 0.5}px)`
     }}
   >
-    <div className="absolute inset-0 bg-white/95 backdrop-blur-sm"></div>
+    <div className="absolute inset-0 bg-white/20"></div>
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
       <div className="text-center mb-20">
           <div className="inline-block px-4 py-2 bg-white text-gray-700 rounded-full text-sm font-medium mb-6 shadow-sm border border-gray-200">
