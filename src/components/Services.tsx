@@ -1,40 +1,32 @@
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Code, Database, Cloud, ArrowRight } from "lucide-react";
-
 export const Services = () => {
-  const specialities = [
-    {
-      icon: Code,
-      title: "Front-End Excellence",
-      description: "React, Vue, Angular, TypeScript, JavaScript, Next.js, Redux, Micro Frontends, and modern web technologies for scalable user interfaces.",
-      highlights: ["React/Vue/Angular", "TypeScript", "Next.js", "Micro Frontends"],
-      color: "from-blue-50 to-indigo-50",
-      iconBg: "bg-blue-500",
-      border: "border-blue-100"
-    },
-    {
-      icon: Database,
-      title: "Full-Stack Development",
-      description: "GraphQL, Node.js, Python, RESTful APIs, MongoDB, PostgreSQL, MySQL, and end-to-end application development.",
-      highlights: ["Node.js/Python", "GraphQL/REST", "Database Design", "API Development"],
-      color: "from-emerald-50 to-teal-50",
-      iconBg: "bg-emerald-500",
-      border: "border-emerald-100"
-    },
-    {
-      icon: Cloud,
-      title: "DevOps & Architecture",
-      description: "AWS, Docker, Kubernetes, Jenkins, CI/CD pipelines, Micro Services architecture, and scalable cloud solutions.",
-      highlights: ["AWS/Cloud", "Docker/K8s", "CI/CD", "Microservices"],
-      color: "from-purple-50 to-violet-50",
-      iconBg: "bg-purple-500",
-      border: "border-purple-100"
-    }
-  ];
-
-  return (
-    <section id="services" className="py-24 bg-gray-50">
+  const specialities = [{
+    icon: Code,
+    title: "Front-End Excellence",
+    description: "React, Vue, Angular, TypeScript, JavaScript, Next.js, Redux, Micro Frontends, and modern web technologies for scalable user interfaces.",
+    highlights: ["React/Vue/Angular", "TypeScript", "Next.js", "Micro Frontends"],
+    color: "from-blue-50 to-indigo-50",
+    iconBg: "bg-blue-500",
+    border: "border-blue-100"
+  }, {
+    icon: Database,
+    title: "Full-Stack Development",
+    description: "GraphQL, Node.js, Python, RESTful APIs, MongoDB, PostgreSQL, MySQL, and end-to-end application development.",
+    highlights: ["Node.js/Python", "GraphQL/REST", "Database Design", "API Development"],
+    color: "from-emerald-50 to-teal-50",
+    iconBg: "bg-emerald-500",
+    border: "border-emerald-100"
+  }, {
+    icon: Cloud,
+    title: "DevOps & Architecture",
+    description: "AWS, Docker, Kubernetes, Jenkins, CI/CD pipelines, Micro Services architecture, and scalable cloud solutions.",
+    highlights: ["AWS/Cloud", "Docker/K8s", "CI/CD", "Microservices"],
+    color: "from-purple-50 to-violet-50",
+    iconBg: "bg-purple-500",
+    border: "border-purple-100"
+  }];
+  return <section id="services" className="py-24 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <div className="inline-block px-4 py-2 bg-white text-gray-700 rounded-full text-sm font-medium mb-6 shadow-sm border border-gray-200">
@@ -43,15 +35,11 @@ export const Services = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Technical Specializations
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            14+ years of expertise in front-end and full-stack development, delivering scalable 
-            web and mobile applications across multiple industries with modern best practices.
-          </p>
+          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">Expertise in front-end and full-stack development, delivering scalable web and mobile applications across multiple industries with modern best practices.</p>
         </div>
 
         <div className="grid md:grid-cols-3 gap-8">
-          {specialities.map((specialty, index) => (
-            <Card key={index} className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl bg-gradient-to-br ${specialty.color} group overflow-hidden relative`}>
+          {specialities.map((specialty, index) => <Card key={index} className={`border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl bg-gradient-to-br ${specialty.color} group overflow-hidden relative`}>
               <div className="absolute inset-0 bg-white/40 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               
               <CardContent className="p-10 text-center relative z-10">
@@ -68,14 +56,9 @@ export const Services = () => {
                 </p>
                 
                 <div className="grid grid-cols-2 gap-3 mb-6">
-                  {specialty.highlights.map((highlight, hIndex) => (
-                    <div
-                      key={hIndex}
-                      className="px-3 py-2 bg-white/80 backdrop-blur-sm text-gray-800 text-sm rounded-xl border border-white/50 hover:bg-white hover:shadow-md transition-all duration-200 font-medium text-center group-hover:border-white/70"
-                    >
+                  {specialty.highlights.map((highlight, hIndex) => <div key={hIndex} className="px-3 py-2 bg-white/80 backdrop-blur-sm text-gray-800 text-sm rounded-xl border border-white/50 hover:bg-white hover:shadow-md transition-all duration-200 font-medium text-center group-hover:border-white/70">
                       {highlight}
-                    </div>
-                  ))}
+                    </div>)}
                 </div>
                 
                 <div className="flex items-center justify-center text-gray-600 group-hover:text-gray-700 transition-colors duration-300">
@@ -83,8 +66,7 @@ export const Services = () => {
                   <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300 text-orange-500" />
                 </div>
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         {/* Additional Services Section */}
@@ -92,25 +74,13 @@ export const Services = () => {
           <div className="bg-white rounded-3xl p-12 shadow-lg border border-gray-100">
             <h3 className="text-3xl font-bold text-gray-900 mb-6">Additional Capabilities</h3>
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-left">
-              {[
-                "Agile/Scrum Leadership",
-                "Team Mentoring",
-                "Code Reviews",
-                "Performance Optimization",
-                "Security Best Practices",
-                "Testing Strategies",
-                "Technical Documentation",
-                "Project Architecture"
-              ].map((capability, index) => (
-                <div key={index} className="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200">
+              {["Agile/Scrum Leadership", "Team Mentoring", "Code Reviews", "Performance Optimization", "Security Best Practices", "Testing Strategies", "Technical Documentation", "Project Architecture"].map((capability, index) => <div key={index} className="flex items-center space-x-3 p-4 bg-gray-50 rounded-xl hover:bg-gray-100 transition-colors duration-200">
                   <div className="w-2 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                   <span className="text-gray-700 font-medium">{capability}</span>
-                </div>
-              ))}
+                </div>)}
             </div>
           </div>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
