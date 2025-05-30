@@ -63,12 +63,14 @@ export const About = () => {
             About Me
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">
-            Building Scalable Solutions, Leading Innovation
+            14+ Years of Full-Stack Mastery, Now Amplified by AI
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            I'm passionate about leveraging modern web technologies to create exceptional user experiences. 
-            With expertise in Agile methodologies and a commitment to mentoring emerging talent, I drive 
-            innovation in every project while maintaining the highest standards of code quality and performance.
+            From finance graduate to full-stack architect, I've evolved alongside the web development landscape. 
+            Now I'm pioneering the integration of AI into modern development workflows—leveraging machine learning 
+            for code optimization, automated testing, and intelligent debugging. My passion lies in creating 
+            scalable solutions while mentoring teams and implementing cutting-edge AI tools that enhance 
+            productivity and code quality.
           </p>
         </div>
 
