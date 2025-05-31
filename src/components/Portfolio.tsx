@@ -7,6 +7,7 @@ export const Portfolio = () => {
   const projects = [
     {
       title: "Lululemon Login Experience",
+      company: "Lululemon",
       description: "Integrated Okta SSO with passwordless passkeys and biometric authentication for enhanced security and user experience.",
       tech: "TypeScript, Next.js, React, OKTA API",
       image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-165348-700x492.png",
@@ -18,6 +19,7 @@ export const Portfolio = () => {
     },
     {
       title: "EA Technical Health Dashboard",
+      company: "EA",
       description: "Built a comprehensive data-driven dashboard aggregating multiple sources into an intuitive, real-time monitoring interface.",
       tech: "React, Next.js, Node.js, Express.js",
       image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-170145-700x383.png",
@@ -27,6 +29,7 @@ export const Portfolio = () => {
     },
     {
       title: "Realtor.com Property Details",
+      company: "Realtor.com",
       description: "Developed a high-performance listing details page serving millions of users with optimized loading and enhanced UX.",
       tech: "React, Next.js, TypeScript, GraphQL",
       image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-165548-700x602.png",
@@ -73,48 +76,33 @@ export const Portfolio = () => {
                 )}
               </div>
               <CardContent className="p-8">
-                <div className="mb-4 flex items-center justify-between">
-                  <div className="flex items-center gap-3">
+                <div className="flex flex-col items-center text-center mb-6">
+                  <div className="w-16 h-16 flex items-center justify-center mb-3">
+                    <img 
+                      src={project.logo} 
+                      alt={`${project.company} logo`} 
+                      className="max-w-full max-h-full object-contain" 
+                    />
                   </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-2">
+                    {project.company}
+                  </h3>
+                  <h4 className="text-lg font-semibold text-gray-700 mb-4">
+                    {project.title}
+                  </h4>
                 </div>
                 
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
-                    <div className="w-8 h-8 flex items-center justify-center bg-white rounded-lg p-1 shadow-sm border border-gray-100">
-                      <img 
-                        src={project.logo} 
-                        alt={`${project.title} logo`} 
-                        className="max-w-full max-h-full object-contain" 
-                      />
-                    </div>
-                  {project.title}
-                </h3>
-                
-                <p className="text-gray-600 mb-6 leading-relaxed">
+                <p className="text-gray-600 mb-4 leading-relaxed">
                   {project.description}
                 </p>
                 
-                {project.metrics && (
-                  <div className="mb-4 p-3 bg-green-50 border border-green-100 rounded-xl">
-                    <p className="text-sm text-green-700 font-medium flex items-center gap-2">
-                      <div className="w-2 h-2 bg-green-500 rounded-full"></div>
-                      {project.metrics}
-                    </p>
-                  </div>
-                )}
+                <p className="text-gray-700 mb-4 font-medium">
+                  {project.metrics}
+                </p>
                 
-                <div className="mb-6">
-                  <p className="text-sm text-gray-500 mb-2 font-medium">Technology Stack:</p>
-                  <div className="flex flex-wrap gap-2">
-                    {project.tech.split(', ').map((tech, techIndex) => (
-                      <span
-                        key={techIndex}
-                        className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-lg font-medium border border-gray-200"
-                      >
-                        {tech}
-                      </span>
-                    ))}
-                  </div>
-                </div>
+                <p className="text-sm text-gray-600 mb-6">
+                  <span className="font-medium">Tech stack:</span> {project.tech}
+                </p>
                 
                 {project.link && (
                   <Button 
