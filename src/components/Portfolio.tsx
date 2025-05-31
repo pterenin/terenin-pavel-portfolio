@@ -133,7 +133,7 @@ export const Portfolio = () => {
         <div className="text-center">
           <Button 
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            onClick={() => window.open('https://docs.google.com/document/d/1IL9JJWODBToRulJeuLTmFd15fyqAUJbSiakI9l-kiH8/edit?usp=sharing', '_blank')}
+            onClick={() => window.open('https://pavelterenin.com/Pavel_CV.pdf', '_blank')}
           >
             <Download className="mr-2 w-5 h-5 text-blue-300" />
             Download Full Resume

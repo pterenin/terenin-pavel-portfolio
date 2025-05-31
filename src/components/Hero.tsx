@@ -83,7 +83,7 @@ export const Hero = () => {
               </Button>
               <Button 
                 variant="outline" 
-                onClick={() => window.open('https://docs.google.com/document/d/1IL9JJWODBToRulJeuLTmFd15fyqAUJbSiakI9l-kiH8/edit?usp=sharing', '_blank')}
+                onClick={() => window.open('https://pavelterenin.com/Pavel_CV.pdf', '_blank')}
                 className="border-2 border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300 px-8 py-4 rounded-xl font-medium text-lg h-auto flex items-center gap-2 transition-all duration-300"
               >
                 <Download className="w-4 h-4 text-blue-600" />
