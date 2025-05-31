@@ -1,8 +1,8 @@
 
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Download, Zap } from "lucide-react";
-
 export const Portfolio = () => {
   const projects = [{
     title: "Lululemon Login Experience",
@@ -35,9 +35,7 @@ export const Portfolio = () => {
     metrics: "30% improvement in page load times",
     logo: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/realtor-com-logo-300-150x150.png"
   }];
-
-  return (
-    <section id="portfolio" className="py-24 bg-white relative">
+  return <section id="portfolio" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-6">
@@ -53,67 +51,55 @@ export const Portfolio = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
-          {projects.map((project, index) => (
-            <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden group bg-white">
+          {projects.map((project, index) => <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden group bg-white">
               <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden relative">
                 <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                {project.featured && (
-                  <div className="absolute top-4 left-4">
+                {project.featured && <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full flex items-center gap-1">
                       <Zap className="w-3 h-3 text-yellow-400" />
                       Featured
                     </span>
-                  </div>
-                )}
+                  </div>}
               </div>
               <CardContent className="p-8">
                 <div className="flex flex-col items-center text-center mb-6">
-                  <div className="w-24 h-24 flex items-center justify-center mb-4">
-                    <img src={project.logo} alt={`${project.company} logo`} className="w-24 h-24 object-cover rounded-lg" />
+                  <div className="w-16 h-16 flex items-center justify-center mb-3">
+                    <img src={project.logo} alt={`${project.company} logo`} className="w-16 h-16 object-cover" />
                   </div>
                   
-                  <h4 className="text-xl font-semibold text-gray-700 mb-4">
+                  <h4 className="text-lg font-semibold text-gray-700 mb-4">
                     {project.title}
                   </h4>
                 </div>
                 
-                <p className="text-gray-600 mb-5 leading-relaxed text-base">
+                <p className="text-gray-600 mb-4 leading-relaxed">
                   {project.description}
                 </p>
                 
-                <p className="text-gray-700 mb-5 font-medium text-base">
+                <p className="text-gray-700 mb-4 font-medium">
                   {project.metrics}
                 </p>
                 
-                <p className="text-gray-600 mb-6 text-base">
+                <p className="text-sm text-gray-600 mb-6">
                   <span className="font-medium">Tech stack:</span> {project.tech}
                 </p>
                 
-                {project.link && (
-                  <Button 
-                    className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-all duration-300 shadow-md hover:shadow-lg text-base py-3" 
-                    onClick={() => window.open(project.link, '_blank')}
-                  >
+                {project.link && <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-all duration-300 shadow-md hover:shadow-lg" onClick={() => window.open(project.link, '_blank')}>
                     View Live Project
                     <ExternalLink className="ml-2 w-4 h-4" />
-                  </Button>
-                )}
+                  </Button>}
               </CardContent>
-            </Card>
-          ))}
+            </Card>)}
         </div>
 
         <div className="text-center">
-          <Button 
-            className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300" 
-            onClick={() => window.open('https://docs.google.com/document/d/1IL9JJWODBToRulJeuLTmFd15fyqAUJbSiakI9l-kiH8/edit?usp=sharing', '_blank')}
-          >
+          <Button className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300" onClick={() => window.open('https://docs.google.com/document/d/1IL9JJWODBToRulJeuLTmFd15fyqAUJbSiakI9l-kiH8/edit?usp=sharing', '_blank')}>
             <Download className="mr-2 w-5 h-5 text-blue-300" />
             Download Full Resume
           </Button>
         </div>
       </div>
-    </section>
-  );
+    </section>;
 };
+
