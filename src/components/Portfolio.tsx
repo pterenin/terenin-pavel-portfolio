@@ -1,3 +1,4 @@
+
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Download, Zap } from "lucide-react";
@@ -63,7 +64,7 @@ export const Portfolio = () => {
               <CardContent className="p-8">
                 <div className="flex flex-col items-center text-center mb-6">
                   <div className="w-16 h-16 flex items-center justify-center mb-3">
-                    <img src={project.logo} alt={`${project.company} logo`} className="max-w-full max-h-full object-contain" />
+                    <img src={project.logo} alt={`${project.company} logo`} className="w-16 h-16 object-contain" />
                   </div>
                   
                   <h4 className="text-lg font-semibold text-gray-700 mb-4">
