@@ -1,6 +1,4 @@
-
 import { GraduationCap, Code2, Database, Cloud, Monitor } from "lucide-react";
-
 export const About = () => {
   const timeline = [{
     year: "2007–2010",
@@ -15,7 +13,6 @@ export const About = () => {
     title: "Diploma in Web Programming",
     institution: "Concordia University"
   }];
-  
   const skillGroups = [{
     category: "Languages & Frameworks",
     skills: ["Python", "TypeScript", "JavaScript", "PHP", "Java", "HTML", "CSS", "XML", "Ajax"],
@@ -45,7 +42,6 @@ export const About = () => {
     iconBg: "bg-orange-500",
     border: "border-orange-200"
   }];
-  
   return <section id="about" className="py-24 bg-white relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-20">
@@ -53,13 +49,7 @@ export const About = () => {
             About Me
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Building Scalable Solutions, Leading Innovation</h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            From finance graduate to full-stack architect, I've evolved alongside the web development landscape. 
-            Now I'm pioneering the integration of AI into modern development workflows—leveraging machine learning 
-            for code optimization, automated testing, and intelligent debugging. My passion lies in creating 
-            scalable solutions while mentoring teams and implementing cutting-edge AI tools that enhance 
-            productivity and code quality.
-          </p>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">I partner with companies to take their web applications from MVP to full-scale production—delivering clean, maintainable code and measurable performance gains. My journey from a finance graduate to a full-stack architect has given me a deep understanding of both the business and technical sides of software development. Today, I’m at the forefront of integrating AI into modern workflows—using machine learning to optimize code, automate testing, and streamline debugging. I thrive on building scalable solutions, mentoring engineering teams, and implementing cutting-edge AI tools that boost productivity and elevate code quality. When I’m not architecting software, you’ll find me hiking the North Shore or spending time with my kids.</p>
         </div>
 
         <div className="grid gap-20">
