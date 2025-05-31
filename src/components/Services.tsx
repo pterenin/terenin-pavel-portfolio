@@ -3,7 +3,7 @@ import { Code, Database, Cloud, ArrowRight } from "lucide-react";
 export const Services = () => {
   const specialities = [{
     icon: Code,
-    title: "Front-End Excellence",
+    title: "Front-End Development",
     description: "React, Vue, Angular, TypeScript, JavaScript, Next.js, Redux, Micro Frontends, and modern web technologies for scalable user interfaces.",
     highlights: ["React/Vue/Angular", "TypeScript", "Next.js", "Micro Frontends"],
     color: "from-blue-50 to-indigo-50",

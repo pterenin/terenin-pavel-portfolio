@@ -164,7 +164,7 @@ export const Hero = () => {
               image: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/Lululemon_Athletica_logo.svg_-300x300.png"
             }, {
               name: "Electronic Arts",
-              image: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/Electronic_Arts-Logo.wine_-300x200.png"
+              image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Electronic-Arts-Logo-2006-300x169.png"
             }, {
               name: "Realtor.com",
               image: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/realtor-com-logo-300-150x150.png"

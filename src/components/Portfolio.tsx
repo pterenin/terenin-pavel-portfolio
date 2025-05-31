@@ -23,7 +23,7 @@ export const Portfolio = () => {
       image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-170145-700x383.png",
       category: "Dashboard",
       metrics: "Reduced system monitoring time by 60%",
-      logo: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/Electronic_Arts-Logo.wine_-300x200.png"
+      logo: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Electronic-Arts-Logo-2006-300x169.png"
     },
     {
       title: "Realtor.com Property Details",
@@ -75,6 +75,10 @@ export const Portfolio = () => {
               <CardContent className="p-8">
                 <div className="mb-4 flex items-center justify-between">
                   <div className="flex items-center gap-3">
+                  </div>
+                </div>
+                
+                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
                     <div className="w-8 h-8 flex items-center justify-center bg-white rounded-lg p-1 shadow-sm border border-gray-100">
                       <img 
                         src={project.logo} 
@@ -82,23 +86,6 @@ export const Portfolio = () => {
                         className="max-w-full max-h-full object-contain" 
                       />
                     </div>
-                    <span className="inline-block px-3 py-1 bg-gray-100 text-gray-700 text-sm font-medium rounded-full">
-                      {project.category}
-                    </span>
-                  </div>
-                  {project.link && (
-                    <Button
-                      variant="ghost"
-                      size="sm"
-                      onClick={() => window.open(project.link, '_blank')}
-                      className="text-blue-500 hover:text-blue-600 p-2"
-                    >
-                      <ExternalLink className="w-4 h-4" />
-                    </Button>
-                  )}
-                </div>
-                
-                <h3 className="text-2xl font-bold text-gray-900 mb-4 group-hover:text-blue-600 transition-colors duration-300">
                   {project.title}
                 </h3>
                 
