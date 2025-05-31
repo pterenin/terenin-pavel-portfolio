@@ -1,4 +1,3 @@
-
 import { GraduationCap, Code2, Database, Cloud, Monitor } from "lucide-react";
 export const About = () => {
   const timeline = [{
@@ -50,7 +49,7 @@ export const About = () => {
             About Me
           </div>
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-8">Full‐Stack Architect Driving Web &amp; Mobile Solutions</h2>
-          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed text-left">I partner with companies to take their web applications from MVP to full-scale production—delivering clean, maintainable code and measurable performance gains. My journey from a finance graduate to a full-stack architect has given me a deep understanding of both the business and technical sides of software development. Today, I'm at the forefront of integrating AI into modern workflows—using machine learning to optimize code, automate testing, and streamline debugging. I thrive on building scalable solutions, mentoring engineering teams, and implementing cutting-edge AI tools that boost productivity and elevate code quality. When I'm not architecting software, you'll find me hiking the North Shore or spending time with my kids.</p>
+          <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed text-left">I partner with companies to take their web applications from MVP to full-scale production—delivering clean, maintainable code and measurable performance gains. My journey from a finance graduate to a full-stack architect has given me a deep understanding of both the business and technical sides of software development. Today, I'm at the forefront of integrating AI into modern workflows—using machine learning to optimize code, automate testing, and streamline debugging. I thrive on building scalable solutions, mentoring engineering teams, and implementing cutting-edge AI tools that boost productivity and elevate code quality. When I'm not coding you'll find me hiking the North Shore or spending time with my kids.</p>
         </div>
 
         <div className="grid gap-20">
