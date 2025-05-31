@@ -176,10 +176,10 @@ export const Hero = () => {
               image: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/1_bEhYs4ufdL56tExesmt-8Q@2x-150x150.png"
             }].map((client, index) => (
               <div key={index} className="text-center group">
-                <div className="w-20 h-16 mx-auto mb-3 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-xl p-3 shadow-sm border border-white/50 group-hover:shadow-md transition-all duration-300">
+                <div className="w-28 h-20 mx-auto mb-4 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-sm border border-white/50 group-hover:shadow-md transition-all duration-300">
                   <img src={client.image} alt={client.name} className="max-w-full max-h-full object-contain transition-all duration-300" />
                 </div>
-                <span className="text-xs text-gray-600 font-medium">{client.name}</span>
+                <span className="text-sm text-gray-600 font-medium">{client.name}</span>
               </div>
             ))}
           </div>
