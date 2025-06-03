@@ -27,33 +27,87 @@ export const AIChat = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const cvContext = `
-Pavel Terenin - Full-Stack Architect & AI Integration Specialist
+PAVEL TERENIN  
+SENIOR/STAFF SOFTWARE ENGINEER  
+pavelterenin.com | pavel.terenin@gmail.com | +1 (604) 910-8101
 
-EDUCATION:
-- Bachelor of Commerce (Finance) - Lobachevsky State University (2007-2010)
-- Certificate in Java Programming - University of Information Technologies (2011)
-- Diploma in Web Programming - Concordia University (2012-2013)
+—— SUMMARY ——  
+Software Engineer with 14+ years of experience in front-end and full-stack development across multiple industries. Expert in modern web technologies and Agile methodologies, with deep expertise in TypeScript, JavaScript, Python, and frameworks such as React, Vue, Angular, Next.js, and GraphQL. Proven track record leading UI development and architecture, delivering scalable web and mobile applications that enhance user experiences. Committed to innovation, teamwork, and continuous learning. Excels at driving projects from MVP to production, mentoring teams, and integrating AI/ML to optimize code and workflows.
 
-TECHNICAL EXPERTISE:
-Languages & Frameworks: Python, TypeScript, JavaScript, PHP, Java, HTML, CSS, XML, Ajax
-Front-End: React, Vue, Angular, Redux, Flux, Backbone, Micro Frontends
-Back-End & Databases: Node.js, Next.js, GraphQL, MongoDB, PostgreSQL, MySQL, Oracle
-DevOps & Cloud: Docker, Kubernetes, Jenkins, AWS, CI/CD
+—— TECHNICAL SKILLS ——  
+• Languages & Frameworks: Python, TypeScript, JavaScript (ES6+), PHP, Java, HTML5, CSS3, XML, Ajax  
+• Front-End: React, Vue, Angular, Redux, Flux, Backbone, Micro Frontends, Knockout, jQuery, Bootstrap, Tailwind  
+• Back-End: Node.js, Express, Next.js, GraphQL, RESTful APIs, Microservices, MongoDB, PostgreSQL, MySQL, Oracle  
+• DevOps & Cloud: Jenkins, Kubernetes, Docker, AWS (EC2, S3, Lambda), CI/CD pipelines, Git/GitLab/GitHub
 
-PROFESSIONAL EXPERIENCE:
-14+ years of full-stack development experience. Specializes in taking web applications from MVP to full-scale production. Expert in delivering clean, maintainable code and measurable performance gains. Currently at the forefront of integrating AI into modern workflows, using machine learning to optimize code, automate testing, and streamline debugging.
+—— WORK EXPERIENCE ——  
+**Lululemon (07/2024 – 05/2025)**  
+• Role: Software Engineer (contractor/consultant)  
+• Achievements:  
+  – Implemented OKTA-based passwordless login (passkeys & biometrics) with TypeScript, Next.js, React, GraphQL.  
+  – Orchestrated Micro Frontend module federation for secure login flows across multiple consumer apps.  
+  – Technologies: React, Next.js, TypeScript, GraphQL, Node.js, Docker, Jenkins, Sentry, DataDog, AWS, SCSS.  
 
-EXPERTISE AREAS:
-- Full-stack web application development
-- AI integration and workflow optimization
-- Scalable solution architecture
-- Engineering team mentoring
-- Modern development practices and best practices implementation
-- Performance optimization
-- Code quality and maintainability
+**Electronic Arts (01/2024 – 05/2025)**  
+• Role: Software Engineer (contractor/consultant)  
+• Achievements:  
+  – Designed and built a data-driven Dashboard app (FE & BE) from scratch using TypeScript, Next.js, React, Node.js, Express.js.  
+  – Architected database schemas (SQLite, SQL Server, MySQL) and event-tracking for user analytics.  
+  – Packaged the web app into an Electron desktop application.  
+  – Technologies: React, Next.js, TypeScript, Node.js, Electron, GitLab CI, SQLite, SQL Server, MySQL, Tailwind, AWS.  
 
-PERSONAL:
-Based in North Shore area, enjoys hiking and spending time with family. Passionate about continuous learning and building innovative web applications.
+**Juniper Square (04/2022 – 10/2023)**  
+• Role: Senior Software Engineer  
+• Achievements:  
+  – Built a new Account Subscription page (React, Python, GraphQL, TypeScript) that improved onboarding flow.  
+  – Introduced Micro Frontends via Webpack Module Federation, improving team autonomy and reducing bundle size.  
+  – Maintained AWS-based CI/CD pipelines, ensuring 99.9% uptime for core services.  
+  – Technologies: React, Python, GraphQL, TypeScript, PostgreSQL, Docker, AWS, CI/CD.  
+
+**Realtor.com (02/2021 – 04/2022)**  
+• Role: Senior Software Engineer  
+• Achievements:  
+  – Developed a brand new Listing Details page (React, Next.js, TypeScript, GraphQL), cutting load time by 30%.  
+  – Established a Jenkins CI pipeline, Dockerized microservices, and deployed to AWS, supporting 100M+ MAUs.  
+  – Technologies: React, Next.js, Angular, TypeScript, Node.js, GraphQL, Docker, Jenkins, AWS.  
+
+**TrustArc (10/2018 – 02/2021)**  
+• Role: Senior Front-End Engineer / UI Tech Lead  
+• Achievements:  
+  – Led a team of 4 UI developers to build a complex Angular 8+ application from the ground up, delivering on time and under budget.  
+  – Mentored junior engineers and collaborated with product managers to refine UX, boosting user satisfaction.  
+  – Technologies: Angular, TypeScript, ES6, Node.js, Docker, OpenShift, Webpack, Bootstrap.  
+
+**Intersog (07/2017 – 10/2018)**  
+• Role: Senior Software Engineer / Architect  
+• Project: Riparian (pharma pricing SaaS)  
+• Technologies: Vue.js, React, Node.js, Webpack, Bootstrap, OpenShift.  
+
+**DNN Software Inc. (07/2013 – 07/2017)**  
+• Role: JavaScript / Front-End Developer  
+• Achievements:  
+  – Contributed to the DNN CMS core modules, serving 750K+ sites globally.  
+  – Technologies: React, ES6, Flux/Redux, Webpack, Bootstrap, Node.js.  
+
+**Vidigami Media Inc. (06/2014 – 03/2016)**  
+• Role: JavaScript / Front-End Developer  
+• Technologies: React, React Native, Backbone, Knockout, TypeScript, MongoDB, PostgreSQL, Gulp, Bower, jQuery.  
+
+—— EDUCATION ——  
+• Concordia University (2012–2013) – Diploma in Web Programming (Montreal, QC, Canada)  
+• University of Information Technologies (2011) – Certificate in Java Programming (Nizhny Novgorod, Russia)  
+• Lobachevsky State University (2007–2010) – B.Com. in Finance (Nizhniy Novgorod, Russia)  
+
+—— PERSONAL BIO ——  
+Hi, I'm Pavel Terenin, a Senior/Staff Software Engineer based in Victoria, British Columbia. My passion for programming began in middle school, writing simple games in Q-Basic and Pascal. After teaching myself JavaScript, I fell in love with Web development. Today, I focus on crafting fast, reliable web and mobile experiences that scale to millions of users, often integrating AI/ML to optimize code and automate testing/debugging.  
+
+Outside of work, I hike the North Shore, write technical articles, speak at conferences, and mentor hackathon teams. I live in Victoria, BC with my wife and two kids.  
+
+Key Links:  
+• HackerNoon Articles:  
+  – "Micro-Frontends" – https://hackernoon.com/micro-frontends  
+  – "The 7 Most Useful Array Methods in JavaScript" – https://hackernoon.com/the-7-most-useful-array-methods-in-javascript  
+  – "Trunk-Based Development, Continuous Deployment, and Why You Should Adopt Them" – https://hackernoon.com/trunk-based-development-continuous-deployment-and-why-you-should-adopt-them
   `;
 
   const sendMessage = async () => {
