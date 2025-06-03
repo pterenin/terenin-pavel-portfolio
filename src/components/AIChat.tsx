@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -157,8 +156,7 @@ Key Links:
     try {
       console.log('Calling AI chat function...');
       
-      // Get user location and metadata
-      const userLocation = await getUserLocation();
+      // Get user agent without location
       const userAgent = navigator.userAgent;
       
       const { data, error } = await supabase.functions.invoke('ai-chat', {
@@ -167,7 +165,7 @@ Key Links:
           cvContext: cvContext,
           userMetadata: {
             userAgent,
-            userLocation,
+            userLocation: null, // Remove location tracking
             userIp: null // Will be captured server-side
           }
         }
