@@ -4,6 +4,7 @@ import { MessageCircle, X, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { supabase } from '@/integrations/supabase/client';
 
 interface Message {
   id: string;
@@ -24,8 +25,6 @@ export const AIChat = () => {
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
-  const [apiKey, setApiKey] = useState('');
-  const [showApiKeyInput, setShowApiKeyInput] = useState(true);
 
   const cvContext = `
 Pavel Terenin - Full-Stack Architect & AI Integration Specialist
@@ -59,11 +58,6 @@ Based in North Shore area, enjoys hiking and spending time with family. Passiona
 
   const sendMessage = async () => {
     if (!inputValue.trim() || isLoading) return;
-    
-    if (showApiKeyInput && !apiKey.trim()) {
-      alert('Please enter your OpenAI API key first');
-      return;
-    }
 
     const userMessage: Message = {
       id: Date.now().toString(),
@@ -77,44 +71,30 @@ Based in North Shore area, enjoys hiking and spending time with family. Passiona
     setIsLoading(true);
 
     try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${apiKey}`,
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          model: 'gpt-4o-mini',
-          messages: [
-            {
-              role: 'system',
-              content: `You are Pavel Terenin's AI assistant. Answer questions about Pavel based on this CV information: ${cvContext}. Be helpful, professional, and personable. If asked about something not in the CV, politely say you can only answer questions about Pavel's professional background and experience.`
-            },
-            {
-              role: 'user',
-              content: inputValue
-            }
-          ],
-          max_tokens: 500,
-          temperature: 0.7
-        }),
+      console.log('Calling AI chat function...');
+      
+      const { data, error } = await supabase.functions.invoke('ai-chat', {
+        body: {
+          message: inputValue,
+          cvContext: cvContext
+        }
       });
 
-      if (!response.ok) {
-        throw new Error('Failed to get response from OpenAI');
+      if (error) {
+        console.error('Supabase function error:', error);
+        throw new Error(error.message || 'Failed to get AI response');
       }
 
-      const data = await response.json();
       const aiMessage: Message = {
         id: (Date.now() + 1).toString(),
-        text: data.choices[0].message.content,
+        text: data.response,
         isUser: false,
         timestamp: new Date()
       };
 
       setMessages(prev => [...prev, aiMessage]);
     } catch (error) {
-      console.error('Error calling OpenAI API:', error);
+      console.error('Error calling AI chat function:', error);
       const errorMessage: Message = {
         id: (Date.now() + 1).toString(),
         text: "I'm sorry, I'm having trouble connecting right now. Please try again later.",
@@ -169,34 +149,6 @@ Based in North Shore area, enjoys hiking and spending time with family. Passiona
         </Button>
       </div>
 
-      {/* API Key Input */}
-      {showApiKeyInput && (
-        <div className="p-4 bg-yellow-50 border-b border-gray-200">
-          <p className="text-sm text-gray-700 mb-2">Enter your OpenAI API key to start chatting:</p>
-          <div className="flex space-x-2">
-            <Input
-              type="password"
-              placeholder="sk-..."
-              value={apiKey}
-              onChange={(e) => setApiKey(e.target.value)}
-              className="text-sm"
-            />
-            <Button
-              onClick={() => {
-                if (apiKey.trim()) {
-                  setShowApiKeyInput(false);
-                }
-              }}
-              size="sm"
-              disabled={!apiKey.trim()}
-            >
-              Save
-            </Button>
-          </div>
-          <p className="text-xs text-gray-500 mt-1">Your API key is stored locally and never shared.</p>
-        </div>
-      )}
-
       {/* Messages */}
       <ScrollArea className="flex-1 p-4">
         <div className="space-y-4">
@@ -238,12 +190,12 @@ Based in North Shore area, enjoys hiking and spending time with family. Passiona
             onChange={(e) => setInputValue(e.target.value)}
             onKeyPress={handleKeyPress}
             placeholder="Ask about Pavel's experience..."
-            disabled={isLoading || showApiKeyInput}
+            disabled={isLoading}
             className="flex-1"
           />
           <Button
             onClick={sendMessage}
-            disabled={isLoading || !inputValue.trim() || showApiKeyInput}
+            disabled={isLoading || !inputValue.trim()}
             size="sm"
             className="px-3"
           >
