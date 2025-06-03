@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -176,7 +175,7 @@ Key Links:
           className="rounded-full w-16 h-16 bg-blue-600 hover:bg-blue-700 shadow-lg flex flex-col items-center justify-center text-white"
         >
           <MessageCircle className="w-6 h-6 mb-1" />
-          <span className="text-xs font-medium">Ask AI</span>
+          <span className="text-xs font-medium">Have a question? Ask my AI Agent</span>
         </Button>
         <div className="absolute bottom-20 right-0 bg-gray-900 text-white px-3 py-2 rounded-lg text-sm whitespace-nowrap opacity-0 hover:opacity-100 transition-opacity duration-300 pointer-events-none">
           Have Questions? Ask my AI agent
