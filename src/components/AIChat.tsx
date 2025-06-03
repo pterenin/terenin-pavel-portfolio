@@ -110,6 +110,35 @@ Key Links:
   – "Trunk-Based Development, Continuous Deployment, and Why You Should Adopt Them" – https://hackernoon.com/trunk-based-development-continuous-deployment-and-why-you-should-adopt-them
   `;
 
+  // Function to get user's location
+  const getUserLocation = (): Promise<any> => {
+    return new Promise((resolve) => {
+      if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+          async (position) => {
+            const { latitude, longitude } = position.coords;
+            try {
+              // Use a free geolocation API to get more detailed location info
+              const response = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=free&lat=${latitude}&long=${longitude}`);
+              const locationData = await response.json();
+              resolve(locationData);
+            } catch (error) {
+              console.log('Could not get detailed location, using coordinates only');
+              resolve({ latitude, longitude });
+            }
+          },
+          (error) => {
+            console.log('Geolocation permission denied or unavailable');
+            resolve(null);
+          },
+          { timeout: 5000 }
+        );
+      } else {
+        resolve(null);
+      }
+    });
+  };
+
   const sendMessage = async () => {
     if (!inputValue.trim() || isLoading) return;
 
@@ -121,16 +150,26 @@ Key Links:
     };
 
     setMessages(prev => [...prev, userMessage]);
+    const currentInput = inputValue;
     setInputValue('');
     setIsLoading(true);
 
     try {
       console.log('Calling AI chat function...');
       
+      // Get user location and metadata
+      const userLocation = await getUserLocation();
+      const userAgent = navigator.userAgent;
+      
       const { data, error } = await supabase.functions.invoke('ai-chat', {
         body: {
-          message: inputValue,
-          cvContext: cvContext
+          message: currentInput,
+          cvContext: cvContext,
+          userMetadata: {
+            userAgent,
+            userLocation,
+            userIp: null // Will be captured server-side
+          }
         }
       });
 

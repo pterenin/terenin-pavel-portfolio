@@ -1,13 +1,19 @@
 
 import "https://deno.land/x/xhr@0.1.0/mod.ts";
 import { serve } from "https://deno.land/std@0.168.0/http/server.ts";
+import { createClient } from 'https://esm.sh/@supabase/supabase-js@2.7.1';
 
 const openAIApiKey = Deno.env.get('OPENAI_API_KEY');
+const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
+const supabaseServiceKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
 
 const corsHeaders = {
   'Access-Control-Allow-Origin': '*',
   'Access-Control-Allow-Headers': 'authorization, x-client-info, apikey, content-type',
 };
+
+// Create Supabase client with service role for database operations
+const supabase = createClient(supabaseUrl, supabaseServiceKey);
 
 serve(async (req) => {
   // Handle CORS preflight requests
@@ -16,13 +22,19 @@ serve(async (req) => {
   }
 
   try {
-    const { message, cvContext } = await req.json();
+    const { message, cvContext, userMetadata } = await req.json();
 
     console.log('Received chat request:', { message });
 
     if (!openAIApiKey) {
       throw new Error('OpenAI API key not configured');
     }
+
+    // Get user's IP address from request headers
+    const userIp = req.headers.get('x-forwarded-for') || 
+                   req.headers.get('x-real-ip') || 
+                   req.headers.get('cf-connecting-ip') || 
+                   'unknown';
 
     const response = await fetch('https://api.openai.com/v1/chat/completions', {
       method: 'POST',
@@ -65,6 +77,29 @@ RESPONSE GUIDELINES:
     const aiResponse = data.choices[0].message.content;
 
     console.log('Generated AI response successfully');
+
+    // Log the conversation to the database
+    try {
+      const { error: logError } = await supabase
+        .from('ai_chat_logs')
+        .insert({
+          user_question: message,
+          ai_response: aiResponse,
+          user_ip: userIp,
+          user_location: userMetadata?.userLocation || null,
+          user_agent: userMetadata?.userAgent || null
+        });
+
+      if (logError) {
+        console.error('Error logging chat interaction:', logError);
+        // Don't throw here - we don't want to break the chat if logging fails
+      } else {
+        console.log('Chat interaction logged successfully');
+      }
+    } catch (loggingError) {
+      console.error('Failed to log chat interaction:', loggingError);
+      // Continue execution even if logging fails
+    }
 
     return new Response(JSON.stringify({ response: aiResponse }), {
       headers: { ...corsHeaders, 'Content-Type': 'application/json' },

@@ -9,7 +9,36 @@ export type Json =
 export type Database = {
   public: {
     Tables: {
-      [_ in never]: never
+      ai_chat_logs: {
+        Row: {
+          ai_response: string | null
+          created_at: string
+          id: string
+          user_agent: string | null
+          user_ip: string | null
+          user_location: Json | null
+          user_question: string
+        }
+        Insert: {
+          ai_response?: string | null
+          created_at?: string
+          id?: string
+          user_agent?: string | null
+          user_ip?: string | null
+          user_location?: Json | null
+          user_question: string
+        }
+        Update: {
+          ai_response?: string | null
+          created_at?: string
+          id?: string
+          user_agent?: string | null
+          user_ip?: string | null
+          user_location?: Json | null
+          user_question?: string
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
