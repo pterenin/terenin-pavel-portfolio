@@ -53,7 +53,8 @@ export const Portfolio = () => {
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {projects.map((project, index) => <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden group bg-white">
               <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden relative">
-                <img src={project.image} alt={project.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
+                EA
+                <img src={project.image} alt={project.title} className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${project.company === "EA" ? "blur-[1px]" : ""}`} />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 {project.featured && <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full flex items-center gap-1">
