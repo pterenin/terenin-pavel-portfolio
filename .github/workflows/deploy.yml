@@ -45,5 +45,5 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           protocol: ftp
           port: 21
-          local-dir: dist # your build output folder
-          server-dir: public_html
+          local-dir: dist/ # your build output folder
+          server-dir: /public_html/
