@@ -66,7 +66,7 @@ export const Portfolio = () => {
                       Featured
                     </span>
                   </div>
-                )}
+                }
               </div>
               <CardContent className="p-8">
                 <div className="flex flex-col items-center text-center mb-6">
