@@ -26,6 +26,17 @@ jobs:
       - name: Build production bundle
         run: npm run build
 
+      - name: Check FTP_HOST is set
+        run: |
+          if [ -z "$FTP_HOST" ]; then
+            echo "🚨 FTP_HOST is empty!" >&2
+            exit 1
+          else
+            echo "✅ FTP_HOST is set"
+          fi
+        env:
+          FTP_HOST: ${{ secrets.FTP_HOST }}
+
       - name: Deploy via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
