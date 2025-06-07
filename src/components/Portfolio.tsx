@@ -1,41 +1,44 @@
-
-
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Download, Zap } from "lucide-react";
+
 export const Portfolio = () => {
-  const projects = [{
-    title: "Lululemon Login Experience",
-    company: "Lululemon",
-    description: "Integrated Okta SSO with passwordless passkeys and biometric authentication for enhanced security and user experience.",
-    tech: "TypeScript, Next.js, React, OKTA API",
-    image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-165348-700x492.png",
-    category: "Authentication",
-    link: "https://shop.lululemon.com/en-ca/account/login",
-    featured: true,
-    metrics: "Improved login conversion by 23%",
-    logo: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/Lululemon_Athletica_logo.svg_-300x300.png"
-  }, {
-    title: "EA Technical Health Dashboard",
-    company: "EA",
-    description: "Built a comprehensive data-driven dashboard aggregating multiple sources into an intuitive, real-time monitoring interface.",
-    tech: "React, Next.js, Node.js, Express.js",
-    image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-170145-700x383.png",
-    category: "Dashboard",
-    metrics: "Reduced system monitoring time by 60%",
-    logo: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Electronic-Arts-Logo-2006-300x169.png"
-  }, {
-    title: "Realtor.com Property Details",
-    company: "Realtor.com",
-    description: "Developed a high-performance listing details page serving millions of users with optimized loading and enhanced UX.",
-    tech: "React, Next.js, TypeScript, GraphQL",
-    image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-165548-700x602.png",
-    category: "Web Application",
-    link: "https://www.realtor.com/realestateandhomes-detail/508-N-Tremont-St-B_Oceanside_CA_92054_M98642-95351?from=srp-list-card",
-    metrics: "30% improvement in page load times",
-    logo: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/realtor-com-logo-300-150x150.png"
-  }];
-  return <section id="portfolio" className="py-24 bg-white relative">
+  const projects = [
+    {
+      title: "Lululemon Login Experience",
+      company: "Lululemon",
+      description: "Integrated Okta SSO with passwordless passkeys and biometric authentication for enhanced security and user experience.",
+      tech: "TypeScript, Next.js, React, OKTA API",
+      image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-165348-700x492.png",
+      category: "Authentication",
+      link: "https://shop.lululemon.com/en-ca/account/login",
+      featured: true,
+      metrics: "Improved login conversion by 23%",
+      logo: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/Lululemon_Athletica_logo.svg_-300x300.png"
+    }, {
+      title: "EA Technical Health Dashboard",
+      company: "EA",
+      description: "Built a comprehensive data-driven dashboard aggregating multiple sources into an intuitive, real-time monitoring interface.",
+      tech: "React, Next.js, Node.js, Express.js",
+      image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-170145-700x383.png",
+      category: "Dashboard",
+      metrics: "Reduced system monitoring time by 60%",
+      logo: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Electronic-Arts-Logo-2006-300x169.png"
+    }, {
+      title: "Realtor.com Property Details",
+      company: "Realtor.com",
+      description: "Developed a high-performance listing details page serving millions of users with optimized loading and enhanced UX.",
+      tech: "React, Next.js, TypeScript, GraphQL",
+      image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-165548-700x602.png",
+      category: "Web Application",
+      link: "https://www.realtor.com/realestateandhomes-detail/508-N-Tremont-St-B_Oceanside_CA_92054_M98642-95351?from=srp-list-card",
+      metrics: "30% improvement in page load times",
+      logo: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/realtor-com-logo-300-150x150.png"
+    }
+  ];
+
+  return (
+    <section id="portfolio" className="py-24 bg-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-20">
           <div className="inline-block px-4 py-2 bg-blue-100 text-blue-700 rounded-full text-sm font-medium mb-6">
@@ -51,7 +54,8 @@ export const Portfolio = () => {
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
-          {projects.map((project, index) => <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden group bg-white">
+          {projects.map((project, index) => (
+            <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden group bg-white">
               <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden relative">
                 EA
                 <img src={project.image} alt={project.title} className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${project.company === "EA" ? "blur-[1px]" : ""}`} />
@@ -61,7 +65,8 @@ export const Portfolio = () => {
                       <Zap className="w-3 h-3 text-yellow-400" />
                       Featured
                     </span>
-                  </div>}
+                  </div>
+                )}
               </div>
               <CardContent className="p-8">
                 <div className="flex flex-col items-center text-center mb-6">
@@ -86,12 +91,15 @@ export const Portfolio = () => {
                   <span className="font-medium">Tech stack:</span> {project.tech}
                 </p>
                 
-                {project.link && <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-all duration-300 shadow-md hover:shadow-lg" onClick={() => window.open(project.link, '_blank')}>
+                {project.link && (
+                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-all duration-300 shadow-md hover:shadow-lg" onClick={() => window.open(project.link, '_blank')}>
                     View Live Project
                     <ExternalLink className="ml-2 w-4 h-4" />
-                  </Button>}
+                  </Button>
+                )}
               </CardContent>
-            </Card>)}
+            </Card>
+          ))}
         </div>
 
         <div className="text-center">
@@ -104,6 +112,6 @@ export const Portfolio = () => {
           </Button>
         </div>
       </div>
-    </section>;
+    </section>
+  );
 };
-
