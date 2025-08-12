@@ -1,73 +1,137 @@
-# Welcome to your Lovable project
+## Pavel Terenin — Portfolio Website
 
-## Project info
+Personal portfolio showcasing recent work, services, skills, and contact options. Includes an integrated AI assistant that answers questions about Pavel’s background using a serverless function.
 
-**URL**: https://lovable.dev/projects/997e8cc4-ecda-4033-872e-ffb1c8ddebcd
+### Highlights
 
-## How can I edit this code?
+- **Modern UI**: Responsive, accessible design with Tailwind CSS and shadcn/ui components
+- **Projects**: Featured case studies with links and impact metrics
+- **Services & Skills**: Clear overview of specialties and tooling
+- **Contact**: Email form powered by EmailJS
+- **AI Assistant**: Chat widget backed by a Supabase Edge Function and OpenAI
 
-There are several ways of editing your application.
+## Tech Stack
 
-**Use Lovable**
+- **Frontend**: React 18, TypeScript, Vite, React Router
+- **UI**: Tailwind CSS, shadcn/ui (Radix primitives), Lucide icons
+- **State/Data**: @tanstack/react-query
+- **Integrations**: Supabase (Edge Functions), EmailJS
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/997e8cc4-ecda-4033-872e-ffb1c8ddebcd) and start prompting.
+## Project Structure
 
-Changes made via Lovable will be committed automatically to this repo.
+```
+src/
+  components/              # UI sections (Hero, Portfolio, Services, About, Contact, Footer, AIChat)
+  components/ui/           # shadcn/ui primitives
+  hooks/                   # shared hooks
+  integrations/supabase/   # Supabase client
+  pages/                   # routes (Index, NotFound)
+  main.tsx, App.tsx        # app bootstrap
+supabase/
+  functions/ai-chat/       # Supabase Edge Function (OpenAI-powered chat)
+```
 
-**Use your preferred IDE**
+## Features in Detail
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+- **Hero**: Background video, quick CTAs (connect, portfolio, résumé download)
+- **Portfolio**: Highlighted projects (e.g., Lululemon login, EA dashboard, Realtor.com property page)
+- **Services**: Front-end, full‑stack, and DevOps/architecture capabilities
+- **About/Skills**: Timeline and categorized skills
+- **Contact**: Email form via EmailJS with toast notifications
+- **AI Chat**: Floating widget calling `ai-chat` function for contextual Q&A
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+## Getting Started
 
-Follow these steps:
+### Prerequisites
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+- Node.js 18+ and npm
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+### Install & Run
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
+```bash
+npm install
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+App runs on `http://localhost:8080` by default (see `vite.config.ts`).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### Build & Preview
 
-**Use GitHub Codespaces**
+```bash
+npm run build
+npm run preview
+```
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Configuration
 
-## What technologies are used for this project?
+### Supabase (AI Assistant)
 
-This project is built with:
+The chat widget calls a Supabase Edge Function at `supabase/functions/ai-chat/index.ts` which uses OpenAI.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+Set the following environment variables in your Supabase project (Dashboard → Project Settings → Secrets):
 
-## How can I deploy this project?
+- `OPENAI_API_KEY`
+- `SUPABASE_URL`
+- `SUPABASE_SERVICE_ROLE_KEY`
 
-Simply open [Lovable](https://lovable.dev/projects/997e8cc4-ecda-4033-872e-ffb1c8ddebcd) and click on Share -> Publish.
+The function expects a payload with `message`, optional `cvContext`, and metadata. It returns a concise model response.
 
-## Can I connect a custom domain to my Lovable project?
+Deploy the function using the Supabase CLI or the Dashboard. Example with CLI:
 
-Yes, you can!
+```bash
+supabase functions deploy ai-chat
+```
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+Frontend invocation is handled in `src/components/AIChat.tsx` via:
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+```ts
+supabase.functions.invoke("ai-chat", {
+  body: {
+    /* ... */
+  },
+});
+```
+
+### Supabase client
+
+`src/integrations/supabase/client.ts` is auto-generated and currently contains constants for URL and anon key. If you fork this repo, replace these values with your own project’s URL and anon key or wire them via environment variables in your build system.
+
+### EmailJS (Contact Form)
+
+The contact form (`src/components/Contact.tsx`) uses EmailJS. Provide your own:
+
+- Public key
+- Service ID
+- Template ID
+
+Update the initialization and `send` call accordingly, or externalize them via environment variables in your hosting platform.
+
+## Deployment
+
+Any static host (Vercel, Netlify, Cloudflare Pages, S3/CloudFront) will work:
+
+- Build with `npm run build`
+- Publish the `dist/` directory
+- Ensure the Supabase Edge Function is deployed and accessible from your domain (CORS is permissive by default in the function).
+
+## Scripts
+
+- `npm run dev`: Start local dev server
+- `npm run build`: Create production build
+- `npm run build:dev`: Development-mode bundle
+- `npm run preview`: Preview the production build
+- `npm run lint`: Lint the project
+
+## Acknowledgements
+
+- shadcn/ui, Radix UI, Tailwind CSS, Lucide, React Query
+- Supabase Edge Functions
+- OpenAI API
+
+## Contact
+
+- Website: `https://pavelterenin.com`
+- Email: `mailto:pavel.terenin@gmail.com`
+- LinkedIn: `https://linkedin.com/in/pavelterenin`
+
+© Pavel Terenin. All rights reserved.
