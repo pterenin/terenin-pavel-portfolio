@@ -82,7 +82,8 @@
 
 .portrait {
   box-sizing: content-box;
-  padding: 0px 20px;
+  padding: 22px 2px;
+  height: 124% !important;
 }
 
 @keyframes gradient {
@@ -102,7 +103,6 @@
 
   .portrait {
     object-fit: cover;
-    padding: 0px 20px;
     object-position: 52% 0%;
     box-sizing: content-box;
   }
