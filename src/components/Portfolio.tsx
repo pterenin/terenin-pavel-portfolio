@@ -7,34 +7,42 @@ export const Portfolio = () => {
     {
       title: "Lululemon Login Experience",
       company: "Lululemon",
-      description: "Integrated Okta SSO with passwordless passkeys and biometric authentication for enhanced security and user experience.",
+      description:
+        "Integrated Okta SSO with passwordless passkeys and biometric authentication for enhanced security and user experience.",
       tech: "TypeScript, Next.js, React, OKTA API",
-      image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-165348-700x492.png",
+      image:
+        "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-165348-700x492.png",
       category: "Authentication",
       link: "https://shop.lululemon.com/en-ca/account/login",
       featured: true,
       metrics: "Improved login conversion by 23%",
-      logo: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/Lululemon_Athletica_logo.svg_-300x300.png"
-    }, {
+      logo: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/Lululemon_Athletica_logo.svg_-300x300.png",
+    },
+    {
       title: "EA Technical Health Dashboard",
       company: "EA",
-      description: "Built a comprehensive data-driven dashboard aggregating multiple sources into an intuitive, real-time monitoring interface.",
+      description:
+        "Built a comprehensive data-driven dashboard aggregating multiple sources into an intuitive, real-time monitoring interface.",
       tech: "React, Next.js, Node.js, Express.js",
-      image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-170145-700x383.png",
+      image:
+        "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-170145-700x383.png",
       category: "Dashboard",
       metrics: "Reduced system monitoring time by 60%",
-      logo: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Electronic-Arts-Logo-2006-300x169.png"
-    }, {
+      logo: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Electronic-Arts-Logo-2006-300x169.png",
+    },
+    {
       title: "Realtor.com Property Details",
       company: "Realtor.com",
-      description: "Developed a high-performance listing details page serving millions of users with optimized loading and enhanced UX.",
+      description:
+        "Developed a high-performance listing details page serving millions of users with optimized loading and enhanced UX.",
       tech: "React, Next.js, TypeScript, GraphQL",
-      image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-165548-700x602.png",
+      image:
+        "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Screenshot-2025-05-29-165548-700x602.png",
       category: "Web Application",
       link: "https://www.realtor.com/realestateandhomes-detail/508-N-Tremont-St-B_Oceanside_CA_92054_M98642-95351?from=srp-list-card",
       metrics: "30% improvement in page load times",
-      logo: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/realtor-com-logo-300-150x150.png"
-    }
+      logo: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/realtor-com-logo-300-150x150.png",
+    },
   ];
 
   return (
@@ -48,51 +56,69 @@ export const Portfolio = () => {
             Portfolio Highlights
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            A curated selection of projects demonstrating expertise in modern web technologies, 
-            scalable architecture, and user-centered design principles.
+            A curated selection of projects demonstrating expertise in modern
+            web technologies, scalable architecture, and user-centered design
+            principles.
           </p>
         </div>
 
         <div className="grid lg:grid-cols-3 gap-8 mb-16">
           {projects.map((project, index) => (
-            <Card key={index} className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden group bg-white">
+            <Card
+              key={index}
+              className="border-0 shadow-lg hover:shadow-2xl transition-all duration-500 rounded-3xl overflow-hidden group bg-white"
+            >
               <div className="aspect-video bg-gradient-to-br from-gray-100 to-gray-200 overflow-hidden relative">
-                EA
-                <img src={project.image} alt={project.title} className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${project.company === "EA" ? "blur-[1px]" : ""}`} />
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className={`w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 ${
+                    project.company === "EA" ? "blur-[1px]" : ""
+                  }`}
+                />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-                {project.featured && <div className="absolute top-4 left-4">
+                {project.featured && (
+                  <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-blue-600 text-white text-xs font-semibold rounded-full flex items-center gap-1">
                       <Zap className="w-3 h-3 text-yellow-400" />
                       Featured
                     </span>
                   </div>
-                }
+                )}
               </div>
               <CardContent className="p-8">
                 <div className="flex flex-col items-center text-center mb-6">
                   <div className="w-16 h-16 flex items-center justify-center mb-3">
-                    <img src={project.logo} alt={`${project.company} logo`} className="w-16 h-16 object-cover" />
+                    <img
+                      src={project.logo}
+                      alt={`${project.company} logo`}
+                      className="w-16 h-16 object-cover"
+                    />
                   </div>
-                  
+
                   <h4 className="text-lg font-semibold text-gray-700 mb-4">
                     {project.title}
                   </h4>
                 </div>
-                
+
                 <p className="text-gray-600 mb-4 leading-relaxed">
                   {project.description}
                 </p>
-                
+
                 <p className="text-gray-700 mb-4 font-medium">
                   {project.metrics}
                 </p>
-                
+
                 <p className="text-sm text-gray-600 mb-6">
-                  <span className="font-medium">Tech stack:</span> {project.tech}
+                  <span className="font-medium">Tech stack:</span>{" "}
+                  {project.tech}
                 </p>
-                
+
                 {project.link && (
-                  <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-all duration-300 shadow-md hover:shadow-lg" onClick={() => window.open(project.link, '_blank')}>
+                  <Button
+                    className="w-full bg-blue-600 hover:bg-blue-700 text-white rounded-xl font-medium transition-all duration-300 shadow-md hover:shadow-lg"
+                    onClick={() => window.open(project.link, "_blank")}
+                  >
                     View Live Project
                     <ExternalLink className="ml-2 w-4 h-4" />
                   </Button>
@@ -103,9 +129,11 @@ export const Portfolio = () => {
         </div>
 
         <div className="text-center">
-          <Button 
+          <Button
             className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300"
-            onClick={() => window.open('https://pavelterenin.com/Pavel_CV.pdf', '_blank')}
+            onClick={() =>
+              window.open("https://pavelterenin.com/Pavel_CV.pdf", "_blank")
+            }
           >
             <Download className="mr-2 w-5 h-5 text-blue-300" />
             Download Full Resume

@@ -1,13 +1,15 @@
-
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Mail, Globe, FileText, Download } from "lucide-react";
 
+// const portraitUrl = "https://pavelterenin.com/blog/wp-content/uploads/2025/05/IMG_8108.png"
+const portraitUrl =
+  "https://pavelterenin.com/blog/wp-content/uploads/2025/08/portrait.png";
 export const Hero = () => {
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
     if (element) {
       element.scrollIntoView({
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
@@ -16,13 +18,16 @@ export const Hero = () => {
     const element = document.querySelector("#portfolio");
     if (element) {
       element.scrollIntoView({
-        behavior: "smooth"
+        behavior: "smooth",
       });
     }
   };
 
   return (
-    <section id="home" className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden pt-16">
+    <section
+      id="home"
+      className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden pt-16"
+    >
       {/* Video Background */}
       <div className="absolute inset-0 z-0">
         <video
@@ -31,12 +36,15 @@ export const Hero = () => {
           loop
           playsInline
           className="w-full h-full object-cover"
-          poster="https://pavelterenin.com/blog/wp-content/uploads/2025/05/IMG_8108.png"
+          poster={portraitUrl}
         >
-          <source src="https://pavelterenin.com/blog/wp-content/uploads/2025/05/Video_for_Web_Portfolio.mp4" type="video/mp4" />
+          <source
+            src="https://pavelterenin.com/blog/wp-content/uploads/2025/05/Video_for_Web_Portfolio.mp4"
+            type="video/mp4"
+          />
           Your browser does not support the video tag.
         </video>
-        
+
         {/* Video Overlay */}
         <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px]"></div>
       </div>
@@ -61,29 +69,31 @@ export const Hero = () => {
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
-              Crafting exceptional digital experiences with 
-              <span className="font-semibold text-gray-900"> 14+ years</span> of expertise in 
-              modern web technologies and scalable architecture.
+              Crafting exceptional digital experiences with
+              <span className="font-semibold text-gray-900"> 14+ years</span> of
+              expertise in modern web technologies and scalable architecture.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
-              <Button 
-                onClick={scrollToContact} 
+              <Button
+                onClick={scrollToContact}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-medium text-lg h-auto group shadow-lg hover:shadow-xl transition-all duration-300"
               >
                 Let's Connect
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200 text-white" />
               </Button>
-              <Button 
-                variant="outline" 
-                onClick={scrollToPortfolio} 
+              <Button
+                variant="outline"
+                onClick={scrollToPortfolio}
                 className="border-2 border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300 px-8 py-4 rounded-xl font-medium text-lg h-auto transition-all duration-300"
               >
                 View Portfolio
               </Button>
-              <Button 
-                variant="outline" 
-                onClick={() => window.open('https://pavelterenin.com/Pavel_CV.pdf', '_blank')}
+              <Button
+                variant="outline"
+                onClick={() =>
+                  window.open("https://pavelterenin.com/Pavel_CV.pdf", "_blank")
+                }
                 className="border-2 border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300 px-8 py-4 rounded-xl font-medium text-lg h-auto flex items-center gap-2 transition-all duration-300"
               >
                 <Download className="w-4 h-4 text-blue-600" />
@@ -93,26 +103,28 @@ export const Hero = () => {
 
             {/* Social links */}
             <div className="flex items-center space-x-6">
-              <span className="text-sm text-gray-500 font-medium">Connect with me:</span>
+              <span className="text-sm text-gray-500 font-medium">
+                Connect with me:
+              </span>
               <div className="flex space-x-3">
-                <a 
-                  href="https://linkedin.com/in/pavelterenin" 
-                  className="w-12 h-12 bg-white hover:bg-blue-50 hover:border-blue-200 border-2 border-gray-100 rounded-xl flex items-center justify-center text-gray-700 transition-all duration-300 shadow-sm hover:shadow-md group" 
-                  target="_blank" 
+                <a
+                  href="https://linkedin.com/in/pavelterenin"
+                  className="w-12 h-12 bg-white hover:bg-blue-50 hover:border-blue-200 border-2 border-gray-100 rounded-xl flex items-center justify-center text-gray-700 transition-all duration-300 shadow-sm hover:shadow-md group"
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   <span className="text-sm font-bold text-blue-600">in</span>
                 </a>
-                <a 
-                  href="mailto:pavel.terenin@gmail.com" 
+                <a
+                  href="mailto:pavel.terenin@gmail.com"
                   className="w-12 h-12 bg-white hover:bg-blue-50 hover:border-blue-200 border-2 border-gray-100 rounded-xl flex items-center justify-center text-gray-700 transition-all duration-300 shadow-sm hover:shadow-md group"
                 >
                   <Mail className="w-5 h-5 text-red-500" />
                 </a>
-                <a 
-                  href="https://pavelterenin.com/blog" 
+                <a
+                  href="https://pavelterenin.com/blog"
                   className="w-12 h-12 bg-white hover:bg-blue-50 hover:border-blue-200 border-2 border-gray-100 rounded-xl flex items-center justify-center text-gray-700 transition-all duration-300 shadow-sm hover:shadow-md group"
-                  target="_blank" 
+                  target="_blank"
                   rel="noopener noreferrer"
                 >
                   <Globe className="w-5 h-5 text-green-500" />
@@ -122,14 +134,14 @@ export const Hero = () => {
           </div>
 
           {/* Profile Image */}
-          <div className="flex justify-center lg:justify-end order-1 lg:order-2">
+          <div className="flex justify-center order-1 lg:order-2">
             <div className="relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-3xl blur-3xl"></div>
-              <div className="relative w-80 h-96 rounded-3xl overflow-hidden portrait-container shadow-2xl ring-1 ring-white/20 backdrop-blur-sm">
-                <img 
-                  src="https://pavelterenin.com/blog/wp-content/uploads/2025/05/IMG_8108.png" 
-                  alt="Pavel Terenin" 
-                  className="w-full h-full object-cover portrait" 
+              <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
+              <div className="relative w-80 rounded-full overflow-hidden portrait-container shadow-2xl ring-1 ring-white/20 backdrop-blur-sm">
+                <img
+                  src={portraitUrl}
+                  alt="Pavel Terenin"
+                  className=" h-full object-cover portrait"
                 />
               </div>
             </div>
@@ -139,15 +151,23 @@ export const Hero = () => {
         {/* Statistics Section */}
         <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-white/50 hover:shadow-md transition-all duration-300">
-            <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">14+</div>
+            <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+              14+
+            </div>
             <div className="text-gray-600 font-medium">Years of Experience</div>
           </div>
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-white/50 hover:shadow-md transition-all duration-300">
-            <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">20+</div>
-            <div className="text-gray-600 font-medium">Technologies Mastered</div>
+            <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+              20+
+            </div>
+            <div className="text-gray-600 font-medium">
+              Technologies Mastered
+            </div>
           </div>
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-white/50 hover:shadow-md transition-all duration-300">
-            <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">5+</div>
+            <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
+              5+
+            </div>
             <div className="text-gray-600 font-medium">Fortune 500 Clients</div>
           </div>
         </div>
@@ -155,31 +175,52 @@ export const Hero = () => {
         {/* Client logos section */}
         <div className="mt-20">
           <div className="text-center mb-12">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">Trusted by Industry Leaders</h3>
-            <p className="text-gray-600">Recent collaborations with top-tier companies</p>
+            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+              Trusted by Industry Leaders
+            </h3>
+            <p className="text-gray-600">
+              Recent collaborations with top-tier companies
+            </p>
           </div>
           <div className="grid grid-cols-3 lg:grid-cols-5 gap-8 items-center">
-            {[{
-              name: "Lululemon",
-              image: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/Lululemon_Athletica_logo.svg_-300x300.png"
-            }, {
-              name: "Electronic Arts",
-              image: "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Electronic-Arts-Logo-2006-300x169.png"
-            }, {
-              name: "Realtor.com",
-              image: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/realtor-com-logo-300-150x150.png"
-            }, {
-              name: "1Password",
-              image: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/images-150x150.png"
-            }, {
-              name: "Juniper Square",
-              image: "http://pavelterenin.com/blog/wp-content/uploads/2025/05/1_bEhYs4ufdL56tExesmt-8Q@2x-150x150.png"
-            }].map((client, index) => (
+            {[
+              {
+                name: "Lululemon",
+                image:
+                  "http://pavelterenin.com/blog/wp-content/uploads/2025/05/Lululemon_Athletica_logo.svg_-300x300.png",
+              },
+              {
+                name: "Electronic Arts",
+                image:
+                  "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Electronic-Arts-Logo-2006-300x169.png",
+              },
+              {
+                name: "Realtor.com",
+                image:
+                  "http://pavelterenin.com/blog/wp-content/uploads/2025/05/realtor-com-logo-300-150x150.png",
+              },
+              {
+                name: "1Password",
+                image:
+                  "http://pavelterenin.com/blog/wp-content/uploads/2025/05/images-150x150.png",
+              },
+              {
+                name: "Juniper Square",
+                image:
+                  "http://pavelterenin.com/blog/wp-content/uploads/2025/05/1_bEhYs4ufdL56tExesmt-8Q@2x-150x150.png",
+              },
+            ].map((client, index) => (
               <div key={index} className="text-center group">
                 <div className="w-28 h-20 mx-auto mb-4 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-sm border border-white/50 group-hover:shadow-md transition-all duration-300">
-                  <img src={client.image} alt={client.name} className="max-w-full max-h-full object-contain transition-all duration-300" />
+                  <img
+                    src={client.image}
+                    alt={client.name}
+                    className="max-w-full max-h-full object-contain transition-all duration-300"
+                  />
                 </div>
-                <span className="text-sm text-gray-600 font-medium">{client.name}</span>
+                <span className="text-sm text-gray-600 font-medium">
+                  {client.name}
+                </span>
               </div>
             ))}
           </div>

@@ -1,4 +1,3 @@
-
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import "./styles.css";
@@ -11,32 +10,32 @@ export const Navigation = () => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
   const navItems = [
     {
       name: "Projects",
-      href: "#portfolio"
+      href: "#portfolio",
     },
     {
       name: "Services",
-      href: "#services"
+      href: "#services",
     },
     {
       name: "About",
-      href: "#about"
+      href: "#about",
     },
     {
       name: "Blog",
       href: "https://pavelterenin.com/blog",
-      external: true
+      external: true,
     },
     {
       name: "Contact",
-      href: "#contact"
-    }
+      href: "#contact",
+    },
   ];
 
   const scrollToSection = (href: string) => {
@@ -44,15 +43,15 @@ export const Navigation = () => {
     if (element) {
       element.scrollIntoView({
         behavior: "smooth",
-        block: "start"
+        block: "start",
       });
       setIsMenuOpen(false);
     }
   };
 
-  const handleNavClick = (item: typeof navItems[0]) => {
+  const handleNavClick = (item: (typeof navItems)[0]) => {
     if (item.external) {
-      window.open(item.href, '_blank');
+      window.open(item.href, "_blank");
       setIsMenuOpen(false);
     } else {
       scrollToSection(item.href);
@@ -60,11 +59,13 @@ export const Navigation = () => {
   };
 
   return (
-    <header className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      isScrolled 
-        ? 'bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm' 
-        : 'bg-white/80 backdrop-blur-sm'
-    }`}>
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        isScrolled
+          ? "bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm"
+          : "bg-white/80 backdrop-blur-sm"
+      }`}
+    >
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
@@ -72,7 +73,11 @@ export const Navigation = () => {
             <div className="site-branding">
               <div className="site-brand-inner no-logo-img has-title has-desc">
                 <p className="site-title">
-                  <a className="site-text-logo" href="https://pavelterenin.com/" rel="home">
+                  <a
+                    className="site-text-logo"
+                    href="https://pavelterenin.com/"
+                    rel="home"
+                  >
                     Pavel Terenin
                   </a>
                 </p>
@@ -96,7 +101,7 @@ export const Navigation = () => {
           </div>
 
           {/* Profile Image */}
-          <div className="hidden md:block">
+          {/* <div className="hidden md:block">
             <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-200 ring-2 ring-white shadow-sm">
               <img
                 src="https://pavelterenin.com/blog/wp-content/uploads/2017/01/portrait.jpeg"
@@ -104,7 +109,7 @@ export const Navigation = () => {
                 className="w-full h-full object-cover"
               />
             </div>
-          </div>
+          </div> */}
 
           {/* Mobile menu button */}
           <div className="md:hidden">
