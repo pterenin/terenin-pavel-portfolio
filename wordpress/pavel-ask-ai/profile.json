@@ -42,7 +42,7 @@
     ],
     "en": "Pavel has been NeironHub’s co-founder and part-time CTO since March 2026. Companies compare proposals from AI experts and carry the agreed scope into milestones, deliverable reviews and payment approvals. Pavel designed the platform architecture and set up review and release checks. The text and voice brief assistant is one feature of the marketplace.",
     "ru": "С марта 2026 года Павел совмещает инженерную работу с ролью сооснователя и part-time CTO NeironHub. Компании сравнивают предложения AI-экспертов, согласуют объём работ, принимают этапы и одобряют оплату. Павел спроектировал архитектуру платформы и настроил ревью и выпуск изменений. Помощник для подготовки брифа по тексту или голосу входит в состав маркетплейса.",
-    "detail": "The project workspace inherits the accepted proposal. The client can edit a brief before submitting it to experts. The implementation uses Next.js, TypeScript, PostgreSQL and GitHub Actions. User counts, revenue and transaction volume are not in the public evidence."
+    "detail": "The project workspace inherits the accepted proposal. The client can edit a brief before submitting it to experts. The implementation uses Next.js, TypeScript, PostgreSQL and GitHub Actions. User counts, revenue and transaction volume are not in the public evidence. Pavel built the text and voice brief assistant, including saving drafts and validating the brief for the client to review. His CTO remit covers design decisions across the Next.js app, PostgreSQL and OpenAI, code review, and automated staging-to-production checks. Fractional and part-time refer to the same CTO engagement."
   },
   {
     "id": "codepipeline",
@@ -110,7 +110,7 @@
     ],
     "en": "Pavel helped a retail team move catalog pages to Amazon EKS and planned the capacity needed before a campaign launched. He distinguished average demand from the opening burst, allowed time for pods to become ready and checked that they could serve requests. The published figures are a worked example.",
     "ru": "Павел участвовал в переносе каталога ритейлера на Amazon EKS и планировал, сколько подов должно обслуживать запросы к началу кампании. Он учитывал всплеск в первые минуты и время до готовности подов. Числа в публичной статье иллюстрируют расчёт.",
-    "detail": "The case study is anonymous. It does not identify the client or establish production traffic numbers. Do not infer a client name or the exact scheduling mechanism used at the company."
+    "detail": "The case study is anonymous. It does not identify the client or establish production traffic numbers. Do not infer a client name or the exact scheduling mechanism used at the company. In the article’s worked example four ready pods sustain 120 origin requests per second within the example latency and error targets, or 30 per pod. He describes checking both Kubernetes readiness and actual requests through the storefront before launch."
   },
   {
     "id": "lululemon",
@@ -131,8 +131,8 @@
   },
   {
     "id": "arcteryx",
-    "title": "Pavel’s experience on LinkedIn",
-    "url": "https://www.linkedin.com/in/pavelterenin/details/experience/",
+    "title": "Arc’teryx in Pavel’s résumé",
+    "url": "https://pavelterenin.com/Pavel_CV.pdf",
     "keywords": [
       "arcteryx",
       "arc teryx",
@@ -177,21 +177,14 @@
     "title": "Earlier projects and leadership",
     "url": "https://pavelterenin.com/blog/about/",
     "keywords": [
-      "trustarc",
-      "juniper",
-      "1password",
-      "contentful",
-      "vidigami",
-      "dnn",
-      "urbanlinx",
-      "hotnewhiphop",
+      "earlier projects",
+      "older projects",
+      "previous clients",
       "vivid seats",
       "meevo",
       "zoho",
-      "mentoring",
-      "leadership",
-      "руковод",
-      "ментор"
+      "ранние проекты",
+      "прошлые проекты"
     ],
     "en": "Pavel led front-end work on privacy software at TrustArc, built account features and microfrontends at Juniper Square, and built Contentful publishing tools at 1Password. Earlier work included DNN’s CMS, Vidigami’s school photo platform and HotNewHipHop. He also implemented a Meevo and Zoho integration and handed it over in March 2026.",
     "ru": "В TrustArc Павел руководил фронтенд-разработкой ПО для privacy-команд. В Juniper Square создавал функции аккаунта и микрофронтенды, в 1Password разрабатывал инструменты публикации в Contentful. Среди других проектов были DNN, Vidigami, HotNewHipHop и интеграция Meevo с Zoho.",
@@ -220,7 +213,8 @@
       "технолог"
     ],
     "en": "Pavel uses TypeScript, JavaScript, React, Next.js, Node.js, Python, GraphQL and PostgreSQL. His delivery experience includes AWS, Kubernetes, Docker, Jenkins and GitHub Actions. He has implemented Module Federation and WebAuthn, and written agent harnesses with tool validation, tracing and recovery.",
-    "ru": "Павел использует TypeScript, JavaScript, React, Next.js, Node.js, Python, GraphQL и PostgreSQL. Для инфраструктуры и выпуска изменений работал с AWS, Kubernetes, Docker, Jenkins и GitHub Actions. Среди прикладных навыков есть Module Federation, WebAuthn, оркестрация агентов и обработка сбоев."
+    "ru": "Павел использует TypeScript, JavaScript, React, Next.js, Node.js, Python, GraphQL и PostgreSQL. Для инфраструктуры и выпуска изменений работал с AWS, Kubernetes, Docker, Jenkins и GitHub Actions. Среди прикладных навыков есть Module Federation, WebAuthn, оркестрация агентов и обработка сбоев.",
+    "detail": "For a portfolio overview, the six skill groups cover languages, front end, back end and data, delivery infrastructure, agent tooling, and technical leadership. Connect a skill to a project when possible: WebAuthn at lululemon, Electron at EA, Jenkins and Docker at Realtor.com, and tool validation in the personal assistant."
   },
   {
     "id": "education",
@@ -239,7 +233,8 @@
       "юриспруденц"
     ],
     "en": "Pavel received a Diploma in Web Programming from Concordia University’s Centre for Continuing Education in May 2014. It was a 280-hour non-credit program. He also holds diplomas in Finance and Credit and in Jurisprudence, issued in 2010.",
-    "ru": "В мае 2014 года Павел получил Diploma in Web Programming в Centre for Continuing Education университета Concordia. Это 280-часовая программа non-credit. В 2010 году ему выдали дипломы по финансам и кредиту и по юриспруденции."
+    "ru": "В мае 2014 года Павел получил Diploma in Web Programming в Centre for Continuing Education университета Concordia. Это 280-часовая программа non-credit. В 2010 году ему выдали дипломы по финансам и кредиту и по юриспруденции.",
+    "url": "https://pavelterenin.com/Pavel_CV.pdf"
   },
   {
     "id": "writing",
@@ -303,5 +298,119 @@
     ],
     "en": "Pavel lists pavel.terenin@gmail.com and linkedin.com/in/pavelterenin as public professional contacts. Ask him directly about availability, rates and a specific engagement.",
     "ru": "Для деловых запросов Павел указывает pavel.terenin@gmail.com и linkedin.com/in/pavelterenin. По вопросам доступности, ставок и конкретных проектов лучше обратиться к нему напрямую."
+  },
+  {
+    "id": "juniper",
+    "title": "Juniper Square in Pavel’s résumé",
+    "url": "https://pavelterenin.com/Pavel_CV.pdf",
+    "keywords": [
+      "juniper square",
+      "juniper",
+      "investment management",
+      "инвестицион"
+    ],
+    "en": "At Juniper Square, Pavel built account features for a commercial real estate investment platform. He worked with backend engineers on the data used by those screens, implemented microfrontends and maintained AWS delivery pipelines. He held the senior engineering role from April 2022 to September 2023.",
+    "ru": "В Juniper Square Павел разрабатывал функции аккаунта для инвестиционной платформы в сфере коммерческой недвижимости. Вместе с бэкенд-командой он определял данные для интерфейсов, реализовывал микрофронтенды и поддерживал CI/CD в AWS. Он работал там с апреля 2022 по сентябрь 2023 года."
+  },
+  {
+    "id": "trustarc",
+    "title": "TrustArc in Pavel’s biography",
+    "url": "https://pavelterenin.com/blog/about/",
+    "keywords": [
+      "trustarc",
+      "privacy management",
+      "angular",
+      "privacy teams",
+      "приватност"
+    ],
+    "en": "At TrustArc, Pavel led front-end development of an Angular application for privacy teams. He worked with product managers to translate their workflows into screens and built reusable components with unit and end-to-end tests.",
+    "ru": "В TrustArc Павел руководил фронтенд-разработкой Angular-приложения для команд, отвечающих за конфиденциальность данных. С продакт-менеджерами он переводил рабочие процессы в интерфейсы и создавал переиспользуемые компоненты с модульными и сквозными тестами."
+  },
+  {
+    "id": "onepassword",
+    "title": "1Password in Pavel’s biography",
+    "url": "https://pavelterenin.com/blog/about/",
+    "keywords": [
+      "1password",
+      "contentful",
+      "publishing tools",
+      "content models",
+      "контентные модели"
+    ],
+    "en": "At 1Password, Pavel built Contentful models and publishing tools for the teams maintaining the website. His work included automated tests, experiments and controlled rollouts of site changes.",
+    "ru": "В 1Password Павел разрабатывал модели контента и инструменты публикации в Contentful для команд сайта. Он также занимался автоматизацией тестирования, экспериментами и поэтапным выпуском изменений."
+  },
+  {
+    "id": "earlyweb",
+    "title": "Earlier web projects in Pavel’s biography",
+    "url": "https://pavelterenin.com/blog/about/",
+    "keywords": [
+      "dnn",
+      "evoq",
+      "digi117",
+      "pharmaceutical",
+      "vidigami",
+      "urbanlinx",
+      "hotnewhiphop",
+      "react native",
+      "первые веб",
+      "фармацевтич"
+    ],
+    "en": "Pavel’s first professional web role was at Urbanlinx in Montreal, building responsive pages and browser tests for HotNewHipHop. At Vidigami he worked on a school photo platform and a React Native mobile app. He later built reusable React components for DNN’s Evoq Content CMS and a Vue front end for a modular pharmaceutical pricing application at DIGI117.",
+    "ru": "Первой профессиональной веб-ролью Павла была работа в Urbanlinx в Монреале над HotNewHipHop: адаптивные страницы, интеграция с бэкендом и браузерные тесты. В Vidigami он работал над фотоплатформой для школ и приложением на React Native, в DNN разрабатывал React-компоненты для CMS Evoq Content, а в DIGI117 создавал Vue-интерфейс для расчёта цен на фармпродукцию."
+  },
+  {
+    "id": "enterprise",
+    "title": "Enterprise software before web development",
+    "url": "https://pavelterenin.com/blog/about/",
+    "keywords": [
+      "bft",
+      "otr",
+      "budgeting software",
+      "before web development",
+      "municipal",
+      "regional budgets",
+      "до веб-разработки",
+      "бюджетирован",
+      "муниципал"
+    ],
+    "en": "Before entering web engineering in 2013, Pavel helped municipal and regional finance teams implement budgeting software at BFT and OTR. He gathered requirements with finance teams, wrote specifications and supported users after rollout.",
+    "ru": "До перехода в веб-разработку в 2013 году Павел работал в BFT и OTR, где помогал муниципальным и региональным финансовым командам внедрять ПО для бюджетного планирования. Он собирал требования, писал спецификации и сопровождал пользователей после запуска."
+  },
+  {
+    "id": "philosophy",
+    "title": "Professional philosophy",
+    "url": "https://pavelterenin.com/#professional-philosophy",
+    "keywords": [
+      "philosophy",
+      "engineering principles",
+      "design tradeoffs",
+      "architectural judgment",
+      "философ",
+      "принцип"
+    ],
+    "en": "Pavel keeps the reason for a decision available to the person reviewing the result. In CodePipeline the reviewer can see the Jira discussion alongside the patch. In NeironHub the agreed proposal follows the project, so clients can compare delivered work against the original scope at each milestone.",
+    "ru": "Павел старается сохранять контекст решения там, где будут оценивать результат. В CodePipeline ревьюер видит обсуждение Jira рядом с патчем. В NeironHub принятое предложение сохраняется в проекте, и клиент может сверить результат этапа с согласованным объёмом работ."
+  },
+  {
+    "id": "calendar-recovery",
+    "title": "Multi-account permissions and recovery in the assistant",
+    "url": "https://pavelterenin.com/blog/2026/11/17/before-openais-dots-i-built-an-assistant-that-could-make-calls-for-me/",
+    "keywords": [
+      "incomplete coverage",
+      "calendar permissions",
+      "seven calendars",
+      "row locking",
+      "lost response",
+      "dropped reply",
+      "temporal",
+      "транзакц",
+      "права календар",
+      "семь календар",
+      "повторный звонок"
+    ],
+    "en": "Pavel found that an early booking path checked only the primary Google account even when two were connected. He changed the model so every connection retains its own permissions. An inaccessible selected calendar produces incomplete coverage. The booking worker checks the call outcome and calendar permissions before writing an event.",
+    "ru": "Павел обнаружил, что при двух подключённых Google-аккаунтах один из сценариев бронирования проверял только основной. Он сохранил отдельные права для каждого подключения. Если выбранный календарь недоступен, ассистент сообщает о неполной проверке. Перед записью события воркер проверяет итог звонка и права календаря.",
+    "detail": "In a documented test, only the seventh calendar across three accounts was busy. Selecting that calendar blocked the slot. PostgreSQL holds durable tasks. For concurrent pickup orders he used a row lock and budget reservation in a transaction. In a local replay experiment he still had to reconcile the provider’s call record to avoid dialing twice. These are test scenarios, not production outcome metrics."
   }
 ]

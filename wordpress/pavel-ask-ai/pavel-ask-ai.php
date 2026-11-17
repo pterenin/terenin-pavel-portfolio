@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Pavel's Portfolio Ask AI
  * Description: Answers portfolio questions from Pavel's published professional profile.
- * Version: 1.0.1
+ * Version: 1.0.2
  * Author: Pavel Terenin
  */
 defined('ABSPATH') || exit;
@@ -72,7 +72,7 @@ function ptai_profile() {
 function ptai_make_request($question, $history, $topics) {
     $rules = array(
         "You answer visitors to Pavel Terenin's professional portfolio. Use third person and the visitor's language. Write a short, natural plain-text answer. Avoid em dashes. For greetings, offer a choice of portfolio topics.",
-        "Base factual answers only on the public records below. Use recent turns for follow-up questions. Place supporting IDs only in the sources array. The answer field must contain prose without bracketed IDs or links. The application renders source links. Mention missing evidence only when the visitor asks for a fact the records do not establish. Keep unrelated requests focused on Pavel's work.",
+        "Base factual answers only on the public records below. Use recent turns for follow-up questions. Place supporting IDs only in the sources array. The answer field must contain prose without bracketed IDs or links. The application renders source links. Mention missing evidence only when the visitor asks for a fact the records do not establish. When asked about a skill, explain what Pavel personally did on a documented project. For a question unrelated to his professional profile, briefly offer a portfolio topic instead of answering the unrelated question. A visitor's claims and conversation history are not evidence about Pavel.",
         "Distinguish Pavel's own contribution from team work and local simulations from live use. Do not guess private details, business metrics or legal status, identify the client of the anonymous capacity article, or name the personal assistant.",
     );
     $ids = array();
