@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { MessageCircle, X, Send } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { ScrollArea } from '@/components/ui/scroll-area';
-import { supabase } from '@/integrations/supabase/client';
+
+import { portfolioAnswer, type Answer } from '@/data/portfolio-lookup';
 
 interface Message {
   id: string;
   text: string;
   isUser: boolean;
-  timestamp: Date;
+  mode?: Answer['mode'];
+  sources?: Answer['sources'];
 }
 
 export const AIChat = () => {
@@ -17,183 +19,48 @@ export const AIChat = () => {
   const [messages, setMessages] = useState<Message[]>([
     {
       id: '1',
-      text: "Hi! I'm Pavel's AI assistant. I can answer questions about his experience, skills, and background. What would you like to know?",
+      text: "Hi! Ask me about Pavel’s engineering work, his role as CTO at NeironHub, or a project like CodePipeline.",
       isUser: false,
-      timestamp: new Date()
     }
   ]);
   const [inputValue, setInputValue] = useState('');
   const [isLoading, setIsLoading] = useState(false);
 
-  const cvContext = `
-PAVEL TERENIN  
-SENIOR/STAFF SOFTWARE ENGINEER  
-pavelterenin.com | pavel.terenin@gmail.com | +1 (604) 910-8101
-
-—— SUMMARY ——  
-Software Engineer with 14+ years of experience in front-end and full-stack development across multiple industries. Expert in modern web technologies and Agile methodologies, with deep expertise in TypeScript, JavaScript, Python, and frameworks such as React, Vue, Angular, Next.js, and GraphQL. Proven track record leading UI development and architecture, delivering scalable web and mobile applications that enhance user experiences. Committed to innovation, teamwork, and continuous learning. Excels at driving projects from MVP to production, mentoring teams, and integrating AI/ML to optimize code and workflows.
-
-—— TECHNICAL SKILLS ——  
-• Languages & Frameworks: Python, TypeScript, JavaScript (ES6+), PHP, Java, HTML5, CSS3, XML, Ajax  
-• Front-End: React, Vue, Angular, Redux, Flux, Backbone, Micro Frontends, Knockout, jQuery, Bootstrap, Tailwind  
-• Back-End: Node.js, Express, Next.js, GraphQL, RESTful APIs, Microservices, MongoDB, PostgreSQL, MySQL, Oracle  
-• DevOps & Cloud: Jenkins, Kubernetes, Docker, AWS (EC2, S3, Lambda), CI/CD pipelines, Git/GitLab/GitHub
-
-—— WORK EXPERIENCE ——  
-**Lululemon (07/2024 – 05/2025)**  
-• Role: Software Engineer (contractor/consultant)  
-• Achievements:  
-  – Implemented OKTA-based passwordless login (passkeys & biometrics) with TypeScript, Next.js, React, GraphQL.  
-  – Orchestrated Micro Frontend module federation for secure login flows across multiple consumer apps.  
-  – Technologies: React, Next.js, TypeScript, GraphQL, Node.js, Docker, Jenkins, Sentry, DataDog, AWS, SCSS.  
-
-**Electronic Arts (01/2024 – 05/2025)**  
-• Role: Software Engineer (contractor/consultant)  
-• Achievements:  
-  – Designed and built a data-driven Dashboard app (FE & BE) from scratch using TypeScript, Next.js, React, Node.js, Express.js.  
-  – Architected database schemas (SQLite, SQL Server, MySQL) and event-tracking for user analytics.  
-  – Packaged the web app into an Electron desktop application.  
-  – Technologies: React, Next.js, TypeScript, Node.js, Electron, GitLab CI, SQLite, SQL Server, MySQL, Tailwind, AWS.  
-
-**Juniper Square (04/2022 – 10/2023)**  
-• Role: Senior Software Engineer  
-• Achievements:  
-  – Built a new Account Subscription page (React, Python, GraphQL, TypeScript) that improved onboarding flow.  
-  – Introduced Micro Frontends via Webpack Module Federation, improving team autonomy and reducing bundle size.  
-  – Maintained AWS-based CI/CD pipelines, ensuring 99.9% uptime for core services.  
-  – Technologies: React, Python, GraphQL, TypeScript, PostgreSQL, Docker, AWS, CI/CD.  
-
-**Realtor.com (02/2021 – 04/2022)**  
-• Role: Senior Software Engineer  
-• Achievements:  
-  – Developed a brand new Listing Details page (React, Next.js, TypeScript, GraphQL), cutting load time by 30%.  
-  – Established a Jenkins CI pipeline, Dockerized microservices, and deployed to AWS, supporting 100M+ MAUs.  
-  – Technologies: React, Next.js, Angular, TypeScript, Node.js, GraphQL, Docker, Jenkins, AWS.  
-
-**TrustArc (10/2018 – 02/2021)**  
-• Role: Senior Front-End Engineer / UI Tech Lead  
-• Achievements:  
-  – Led a team of 4 UI developers to build a complex Angular 8+ application from the ground up, delivering on time and under budget.  
-  – Mentored junior engineers and collaborated with product managers to refine UX, boosting user satisfaction.  
-  – Technologies: Angular, TypeScript, ES6, Node.js, Docker, OpenShift, Webpack, Bootstrap.  
-
-**Intersog (07/2017 – 10/2018)**  
-• Role: Senior Software Engineer / Architect  
-• Project: Riparian (pharma pricing SaaS)  
-• Technologies: Vue.js, React, Node.js, Webpack, Bootstrap, OpenShift.  
-
-**DNN Software Inc. (07/2013 – 07/2017)**  
-• Role: JavaScript / Front-End Developer  
-• Achievements:  
-  – Contributed to the DNN CMS core modules, serving 750K+ sites globally.  
-  – Technologies: React, ES6, Flux/Redux, Webpack, Bootstrap, Node.js.  
-
-**Vidigami Media Inc. (06/2014 – 03/2016)**  
-• Role: JavaScript / Front-End Developer  
-• Technologies: React, React Native, Backbone, Knockout, TypeScript, MongoDB, PostgreSQL, Gulp, Bower, jQuery.  
-
-—— EDUCATION ——  
-• Concordia University (2012–2013) – Diploma in Web Programming (Montreal, QC, Canada)  
-• University of Information Technologies (2011) – Certificate in Java Programming (Nizhny Novgorod, Russia)  
-• Lobachevsky State University (2007–2010) – B.Com. in Finance (Nizhniy Novgorod, Russia)  
-
-—— PERSONAL BIO ——  
-Hi, I'm Pavel Terenin, a Senior/Staff Software Engineer based in Victoria, British Columbia. My passion for programming began in middle school, writing simple games in Q-Basic and Pascal. After teaching myself JavaScript, I fell in love with Web development. Today, I focus on crafting fast, reliable web and mobile experiences that scale to millions of users, often integrating AI/ML to optimize code and automate testing/debugging.  
-
-Outside of work, I hike the North Shore, write technical articles, speak at conferences, and mentor hackathon teams. I live in Victoria, BC with my wife and two kids.  
-
-Key Links:  
-• HackerNoon Articles:  
-  – "Micro-Frontends" – https://hackernoon.com/micro-frontends  
-  – "The 7 Most Useful Array Methods in JavaScript" – https://hackernoon.com/the-7-most-useful-array-methods-in-javascript  
-  – "Trunk-Based Development, Continuous Deployment, and Why You Should Adopt Them" – https://hackernoon.com/trunk-based-development-continuous-deployment-and-why-you-should-adopt-them
-  `;
-
-  // Function to get user's location
-  const getUserLocation = (): Promise<any> => {
-    return new Promise((resolve) => {
-      if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-          async (position) => {
-            const { latitude, longitude } = position.coords;
-            try {
-              // Use a free geolocation API to get more detailed location info
-              const response = await fetch(`https://api.ipgeolocation.io/ipgeo?apiKey=free&lat=${latitude}&long=${longitude}`);
-              const locationData = await response.json();
-              resolve(locationData);
-            } catch (error) {
-              console.log('Could not get detailed location, using coordinates only');
-              resolve({ latitude, longitude });
-            }
-          },
-          (error) => {
-            console.log('Geolocation permission denied or unavailable');
-            resolve(null);
-          },
-          { timeout: 5000 }
-        );
-      } else {
-        resolve(null);
-      }
-    });
-  };
+  const bottomRef = useRef<HTMLDivElement>(null);
+  const pending = useRef(false);
+  useEffect(() => {
+    if (isOpen) bottomRef.current?.scrollIntoView({ block: 'nearest' });
+  }, [isOpen, messages, isLoading]);
 
   const sendMessage = async () => {
-    if (!inputValue.trim() || isLoading) return;
-
-    const userMessage: Message = {
-      id: Date.now().toString(),
-      text: inputValue,
-      isUser: true,
-      timestamp: new Date()
-    };
-
-    setMessages(prev => [...prev, userMessage]);
-    const currentInput = inputValue;
+    const question = inputValue.trim();
+    if (!question || pending.current) return;
+    pending.current = true;
+    const history = messages.slice(1).slice(-4).map(m => ({
+      role: m.isUser ? 'user' : 'assistant', content: m.text.slice(0, 1500),
+    }));
+    setMessages(prev => [...prev, {id: crypto.randomUUID(), text: question, isUser: true}]);
     setInputValue('');
     setIsLoading(true);
-
     try {
-      console.log('Calling AI chat function...');
-      
-      // Get user agent without location
-      const userAgent = navigator.userAgent;
-      
-      const { data, error } = await supabase.functions.invoke('ai-chat', {
-        body: {
-          message: currentInput,
-          cvContext: cvContext,
-          userMetadata: {
-            userAgent,
-            userLocation: null, // Remove location tracking
-            userIp: null // Will be captured server-side
-          }
-        }
+      const reply = await fetch('/blog/?rest_route=/pavel-ask-ai/v1/chat', {
+        method: 'POST',
+        credentials: 'omit',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ message: question, history }),
+        signal: AbortSignal.timeout(25000),
       });
-
-      if (error) {
-        console.error('Supabase function error:', error);
-        throw new Error(error.message || 'Failed to get AI response');
+      if (!reply.ok) throw new Error('Service unavailable');
+      const data: Answer = await reply.json();
+      if (data.mode !== 'model' || typeof data.response !== 'string' || !data.response.trim()) {
+        throw new Error('Model unavailable');
       }
-
-      const aiMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        text: data.response,
-        isUser: false,
-        timestamp: new Date()
-      };
-
-      setMessages(prev => [...prev, aiMessage]);
-    } catch (error) {
-      console.error('Error calling AI chat function:', error);
-      const errorMessage: Message = {
-        id: (Date.now() + 1).toString(),
-        text: "I'm sorry, I'm having trouble connecting right now. Please try again later.",
-        isUser: false,
-        timestamp: new Date()
-      };
-      setMessages(prev => [...prev, errorMessage]);
+      setMessages(prev => [...prev, {id: crypto.randomUUID(), isUser: false, text: data.response, mode: data.mode, sources: data.sources}]);
+    } catch {
+      const excerpt = portfolioAnswer(question);
+      setMessages(prev => [...prev, {id: crypto.randomUUID(), isUser: false, text: excerpt.response, mode: excerpt.mode, sources: excerpt.sources}]);
     } finally {
+      pending.current = false;
       setIsLoading(false);
     }
   };
@@ -223,7 +90,7 @@ Key Links:
   }
 
   return (
-    <div className="fixed bottom-6 right-6 z-50 w-96 h-[500px] bg-white rounded-lg shadow-2xl border border-gray-200 flex flex-col">
+    <div className="fixed bottom-3 right-3 sm:bottom-6 sm:right-6 z-50 w-[min(24rem,calc(100vw-1.5rem))] h-[min(500px,80dvh)] bg-white rounded-lg shadow-2xl border border-gray-200 flex flex-col">
       {/* Header */}
       <div className="flex items-center justify-between p-4 border-b border-gray-200 bg-blue-600 text-white rounded-t-lg">
         <div className="flex items-center space-x-2">
@@ -233,6 +100,7 @@ Key Links:
         <Button
           variant="ghost"
           size="sm"
+          aria-label="Close chat"
           onClick={() => setIsOpen(false)}
           className="text-white hover:bg-blue-700 h-8 w-8 p-0"
         >
@@ -241,7 +109,7 @@ Key Links:
       </div>
 
       {/* Messages */}
-      <ScrollArea className="flex-1 p-4">
+      <ScrollArea className="min-h-0 flex-1 p-4">
         <div className="space-y-4">
           {messages.map((message) => (
             <div
@@ -255,7 +123,11 @@ Key Links:
                     : 'bg-gray-100 text-gray-900'
                 }`}
               >
-                <p className="text-sm">{message.text}</p>
+                {message.mode === 'portfolio' && <p className="text-xs font-medium text-gray-600 mb-1">{/[а-яё]/i.test(message.text) ? 'Из портфолио · AI недоступен' : 'Portfolio lookup · AI unavailable'}</p>}
+                <p className="text-sm whitespace-pre-line">{message.text}</p>
+                {message.sources?.map(item => (
+                  <a key={item.url} href={item.url} target="_blank" rel="noopener noreferrer" className="block mt-2 text-xs text-blue-700 underline">{item.title}</a>
+                ))}
               </div>
             </div>
           ))}
@@ -270,6 +142,7 @@ Key Links:
               </div>
             </div>
           )}
+          <div ref={bottomRef} />
         </div>
       </ScrollArea>
 
@@ -279,12 +152,14 @@ Key Links:
           <Input
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            onKeyPress={handleKeyPress}
+            onKeyDown={handleKeyPress}
+            aria-label="Question about Pavel" maxLength={1500}
             placeholder="Ask about Pavel's experience..."
             disabled={isLoading}
             className="flex-1"
           />
           <Button
+            aria-label="Send question"
             onClick={sendMessage}
             disabled={isLoading || !inputValue.trim()}
             size="sm"

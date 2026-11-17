@@ -8,14 +8,14 @@ Personal portfolio showcasing recent work, services, skills, and contact options
 - **Projects**: Featured case studies with links and impact metrics
 - **Services & Skills**: Clear overview of specialties and tooling
 - **Contact**: Email form powered by EmailJS
-- **AI Assistant**: Chat widget backed by a Supabase Edge Function and OpenAI
+- **AI Assistant**: Chat widget backed by a WordPress REST API and OpenAI
 
 ## Tech Stack
 
 - **Frontend**: React 18, TypeScript, Vite, React Router
 - **UI**: Tailwind CSS, shadcn/ui (Radix primitives), Lucide icons
 - **State/Data**: @tanstack/react-query
-- **Integrations**: Supabase (Edge Functions), EmailJS
+- **Integrations**: WordPress (Ask AI), EmailJS
 
 ## Project Structure
 
@@ -24,11 +24,10 @@ src/
   components/              # UI sections (Hero, Portfolio, Services, About, Contact, Footer, AIChat)
   components/ui/           # shadcn/ui primitives
   hooks/                   # shared hooks
-  integrations/supabase/   # Supabase client
   pages/                   # routes (Index, NotFound)
   main.tsx, App.tsx        # app bootstrap
-supabase/
-  functions/ai-chat/       # Supabase Edge Function (OpenAI-powered chat)
+wordpress/
+  pavel-ask-ai/            # WordPress REST API, public facts, and key settings
 ```
 
 ## Features in Detail
@@ -38,7 +37,7 @@ supabase/
 - **Services**: Front-end, full‑stack, and DevOps/architecture capabilities
 - **About/Skills**: Timeline and categorized skills
 - **Contact**: Email form via EmailJS with toast notifications
-- **AI Chat**: Floating widget calling `ai-chat` function for contextual Q&A
+- **AI Chat**: Floating widget calling the WordPress portfolio chat route for contextual Q&A
 
 ## Getting Started
 
@@ -64,37 +63,9 @@ npm run preview
 
 ## Configuration
 
-### Supabase (AI Assistant)
+### Portfolio Ask AI
 
-The chat widget calls a Supabase Edge Function at `supabase/functions/ai-chat/index.ts` which uses OpenAI.
-
-Set the following environment variables in your Supabase project (Dashboard → Project Settings → Secrets):
-
-- `OPENAI_API_KEY`
-- `SUPABASE_URL`
-- `SUPABASE_SERVICE_ROLE_KEY`
-
-The function expects a payload with `message`, optional `cvContext`, and metadata. It returns a concise model response.
-
-Deploy the function using the Supabase CLI or the Dashboard. Example with CLI:
-
-```bash
-supabase functions deploy ai-chat
-```
-
-Frontend invocation is handled in `src/components/AIChat.tsx` via:
-
-```ts
-supabase.functions.invoke("ai-chat", {
-  body: {
-    /* ... */
-  },
-});
-```
-
-### Supabase client
-
-`src/integrations/supabase/client.ts` is auto-generated and currently contains constants for URL and anon key. If you fork this repo, replace these values with your own project’s URL and anon key or wire them via environment variables in your build system.
+The public blog hosts the chat backend. See [the WordPress plugin setup](wordpress/README.md). The server owns the OpenAI API key and public profile context. If the endpoint is unavailable, the widget offers a labeled excerpt from the portfolio.
 
 ### EmailJS (Contact Form)
 
@@ -112,7 +83,7 @@ Any static host (Vercel, Netlify, Cloudflare Pages, S3/CloudFront) will work:
 
 - Build with `npm run build`
 - Publish the `dist/` directory
-- Ensure the Supabase Edge Function is deployed and accessible from your domain (CORS is permissive by default in the function).
+- Activate the portfolio chat plugin in the WordPress blog at /blog/.
 
 ## Scripts
 
@@ -125,7 +96,6 @@ Any static host (Vercel, Netlify, Cloudflare Pages, S3/CloudFront) will work:
 ## Acknowledgements
 
 - shadcn/ui, Radix UI, Tailwind CSS, Lucide, React Query
-- Supabase Edge Functions
 - OpenAI API
 
 ## Contact
