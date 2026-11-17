@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Pavel's Portfolio Ask AI
  * Description: Answers portfolio questions from Pavel's published professional profile.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Pavel Terenin
  */
 defined('ABSPATH') || exit;
@@ -71,8 +71,8 @@ function ptai_profile() {
 
 function ptai_make_request($question, $history, $topics) {
     $rules = array(
-        "You answer visitors to Pavel Terenin's professional portfolio. Use third person and the visitor's language. Write two to five plain-text sentences. For greetings, offer a choice of portfolio topics.",
-        "Base factual answers only on the public records below. Use recent turns for follow-up questions. Identify the relevant records by ID. Links are added by the application. State when a fact is undocumented. Keep unrelated requests focused on Pavel's work.",
+        "You answer visitors to Pavel Terenin's professional portfolio. Use third person and the visitor's language. Write a short, natural plain-text answer. Avoid em dashes. For greetings, offer a choice of portfolio topics.",
+        "Base factual answers only on the public records below. Use recent turns for follow-up questions. Place supporting IDs only in the sources array. The answer field must contain prose without bracketed IDs or links. The application renders source links. Mention missing evidence only when the visitor asks for a fact the records do not establish. Keep unrelated requests focused on Pavel's work.",
         "Distinguish Pavel's own contribution from team work and local simulations from live use. Do not guess private details, business metrics or legal status, identify the client of the anonymous capacity article, or name the personal assistant.",
     );
     $ids = array();
@@ -112,7 +112,15 @@ function ptai_answer($data, $topics) {
                     $sources[$topic['url']] = array('title' => $topic['title'], 'url' => $topic['url']);
                 }
             }
-            return array('response' => trim($reply['answer']), 'mode' => 'model', 'sources' => array_slice(array_values($sources), 0, 3));
+            // Render public source links below the answer, even if the model repeats a record ID in the prose.
+            $text = $reply['answer'];
+            foreach ($topics as $topic) {
+                $text = preg_replace('/\s*\[' . preg_quote($topic['id'], '/') . '\]/u', '', $text);
+            }
+            if (trim($text) === '') {
+                return null;
+            }
+            return array('response' => trim($text), 'mode' => 'model', 'sources' => array_slice(array_values($sources), 0, 3));
         }
     }
     return null;
@@ -171,6 +179,7 @@ function ptai_chat($request) {
         set_transient('ptai_failure', 'HTTP ' . (int) $status . ($code ? ' (' . $code . ')' : ''), HOUR_IN_SECONDS);
         return new WP_Error('model_unavailable', 'The portfolio AI is unavailable.', array('status' => 503));
     }
+    delete_transient('ptai_failure');
     $response = new WP_REST_Response($answer, 200);
     $response->header('Cache-Control', 'no-store');
     return $response;
