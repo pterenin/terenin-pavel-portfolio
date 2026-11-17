@@ -1,0 +1,307 @@
+[
+  {
+    "id": "overview",
+    "title": "Professional background",
+    "url": "https://pavelterenin.com/blog/about/",
+    "keywords": [
+      "pavel terenin",
+      "background",
+      "overview",
+      "who is",
+      "career",
+      "location",
+      "victoria",
+      "about him",
+      "experience",
+      "павел теренин",
+      "кто такой",
+      "опыт",
+      "карьер",
+      "виктори"
+    ],
+    "en": "Pavel Terenin is a senior full-stack software engineer based in Victoria, British Columbia. He has built web applications since 2013, following earlier work implementing enterprise budgeting software. His work spans retail platforms, developer tools and AI agents. He is also the co-founder and part-time CTO of NeironHub.",
+    "ru": "Павел Теренин живёт в Виктории, Канада. Он занимается веб-разработкой с 2013 года, а до этого внедрял ПО для бюджетного планирования. Его специализация включает full-stack разработку, торговые платформы, инструменты для разработчиков и AI-агентов. Он также сооснователь и part-time CTO NeironHub.",
+    "detail": "The first professional web role was with Urbanlinx in Montreal on HotNewHipHop. Several later engagements overlap. Use calendar dates rather than adding the lengths of concurrent roles."
+  },
+  {
+    "id": "neironhub",
+    "title": "NeironHub",
+    "url": "https://neironhub.ai/",
+    "keywords": [
+      "neironhub",
+      "neiron",
+      "нейронхаб",
+      "fractional",
+      "cto",
+      "part-time",
+      "co-founder",
+      "marketplace",
+      "соосновател",
+      "маркетплейс",
+      "техдиректор"
+    ],
+    "en": "Pavel has been NeironHub’s co-founder and part-time CTO since March 2026. Companies compare proposals from AI experts and carry the agreed scope into milestones, deliverable reviews and payment approvals. Pavel designed the platform architecture and set up review and release checks. The text and voice brief assistant is one feature of the marketplace.",
+    "ru": "С марта 2026 года Павел совмещает инженерную работу с ролью сооснователя и part-time CTO NeironHub. Компании сравнивают предложения AI-экспертов, согласуют объём работ, принимают этапы и одобряют оплату. Павел спроектировал архитектуру платформы и настроил ревью и выпуск изменений. Помощник для подготовки брифа по тексту или голосу входит в состав маркетплейса.",
+    "detail": "The project workspace inherits the accepted proposal. The client can edit a brief before submitting it to experts. The implementation uses Next.js, TypeScript, PostgreSQL and GitHub Actions. User counts, revenue and transaction volume are not in the public evidence."
+  },
+  {
+    "id": "codepipeline",
+    "title": "CodePipeline on GitHub",
+    "url": "https://github.com/pterenin/CodePipeline",
+    "keywords": [
+      "codepipeline",
+      "code pipeline",
+      "jira",
+      "worktree",
+      "pull request",
+      "codex",
+      "second reviewer",
+      "draft pr",
+      "developer tool",
+      "пайплайн",
+      "ревьюер"
+    ],
+    "en": "Pavel built CodePipeline, a self-hosted TypeScript developer tool. It puts a Jira ticket in an isolated Git worktree, runs implementation and a separate review session, then runs repository checks. The reviewer sees the ticket discussion as well as the patch. The default output is a draft pull request for a maintainer.",
+    "ru": "CodePipeline обрабатывает задачу Jira в отдельном Git worktree. После реализации вторая сессия Codex проверяет изменения с учётом задачи и комментариев. Затем выполняются проверки репозитория. По умолчанию инструмент открывает черновик PR для мейнтейнера. Павел создал этот сервис на TypeScript.",
+    "detail": "A failing check can send a change back for bounded repair. A direct commit to a non-main branch is an optional mode. The open-source repository documents implementation; it does not quantify adoption or prove a measured reduction in defects. It is Pavel’s project, distinct from AWS CodePipeline."
+  },
+  {
+    "id": "assistant",
+    "title": "Engineering a personal AI assistant",
+    "url": "https://pavelterenin.com/blog/2026/11/17/before-openais-dots-i-built-an-assistant-that-could-make-calls-for-me/",
+    "keywords": [
+      "personal assistant",
+      "phone",
+      "harness",
+      "vapi",
+      "assistant project",
+      "agent orchestration",
+      "gmail",
+      "calendar",
+      "booking",
+      "voice",
+      "агент",
+      "харнес",
+      "звон",
+      "ассистент",
+      "календар"
+    ],
+    "en": "For a completed personal assistant project, Pavel built the React interface, Express backend and his own TypeScript agent harness. The 2025 prototype connected two Google accounts and used Vapi for calls. Later work included proactive notifications, handling email and calendars across accounts, and processing the outcome of a call. He tested lost provider replies locally with simulated services.",
+    "ru": "В завершённом проекте персонального ассистента Павел разработал React-интерфейс, Express-бэкенд и собственный TypeScript-харнес для агента. В 2025 году прототип подключал два Google-аккаунта и мог звонить через Vapi. Позже появились проактивные уведомления, работа с несколькими почтовыми ящиками и календарями, обработка итогов звонка. Восстановление после потери ответа он проверял локально на имитации провайдеров.",
+    "detail": "The runner validated tool arguments with Zod, limited model steps and traced tool execution. PostgreSQL stored tasks beyond a browser session. The booking worker rechecked the time and calendar permissions after the call. Local simulations verified one call and one calendar event after dropped acknowledgements. A constrained Square pickup-order integration used budget checks. No claim of unlimited merchant support or measured production reliability. Use the public unnamed description."
+  },
+  {
+    "id": "capacity",
+    "title": "Planning Kubernetes Capacity for a Peak Retail Event",
+    "url": "https://pavelterenin.com/blog/2026/11/16/planning-kubernetes-capacity-for-a-peak-retail-event/",
+    "keywords": [
+      "kubernetes",
+      "capacity",
+      "peak traffic",
+      "amazon eks",
+      "pods",
+      "autoscaling",
+      "prescaling",
+      "replicas",
+      "пик",
+      "подов",
+      "кубернетес",
+      "масштабирован"
+    ],
+    "en": "Pavel helped a retail team move catalog pages to Amazon EKS and planned the capacity needed before a campaign launched. He distinguished average demand from the opening burst, allowed time for pods to become ready and checked that they could serve requests. The published figures are a worked example.",
+    "ru": "Павел участвовал в переносе каталога ритейлера на Amazon EKS и планировал, сколько подов должно обслуживать запросы к началу кампании. Он учитывал всплеск в первые минуты и время до готовности подов. Числа в публичной статье иллюстрируют расчёт.",
+    "detail": "The case study is anonymous. It does not identify the client or establish production traffic numbers. Do not infer a client name or the exact scheduling mechanism used at the company."
+  },
+  {
+    "id": "lululemon",
+    "title": "lululemon sign-in",
+    "url": "https://pavelterenin.com/blog/about/",
+    "keywords": [
+      "lululemon",
+      "лу́лулемон",
+      "passkey",
+      "webauthn",
+      "okta",
+      "passwordless",
+      "authentication",
+      "аутентификац"
+    ],
+    "en": "For lululemon, Pavel integrated Okta and WebAuthn for passwordless sign-in. Independently built storefront applications shared the login flow through Module Federation. The first contract ran from July 2024 to May 2025. A separate engagement beginning in March 2026 focused on product detail pages.",
+    "ru": "Для lululemon Павел интегрировал Okta и WebAuthn для входа по passkey. Общая реализация использовалась несколькими приложениями через Module Federation. Первый контракт длился с июля 2024 по май 2025 года. В марте 2026 года начался отдельный контракт по карточкам товаров."
+  },
+  {
+    "id": "arcteryx",
+    "title": "Pavel’s experience on LinkedIn",
+    "url": "https://www.linkedin.com/in/pavelterenin/details/experience/",
+    "keywords": [
+      "arcteryx",
+      "arc teryx",
+      "арктерикс",
+      "hydration",
+      "гидратац",
+      "backend for frontend"
+    ],
+    "en": "Pavel’s Arc’teryx contract started in August 2025. He worked on catalog and product detail pages, built a backend for frontend to isolate third-party dependencies, and diagnosed React hydration mismatches between server and client rendering.",
+    "ru": "Контракт Павла с Arc’teryx начался в августе 2025 года. Он работал над страницами каталога и товаров, реализовал backend for frontend для изоляции внешних зависимостей и исследовал расхождения между серверным и клиентским рендерингом React."
+  },
+  {
+    "id": "realtor",
+    "title": "Realtor.com Listing Details Page",
+    "url": "https://pavelterenin.com/blog/about/",
+    "keywords": [
+      "realtor",
+      "listing details",
+      "property listing",
+      "move inc",
+      "недвижимост"
+    ],
+    "en": "At Realtor.com, Pavel built a new Listing Details Page. His work covered reusable React components, Node.js and Next.js integration, unit and end-to-end tests, Jenkins builds and Docker packaging. He held the senior engineering role from February 2021 to March 2022.",
+    "ru": "В Realtor.com Павел разработал новую Listing Details Page. Он отвечал за React-компоненты, интеграцию с Node.js и Next.js, unit- и end-to-end-тесты, сборку Jenkins и упаковку в Docker. Он работал там с февраля 2021 по март 2022 года."
+  },
+  {
+    "id": "ea",
+    "title": "Electronic Arts dashboard",
+    "url": "https://pavelterenin.com/blog/about/",
+    "keywords": [
+      "electronic arts",
+      "ea",
+      "electron",
+      "dashboard",
+      "дашборд"
+    ],
+    "en": "From July 2024 to June 2025, Pavel built backend services and data integrations for an internal technical health dashboard at Electronic Arts. He implemented access controls and logging, set up staging and production environments, and packaged the application for desktop with Electron.",
+    "ru": "С июля 2024 по июнь 2025 года Павел работал над внутренним дашбордом Electronic Arts. Он разрабатывал бэкенд, интеграцию данных, контроль доступа и логирование, настроил окружения и подготовил настольную версию на Electron."
+  },
+  {
+    "id": "earlier",
+    "title": "Earlier projects and leadership",
+    "url": "https://pavelterenin.com/blog/about/",
+    "keywords": [
+      "trustarc",
+      "juniper",
+      "1password",
+      "contentful",
+      "vidigami",
+      "dnn",
+      "urbanlinx",
+      "hotnewhiphop",
+      "vivid seats",
+      "meevo",
+      "zoho",
+      "mentoring",
+      "leadership",
+      "руковод",
+      "ментор"
+    ],
+    "en": "Pavel led front-end work on privacy software at TrustArc, built account features and microfrontends at Juniper Square, and built Contentful publishing tools at 1Password. Earlier work included DNN’s CMS, Vidigami’s school photo platform and HotNewHipHop. He also implemented a Meevo and Zoho integration and handed it over in March 2026.",
+    "ru": "В TrustArc Павел руководил фронтенд-разработкой ПО для privacy-команд. В Juniper Square создавал функции аккаунта и микрофронтенды, в 1Password разрабатывал инструменты публикации в Contentful. Среди других проектов были DNN, Vidigami, HotNewHipHop и интеграция Meevo с Zoho.",
+    "detail": "Juniper Square: April 2022 to September 2023. At 1Password he also worked on automated testing, experiments and controlled rollouts. At DIGI117 he built the Vue front end for modular pharmaceutical pricing software. Vivid Seats was a short React engagement in 2024. Earlier at BFT and OTR he worked with municipal and regional finance teams, gathering requirements and supporting enterprise budgeting deployments."
+  },
+  {
+    "id": "skills",
+    "title": "Technical expertise",
+    "url": "https://pavelterenin.com/#technical-expertise",
+    "keywords": [
+      "stack",
+      "skills",
+      "languages",
+      "frameworks",
+      "typescript",
+      "react",
+      "node",
+      "postgresql",
+      "python",
+      "frontend",
+      "backend",
+      "testing",
+      "навык",
+      "стек",
+      "язык",
+      "технолог"
+    ],
+    "en": "Pavel uses TypeScript, JavaScript, React, Next.js, Node.js, Python, GraphQL and PostgreSQL. His delivery experience includes AWS, Kubernetes, Docker, Jenkins and GitHub Actions. He has implemented Module Federation and WebAuthn, and written agent harnesses with tool validation, tracing and recovery.",
+    "ru": "Павел использует TypeScript, JavaScript, React, Next.js, Node.js, Python, GraphQL и PostgreSQL. Для инфраструктуры и выпуска изменений работал с AWS, Kubernetes, Docker, Jenkins и GitHub Actions. Среди прикладных навыков есть Module Federation, WebAuthn, оркестрация агентов и обработка сбоев."
+  },
+  {
+    "id": "education",
+    "title": "Education and credentials",
+    "keywords": [
+      "education",
+      "concordia",
+      "diploma",
+      "degrees",
+      "study",
+      "university",
+      "finance",
+      "образован",
+      "диплом",
+      "финанс",
+      "юриспруденц"
+    ],
+    "en": "Pavel received a Diploma in Web Programming from Concordia University’s Centre for Continuing Education in May 2014. It was a 280-hour non-credit program. He also holds diplomas in Finance and Credit and in Jurisprudence, issued in 2010.",
+    "ru": "В мае 2014 года Павел получил Diploma in Web Programming в Centre for Continuing Education университета Concordia. Это 280-часовая программа non-credit. В 2010 году ему выдали дипломы по финансам и кредиту и по юриспруденции."
+  },
+  {
+    "id": "writing",
+    "title": "Technical articles",
+    "url": "https://pavelterenin.com/blog/",
+    "keywords": [
+      "articles",
+      "writing",
+      "publications",
+      "hackernoon",
+      "blog",
+      "microfrontend",
+      "trunk-based",
+      "стать",
+      "публикац",
+      "блог",
+      "микрофронт"
+    ],
+    "en": "Pavel writes about engineering decisions from his projects. His blog covers reviewing AI-generated patches, Kubernetes capacity and building a phone-capable assistant. His HackerNoon articles cover microfrontends, trunk-based development and continuous deployment, and JavaScript array methods.",
+    "ru": "Павел пишет о технических решениях в своих проектах: ревью AI-кода, ёмкости Kubernetes и реализации голосового ассистента. На HackerNoon он опубликовал статьи о микрофронтендах, trunk-based development и continuous deployment, а также о методах массивов JavaScript.",
+    "detail": "Microfrontends article: https://hackernoon.com/micro-frontends . Author page: https://hackernoon.com/u/pterenin . These are technical articles; do not label them peer-reviewed research."
+  },
+  {
+    "id": "community",
+    "title": "CODiE judging in Pavel’s biography",
+    "url": "https://pavelterenin.com/blog/about/",
+    "keywords": [
+      "codie",
+      "judge",
+      "judging",
+      "hackathon",
+      "workshop",
+      "pyxis",
+      "ieee",
+      "community",
+      "award",
+      "судей",
+      "жюри",
+      "хакатон",
+      "сообществ"
+    ],
+    "en": "Pavel served as a first-round judge for the 2023 CODiE Awards. His professional activities also include an Intro to GitHub workshop at Pyxis 2023 and IEEE membership in the Victoria Section.",
+    "ru": "Павел был судьёй первого раунда CODiE Awards 2023. Среди его профессиональных активностей также воркшоп Intro to GitHub на Pyxis 2023 и членство в секции IEEE в Виктории.",
+    "detail": "His verified membership grade is IEEE Member. No Senior Member elevation or CODiE award win is established. Hackathon organizer listings are distinct from confirmation of completed judging."
+  },
+  {
+    "id": "contact",
+    "title": "Contact Pavel",
+    "url": "https://pavelterenin.com/#contact",
+    "keywords": [
+      "contact",
+      "hire",
+      "rate",
+      "email address",
+      "reach him",
+      "linkedin",
+      "связ",
+      "нанять",
+      "ставк",
+      "контакт"
+    ],
+    "en": "Pavel lists pavel.terenin@gmail.com and linkedin.com/in/pavelterenin as public professional contacts. Ask him directly about availability, rates and a specific engagement.",
+    "ru": "Для деловых запросов Павел указывает pavel.terenin@gmail.com и linkedin.com/in/pavelterenin. По вопросам доступности, ставок и конкретных проектов лучше обратиться к нему напрямую."
+  }
+]

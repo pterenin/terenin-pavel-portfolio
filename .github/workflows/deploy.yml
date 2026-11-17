@@ -26,6 +26,11 @@ jobs:
       - name: Build production bundle
         run: npm run build
 
+      - name: Include the portfolio WordPress plugin
+        run: |
+          mkdir -p dist/blog/wp-content/plugins
+          cp -R wordpress/pavel-ask-ai dist/blog/wp-content/plugins/
+
       - name: Check FTP_HOST is set
         run: |
           if [ -z "$FTP_HOST" ]; then
