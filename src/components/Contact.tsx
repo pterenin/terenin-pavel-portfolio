@@ -42,7 +42,7 @@ export const Contact = () => {
         title: "Message Sent!",
         description: "Thank you for your message. I'll get back to you soon.",
       });
-      
+
       // Clear form after successful submission
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
@@ -77,11 +77,11 @@ export const Contact = () => {
   ];
 
   return (
-    <section 
-      id="contact" 
+    <section
+      id="contact"
       className="py-24 bg-gray-50 relative overflow-hidden"
       style={{
-        backgroundImage: 'url(https://pavelterenin.com/blog/wp-content/uploads/2025/05/unnamed.jpg)',
+        backgroundImage: 'url(/images/section-background.webp)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
@@ -98,50 +98,50 @@ export const Contact = () => {
             Let's work together
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Ready to discuss your next project? I'd love to hear from you. 
+            Ready to discuss your next project? I'd love to hear from you.
             Let's create something amazing together.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16">
           {/* Left Column - Contact Info and FAQs */}
           <div className="space-y-12">
             {/* Contact Info */}
             <div>
               <div className="space-y-6">
-                <div className="flex items-center space-x-6">
+                <div className="flex items-center space-x-3 sm:space-x-6">
                   <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm">
                     <Mail className="w-6 h-6 text-gray-700" strokeWidth={1.5} />
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 text-lg">Email</p>
-                    <a href="mailto:pavel.terenin@gmail.com" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    <a href="mailto:pavel.terenin@gmail.com" className="break-words text-gray-600 hover:text-gray-900 transition-colors">
                       pavel.terenin@gmail.com
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center space-x-6">
+                <div className="flex items-center space-x-3 sm:space-x-6">
                   <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm">
                     <Phone className="w-6 h-6 text-gray-700" strokeWidth={1.5} />
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 text-lg">Phone</p>
-                    <a href="tel:+16049108101" className="text-gray-600 hover:text-gray-900 transition-colors">
+                    <a href="tel:+16049108101" className="break-words text-gray-600 hover:text-gray-900 transition-colors">
                       +1 (604) 910-8101
                     </a>
                   </div>
                 </div>
-                <div className="flex items-center space-x-6">
+                <div className="flex items-center space-x-3 sm:space-x-6">
                   <div className="w-14 h-14 bg-white rounded-2xl flex items-center justify-center shadow-sm">
                     <Linkedin className="w-6 h-6 text-gray-700" strokeWidth={1.5} />
                   </div>
                   <div>
                     <p className="font-semibold text-gray-900 text-lg">LinkedIn</p>
-                    <a 
-                      href="https://linkedin.com/in/pavelterenin" 
+                    <a
+                      href="https://linkedin.com/in/pavelterenin"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 hover:text-gray-900 transition-colors"
+                      className="break-words text-gray-600 hover:text-gray-900 transition-colors"
                     >
                       linkedin.com/in/pavelterenin
                     </a>
@@ -155,7 +155,7 @@ export const Contact = () => {
               <h3 className="text-3xl font-bold text-gray-900 mb-8">
                 Frequently Asked Questions
               </h3>
-              
+
               <div className="space-y-6">
                 {faqs.map((faq, index) => (
                   <div key={index} className="bg-white rounded-2xl p-6 shadow-sm">
@@ -174,15 +174,16 @@ export const Contact = () => {
           {/* Right Column - Contact Form */}
           <div>
             <Card className="border-0 shadow-lg rounded-3xl bg-white">
-              <CardContent className="p-10">
+              <CardContent className="p-5 sm:p-10">
                 <h3 className="text-3xl font-bold text-gray-900 mb-8">
                   Send me a message
                 </h3>
-                
+
                 <form onSubmit={handleSubmit} className="space-y-6">
                   <div>
                     <Input
                       name="name"
+                      aria-label="Your name"
                       placeholder="Your Name"
                       value={formData.name}
                       onChange={handleChange}
@@ -194,6 +195,7 @@ export const Contact = () => {
                   <div>
                     <Input
                       name="email"
+                      aria-label="Your email"
                       type="email"
                       placeholder="Your Email"
                       value={formData.email}
@@ -206,6 +208,7 @@ export const Contact = () => {
                   <div>
                     <Input
                       name="subject"
+                      aria-label="Subject"
                       placeholder="Subject"
                       value={formData.subject}
                       onChange={handleChange}
@@ -217,6 +220,7 @@ export const Contact = () => {
                   <div>
                     <Textarea
                       name="message"
+                      aria-label="Your message"
                       placeholder="Your Message"
                       rows={6}
                       value={formData.message}
@@ -226,8 +230,8 @@ export const Contact = () => {
                       className="border-gray-200 rounded-2xl text-lg"
                     />
                   </div>
-                  <Button 
-                    type="submit" 
+                  <Button
+                    type="submit"
                     disabled={isSubmitting}
                     className="w-full bg-gray-900 hover:bg-gray-800 text-white rounded-2xl py-4 h-auto text-lg font-semibold disabled:opacity-50"
                   >

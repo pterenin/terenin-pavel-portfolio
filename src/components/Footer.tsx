@@ -6,18 +6,20 @@ export const Footer = () => {
           {/* Brand */}
           <div>
             <h3 className="text-2xl font-bold text-white mb-6">Pavel Terenin</h3>
-            <p className="text-gray-400 leading-relaxed text-lg">Senior/Staff Software Engineer with 14+ years of experience creating exceptional digital experiences.</p>
+            <p className="text-gray-400 leading-relaxed text-lg">Senior full-stack software engineer in Victoria, BC. I’ve been building web applications since 2013.</p>
           </div>
 
           {/* Quick Links */}
           <div>
             <h4 className="text-xl font-semibold text-white mb-6">Quick Links</h4>
             <ul className="space-y-3">
-              {["Home", "About", "Portfolio", "Services", "Contact"].map(link => <li key={link}>
+              {["Home", "About", "Portfolio", "Services", "Writing", "Contact"].map(link => <li key={link}>
                   <a href={`#${link.toLowerCase()}`} className="text-gray-400 hover:text-white transition-colors duration-200 text-lg">
                     {link}
                   </a>
                 </li>)}
+              <li><a className="text-gray-400 hover:text-white text-lg" href="https://github.com/pterenin">GitHub</a></li>
+              <li><a className="text-gray-400 hover:text-white text-lg" href="https://pavelterenin.com/blog/">Blog</a></li>
             </ul>
           </div>
 

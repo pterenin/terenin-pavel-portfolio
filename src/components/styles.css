@@ -190,3 +190,8 @@ button:focus-visible {
     transform: translateY(0);
   }
 }
+
+main section[id] { scroll-margin-top: 64px; }
+@media (max-width: 480px) {
+  #home .portrait-container { width: min(72vw, 260px); height: min(72vw, 260px) !important; }
+}

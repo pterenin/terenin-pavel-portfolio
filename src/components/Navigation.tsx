@@ -27,6 +27,7 @@ export const Navigation = () => {
       name: "About",
       href: "#about",
     },
+    { name: "Writing", href: "#writing" },
     {
       name: "Blog",
       href: "https://pavelterenin.com/blog",
@@ -75,7 +76,7 @@ export const Navigation = () => {
                 <p className="site-title">
                   <a
                     className="site-text-logo"
-                    href="https://pavelterenin.com/"
+                    href="/"
                     rel="home"
                   >
                     Pavel Terenin
@@ -87,7 +88,7 @@ export const Navigation = () => {
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
               <button
                 key={item.name}
@@ -112,8 +113,10 @@ export const Navigation = () => {
           </div> */}
 
           {/* Mobile menu button */}
-          <div className="md:hidden">
+          <div className="lg:hidden">
             <button
+              aria-label={isMenuOpen ? "Close menu" : "Open menu"}
+              aria-expanded={isMenuOpen}
               onClick={() => setIsMenuOpen(!isMenuOpen)}
               className="inline-flex items-center justify-center p-2 rounded-lg text-gray-600 hover:text-gray-900 hover:bg-gray-50 transition-colors duration-200"
             >
@@ -124,7 +127,7 @@ export const Navigation = () => {
 
         {/* Mobile Navigation */}
         {isMenuOpen && (
-          <div className="md:hidden border-t border-gray-100 bg-white/95 backdrop-blur-md">
+          <div className="lg:hidden border-t border-gray-100 bg-white/95 backdrop-blur-md">
             <div className="px-2 pt-2 pb-3 space-y-1">
               {navItems.map((item) => (
                 <button

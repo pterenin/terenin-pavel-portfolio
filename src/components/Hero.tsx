@@ -1,10 +1,30 @@
+import { useEffect, useState } from "react";
 import { Button } from "@/components/ui/button";
-import { ArrowRight, Mail, Globe, FileText, Download } from "lucide-react";
+import { ArrowRight, Mail, Globe, Download, Pause, Play } from "lucide-react";
 
-// const portraitUrl = "https://pavelterenin.com/blog/wp-content/uploads/2025/05/IMG_8108.png"
-const portraitUrl =
-  "https://pavelterenin.com/blog/wp-content/uploads/2025/08/portrait.png";
+const portraitUrl = "/images/pavel-terenin.webp";
+
+const clients = [
+  { name: "Lululemon", image: "/images/clients/lululemon.png" },
+  { name: "Electronic Arts", image: "/images/clients/ea.png" },
+  { name: "Realtor.com", image: "/images/clients/realtor.png" },
+  { name: "1Password", image: "/images/clients/1password.png" },
+  { name: "Juniper Square", image: "/images/clients/juniper-square.png" },
+  { name: "Arc’teryx", image: "/images/clients/arcteryx.png" },
+];
+
 export const Hero = () => {
+  const [allowMotion, setAllowMotion] = useState(false);
+  const [stopped, setStopped] = useState(false);
+
+  useEffect(() => {
+    const media = window.matchMedia("(min-width: 768px) and (prefers-reduced-motion: no-preference)");
+    const update = () => setAllowMotion(media.matches);
+    update();
+    media.addEventListener("change", update);
+    return () => media.removeEventListener("change", update);
+  }, []);
+
   const scrollToContact = () => {
     const element = document.querySelector("#contact");
     if (element) {
@@ -29,39 +49,33 @@ export const Hero = () => {
       className="min-h-screen bg-gradient-to-br from-gray-50 via-white to-blue-50/30 relative overflow-hidden pt-16"
     >
       {/* Video Background */}
-      <div className="absolute inset-0 z-0">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="w-full h-full object-cover"
-          poster={portraitUrl}
-        >
-          <source
-            src="https://pavelterenin.com/blog/wp-content/uploads/2025/05/Video_for_Web_Portfolio.mp4"
-            type="video/mp4"
-          />
-          Your browser does not support the video tag.
-        </video>
-
-        {/* Video Overlay */}
+      <div className="absolute inset-0 z-0 bg-cover bg-center" aria-hidden="true" style={{ backgroundImage: "url(/images/portfolio-background.webp)" }}>
+        {allowMotion && !stopped && (
+          <video autoPlay muted loop playsInline poster="/images/portfolio-background.webp"
+            src="/media/portfolio-background.mp4" className="w-full h-full object-cover" />
+        )}
         <div className="absolute inset-0 bg-white/85 backdrop-blur-[2px]"></div>
       </div>
+      {allowMotion && (
+        <button type="button" onClick={() => setStopped(!stopped)} aria-label={stopped ? "Play background video" : "Stop background video"}
+          className="absolute top-20 right-5 z-20 p-2 rounded-full bg-white/75 text-gray-600 hover:bg-white">
+          {stopped ? <Play size={16} /> : <Pause size={16} />}
+        </button>
+      )}
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 relative z-10">
-        <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-20 relative z-10">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center lg:min-h-[80vh]">
           {/* Text Content */}
-          <div className="text-left order-2 lg:order-1">
-            <div className="mb-8">
-              <span className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm text-gray-700 rounded-full text-sm font-medium mb-8 shadow-sm border border-gray-100">
-                <span className="w-2 h-2 bg-green-500 rounded-full mr-2 animate-pulse"></span>
+          <div className="text-left">
+            <div className="mb-5 lg:mb-8">
+              <span className="inline-flex items-center px-4 py-2 bg-white/80 backdrop-blur-sm text-gray-700 rounded-full text-sm font-medium lg:mb-8 shadow-sm border border-gray-100">
+                <span className="w-2 h-2 bg-green-500 rounded-full mr-2 motion-safe:animate-pulse"></span>
                 Available for new opportunities
               </span>
             </div>
 
-            <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[1.1]">
-              Senior
+            <h1 className="text-[clamp(2.15rem,9.5vw,3rem)] md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6 leading-[1.1]">
+              Senior <span className="whitespace-nowrap">Full-Stack</span>
               <br />
               <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
                 Software Engineer
@@ -69,35 +83,30 @@ export const Hero = () => {
             </h1>
 
             <p className="text-xl text-gray-600 mb-8 max-w-lg leading-relaxed">
-              Crafting exceptional digital experiences with
-              <span className="font-semibold text-gray-900"> 14+ years</span> of
-              expertise in modern web technologies and scalable architecture.
+              I build retail web platforms, AI agents and developer tools. My work includes passwordless sign-in, Kubernetes capacity planning and code review automation.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 mb-12">
               <Button
-                onClick={scrollToContact}
+                onClick={scrollToPortfolio}
                 className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-medium text-lg h-auto group shadow-lg hover:shadow-xl transition-all duration-300"
               >
-                Let's Connect
+                Explore my work
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform duration-200 text-white" />
               </Button>
               <Button
                 variant="outline"
-                onClick={scrollToPortfolio}
+                onClick={scrollToContact}
                 className="border-2 border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300 px-8 py-4 rounded-xl font-medium text-lg h-auto transition-all duration-300"
               >
-                View Portfolio
+                Let's Connect
               </Button>
               <Button
                 variant="outline"
-                onClick={() =>
-                  window.open("https://pavelterenin.com/Pavel_CV.pdf", "_blank")
-                }
+                asChild
                 className="border-2 border-gray-200 text-gray-700 hover:bg-gray-50 hover:border-gray-300 px-8 py-4 rounded-xl font-medium text-lg h-auto flex items-center gap-2 transition-all duration-300"
               >
-                <Download className="w-4 h-4 text-blue-600" />
-                Resume
+                <a href="/Pavel_CV.pdf"><Download className="w-4 h-4 text-blue-600" /> Resume</a>
               </Button>
             </div>
 
@@ -108,6 +117,7 @@ export const Hero = () => {
               </span>
               <div className="flex space-x-3">
                 <a
+                  aria-label="LinkedIn"
                   href="https://linkedin.com/in/pavelterenin"
                   className="w-12 h-12 bg-white hover:bg-blue-50 hover:border-blue-200 border-2 border-gray-100 rounded-xl flex items-center justify-center text-gray-700 transition-all duration-300 shadow-sm hover:shadow-md group"
                   target="_blank"
@@ -116,12 +126,14 @@ export const Hero = () => {
                   <span className="text-sm font-bold text-blue-600">in</span>
                 </a>
                 <a
+                  aria-label="Email"
                   href="mailto:pavel.terenin@gmail.com"
                   className="w-12 h-12 bg-white hover:bg-blue-50 hover:border-blue-200 border-2 border-gray-100 rounded-xl flex items-center justify-center text-gray-700 transition-all duration-300 shadow-sm hover:shadow-md group"
                 >
                   <Mail className="w-5 h-5 text-red-500" />
                 </a>
                 <a
+                  aria-label="Blog"
                   href="https://pavelterenin.com/blog"
                   className="w-12 h-12 bg-white hover:bg-blue-50 hover:border-blue-200 border-2 border-gray-100 rounded-xl flex items-center justify-center text-gray-700 transition-all duration-300 shadow-sm hover:shadow-md group"
                   target="_blank"
@@ -134,7 +146,7 @@ export const Hero = () => {
           </div>
 
           {/* Profile Image */}
-          <div className="flex justify-center order-1 lg:order-2">
+          <div className="flex justify-center">
             <div className="relative">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-400/20 to-purple-400/20 rounded-full blur-3xl"></div>
               <div className="relative w-80 rounded-full overflow-hidden portrait-container shadow-2xl ring-1 ring-white/20 backdrop-blur-sm">
@@ -149,7 +161,7 @@ export const Hero = () => {
         </div>
 
         {/* Statistics Section */}
-        <div className="mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+        <div id="stats" className="scroll-mt-20 mt-24 grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
           <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-sm border border-white/50 hover:shadow-md transition-all duration-300">
             <div className="text-4xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
               14+
@@ -173,44 +185,18 @@ export const Hero = () => {
         </div>
 
         {/* Client logos section */}
-        <div className="mt-20">
+        <section className="mt-20" id="clients" aria-labelledby="clients-heading">
           <div className="text-center mb-12">
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
+            <h3 id="clients-heading" className="text-xl font-semibold text-gray-900 mb-2">
               Trusted by Industry Leaders
             </h3>
             <p className="text-gray-600">
               Recent collaborations with top-tier companies
             </p>
           </div>
-          <div className="grid grid-cols-3 lg:grid-cols-5 gap-8 items-center">
-            {[
-              {
-                name: "Lululemon",
-                image:
-                  "http://pavelterenin.com/blog/wp-content/uploads/2025/05/Lululemon_Athletica_logo.svg_-300x300.png",
-              },
-              {
-                name: "Electronic Arts",
-                image:
-                  "https://pavelterenin.com/blog/wp-content/uploads/2025/05/Electronic-Arts-Logo-2006-300x169.png",
-              },
-              {
-                name: "Realtor.com",
-                image:
-                  "http://pavelterenin.com/blog/wp-content/uploads/2025/05/realtor-com-logo-300-150x150.png",
-              },
-              {
-                name: "1Password",
-                image:
-                  "http://pavelterenin.com/blog/wp-content/uploads/2025/05/images-150x150.png",
-              },
-              {
-                name: "Juniper Square",
-                image:
-                  "http://pavelterenin.com/blog/wp-content/uploads/2025/05/1_bEhYs4ufdL56tExesmt-8Q@2x-150x150.png",
-              },
-            ].map((client, index) => (
-              <div key={index} className="text-center group">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-8 items-center">
+            {clients.map(client => (
+              <div key={client.name} className="text-center group">
                 <div className="w-28 h-20 mx-auto mb-4 flex items-center justify-center bg-white/90 backdrop-blur-sm rounded-xl p-4 shadow-sm border border-white/50 group-hover:shadow-md transition-all duration-300">
                   <img
                     src={client.image}
@@ -224,7 +210,7 @@ export const Hero = () => {
               </div>
             ))}
           </div>
-        </div>
+        </section>
       </div>
     </section>
   );
